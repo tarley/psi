@@ -8,14 +8,14 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.newtonpaiva.psi.model.ITarefaRepository;
 import br.newtonpaiva.psi.model.Tarefa;
+import br.newtonpaiva.psi.model.TarefaRepository;
 
 @Controller
 public class OlaMundoController {
 	
 	@Autowired
-	private ITarefaRepository repository;
+	private TarefaRepository repository;
 	
 	@RequestMapping("/olaMundoSpring")
 	public String execute() {
