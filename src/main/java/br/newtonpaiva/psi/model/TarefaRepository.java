@@ -24,6 +24,15 @@ public class TarefaRepository {
 				.setParameter("descricao", descricao + "%").getResultList();
 	}	
 	
+	public void remover(Tarefa tarefa) {
+		manager.remove(tarefa);
+	}
+	
+	public void remover(Long id) {
+		Tarefa tarefaARemover = buscaPorId(id);
+		remover(tarefaARemover);
+	}
+	
 	public void adiciona(Tarefa tarefa) {
 		manager.persist(tarefa);
 	}
@@ -38,10 +47,7 @@ public class TarefaRepository {
 		return manager.find(Tarefa.class, id);
 	}
 
-	public void remove(Tarefa tarefa) {
-		Tarefa tarefaARemover = buscaPorId(tarefa.getId());
-		manager.remove(tarefaARemover);
-	}
+	
 
 	public void finaliza(Long id) {
 		Tarefa tarefa = buscaPorId(id);
