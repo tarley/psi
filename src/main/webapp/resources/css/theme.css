@@ -1,0 +1,42 @@
+.status{
+
+	border: 1px solid silver;
+
+
+
+
+}
+
+
+.titulo{
+	margin-top:40px;
+	border-bottom:1px solid silver;
+}
+
+
+
+.responsive{
+	width:35%;
+	min-width:50px;
+	max-width:100px;
+	border: 1px solid silver;
+	
+	margin:8.8px;
+	float:left;
+	text-align: left;
+
+	
+	
+	
+		border: 1px solid silver;
+		padding: 10px;
+		text-decoration:none;
+	}
+	.responsive:hover
+	{
+		-moz-box-shadow: 0 0 10px #ccc;
+		-webkit-box-shadow: 0 0 10px #ccc;
+		box-shadow: 0 0 10px #ccc;
+	}
+
+
