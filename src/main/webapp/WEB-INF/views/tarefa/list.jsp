@@ -20,7 +20,7 @@
 	<fieldset>
 		<legend>Filtro</legend>
 		
-		<form action="pesquisar" method="get" class="form-inline">
+		<form action="/psi/tarefa/pesquisar" method="get" class="form-inline">
 			<div class="form-group">
 				<label for="descricao" class="sr-only">Descrição:</label>
 				<input type="text" name="descricao" id="descricao" value="${empty filtro ? '' : filtro}" 
