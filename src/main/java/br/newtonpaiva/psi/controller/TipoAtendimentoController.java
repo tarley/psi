@@ -33,11 +33,10 @@ public class TipoAtendimentoController {
 	@Autowired
 	ITipoAtendimentoRepository repository;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView index() {
 		//Recupera todos os tipos para exibir na lista
 		List<String> tipos = repository.recuperaTodos();
-//		List<TipoAtendimento> tipos = new ArrayList();
 		
 		//Cria o model
 		ModelAndView model = new ModelAndView("tipo-atendimento/listar-tipo-atendimento");
