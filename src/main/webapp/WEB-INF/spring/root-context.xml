@@ -4,23 +4,31 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<bean id="mysqlDataSource"
+	<!-- <bean id="mysqlDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/psi" />
 		<property name="username" value="root" />
 		<property name="password" value="" />
-	</bean>
+	</bean> -->
 
-	<!-- Configurando o acesso ao banco de dados 
-	<bean id="mysqlDataSource"
+	<!-- Banco de produção --> 
+	<!-- <bean id="mysqlDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://mysql66435-projetopsi.jelasticlw.com.br/psi_dev" />
-		<property name="username" value="psi" />
-		<property name="password" value="newtonpsi" />
+		<property name="username" value="root" />
+		<property name="password" value="TYOscb93834" />
+	</bean> -->
+	
+	<!-- Banco de testes -->
+	<bean id="mysqlDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://mysql66435-projetopsi.jelasticlw.com.br/psi" />
+		<property name="username" value="root" />
+		<property name="password" value="TYOscb93834" />
 	</bean>
-	-->
 	
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
