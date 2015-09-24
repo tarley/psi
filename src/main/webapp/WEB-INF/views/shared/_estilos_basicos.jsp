@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<spring:url value="/resources/css/bootstrap.css" var="bootstrap"></spring:url>
-<spring:url value="/resources/css/bootstrap-responsive.css" var="bootstrapResponsive"></spring:url>
+<spring:url value="/resources/css/bootstrap.min.css" var="bootstrap"></spring:url>
+<spring:url value="/resources/css/bootstrap-responsive.min.css" var="bootstrapResponsive"></spring:url>
 <spring:url value="/resources/css/theme.css" var="theme"></spring:url>
 <spring:url value="/resources/css/jquery.dataTables.min.css" var="dataTables"></spring:url>
 

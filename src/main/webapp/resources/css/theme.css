@@ -1,42 +1,44 @@
-.status{
+.status{ border: 1px solid silver; }
 
-	border: 1px solid silver;
-
-
-
-
+.titulo {
+	border-bottom: 1px solid silver;
+	margin-top: 40px;
 }
 
-
-.titulo{
-	margin-top:40px;
-	border-bottom:1px solid silver;
-}
-
-
-
-.responsive{
-	width:35%;
-	min-width:50px;
-	max-width:100px;
+.responsive {
 	border: 1px solid silver;
-	
-	margin:8.8px;
-	float:left;
+	float: left;
+	margin: 8.8px;
+	max-width: 100px;
+	min-width: 50px;
+	padding: 10px;
 	text-align: left;
+	text-decoration: none;
+	width: 35%;
+}
 
-	
-	
-	
-		border: 1px solid silver;
-		padding: 10px;
-		text-decoration:none;
-	}
-	.responsive:hover
-	{
-		-moz-box-shadow: 0 0 10px #ccc;
-		-webkit-box-shadow: 0 0 10px #ccc;
-		box-shadow: 0 0 10px #ccc;
-	}
+.responsive:hover
+{
+	box-shadow: 0 0 10px #ccc;
+	-moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+}
 
+/*
+ * Estilos utilizados na home.jsp
+ */
+header { 
+	background: #eee;
+	margin-bottom: 50px;
+	padding: 20px 40px; 
+}
 
+.input-lg { text-align: center; }
+
+.no-margin { margin: 0; }
+
+.no-padding { padding: 0; }
+
+#bloco-resultado { padding-top: 30px; }
+
+#mapa { height: 400px; }

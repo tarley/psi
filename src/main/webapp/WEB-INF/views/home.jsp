@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -8,74 +5,135 @@
 <%@ page session="false"%>
 
 <!DOCTYPE html>
-<html>
+<html class="no-margin no-padding">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 <title>PSI</title>
 
 <%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
 </head>
 <body>
 
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<a class="brand" href="home.html"><img
-				src="resources/img/logo11.png" alt="Logo PSI"
-				title="Ir para Página Inicial" /> </a>
-		</div>
-	</div>
-	<br />
-
-	<div class="container">
+	<header>
 		<div class="row">
-			<div class="span12">
-				&nbsp;&nbsp; </span> <br /> <br /> <br />
+			<div class="col-md-12">
+				<img src="resources/img/logo11.png" alt="PSI Logo" title="Ir para Página Inicial" class="pull-left">
 			</div>
 		</div>
-	</div>
-	<div class="container-fluid">
-
-		<div class="row-fluid">
-			<div class="span12" style="text-align: right">
-				<i class="icon-user"></i> Olá, Usuário | <span
-					style="color: #1E90FF;">SAIR</span> <br /> <br /> <br /> <br />
+	</header>
+	
+	<section class="container">
+		
+		<div class="row" id="bloco-pesquisa">
+			<div class="col-md-12">
+				<form>
+					<div class="input-group">
+						<input type="text" id="des-bairro" class="form-control input-lg" placeholder="DIGITE O BAIRRO">
+						<span class="input-group-btn">
+							<button class="btn btn-primary btn-lg" type="submit">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Pesquisar
+							</button>
+						</span>
+					</div>
+				</form>
 			</div>
 		</div>
-	</div>
-	<div class="container-fluid">
-		<h4>Consultar Unidades</h4>
-		<hr>
-	</div>
-	<div class="container-fixed">
-		<table id="unidadesTable" class="display" cellspacing="0"
-			width="100%">
-			<thead>
-				<tr>
-					<th>Nome</th>
-				</tr>
-			</thead>
-
-			<tbody>
-<%-- 				<c:forEach var="listValue" items="${lists}"> --%>
-					<tr>
-						<td style="text-align: center">teste</td>
-					</tr>
-
-<%-- 				</c:forEach> --%>
-			</tbody>
-		</table>
-	</div>
+		
+		<div class="row table-responsive" id="bloco-resultado">
+			<div class="col-md-6">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Unidade</th>
+							<th>Endereço</th>
+							<th>Mapa</th>
+						</tr>
+					</thead>
+	
+					<tbody>
+		 				<%-- <c:forEach var="listValue" items="${lists}"> --%>
+							<tr>
+								<td>Nome da Unidade</td>
+								<td>Endereço da Unidade</td>
+								<td>
+								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
+									<a href="#" class="btn btn-primary">
+										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Nome da Unidade</td>
+								<td>Endereço da Unidade</td>
+								<td>
+								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
+									<a href="#" class="btn btn-primary">
+										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Nome da Unidade</td>
+								<td>Endereço da Unidade</td>
+								<td>
+								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
+									<a href="#" class="btn btn-primary">
+										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Nome da Unidade</td>
+								<td>Endereço da Unidade</td>
+								<td>
+								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
+									<a href="#" class="btn btn-primary">
+										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+		 				<%-- </c:forEach> --%>
+					</tbody>
+				</table>
+			</div>
+		
+			<div class="col-md-6">
+				<div id="mapa"></div>
+			</div>
+		</div>
+		
+	</section>
 
 	<%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3wiTHEdnl0vLz_Z4FZbivw6JsnjT2Pg&signed_in=true&callback=initMap"></script>
+	
 	<script>
-		$(document).ready(function() {
-			$('#unidadesTable').DataTable({
-				"language": {
-					"url": "../resources/i18n/datatables-pt_BR.json"
-				}
-			});
-		} );
+	function initMap() {
+	  var bh = {lat: -19.9027163, lng: -43.9640501};
+	  var map = new google.maps.Map(document.getElementById('mapa'), {
+	    zoom: 11,
+	    center: bh
+	  });
+
+	  /*var contentString = '<div id="content">'+
+	      'Teste'+
+	      '</div>';
+
+	  var infowindow = new google.maps.InfoWindow({
+	    content: contentString,
+	  });
+
+	  var marker = new google.maps.Marker({
+	    position: bh,
+	    map: map,
+	    title: 'Belo Horizonte'
+	  });
+	  marker.addListener('click', function() {
+	    infowindow.open(map, marker);
+	  });*/
+	}
 	</script>
 </body>
 </html>
