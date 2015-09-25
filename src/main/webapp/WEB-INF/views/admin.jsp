@@ -58,7 +58,7 @@
 			<div class="span11">
 				<div class="space">
 					<div style="" />
-						<a href="#"><img formaction="tipoUnidade" class="image img-polaroid pos responsive"
+						<a href="unidadeAtendimento/"><img class="image img-polaroid pos responsive"
 						src="resources/img/btm_medico.png" alt="placeholder image"
 						height="" width="100px" title="Gerenciar Unidade de Atendimento" /> 
 						</a>
@@ -68,7 +68,7 @@
 						height="" width="100px" title="Gerenciar Tipo de Unidade" /> 
 						</a>
 						
-						<a href="#"><img formaction="tipoAtendimento" class="image img-polaroid pos responsive"
+						<a href="tipoAtendimento/"><img class="image img-polaroid pos responsive"
 						src="resources/img/btm_especialidade.png" alt="placeholder image"
 						height="" width="100px" title="Gerenciar Tipo Atendimento"> 
 						</a>
