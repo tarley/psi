@@ -52,12 +52,22 @@
 					</thead>
 	
 					<tbody>
-		 				<%-- <c:forEach var="listValue" items="${lists}"> --%>
-							<tr>
-								<td>Nome da Unidade</td>
+		 				<c:forEach items="${listaUnidadeAtendimentos}" var="unidadeAtendimentos">
+		 					<tr>
+								<td>${unidadeAtendimentos.nom_uni_atendimento}</td>
 								<td>Endereço da Unidade</td>
 								<td>
 								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
+									<a href="#" class="btn btn-primary">
+										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+		 				</c:forEach>
+							<!-- <tr>
+								<td>Nome da Unidade</td>
+								<td>Endereço da Unidade</td>
+								<td>
 									<a href="#" class="btn btn-primary">
 										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 									</a>
@@ -67,7 +77,6 @@
 								<td>Nome da Unidade</td>
 								<td>Endereço da Unidade</td>
 								<td>
-								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
 									<a href="#" class="btn btn-primary">
 										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 									</a>
@@ -77,7 +86,6 @@
 								<td>Nome da Unidade</td>
 								<td>Endereço da Unidade</td>
 								<td>
-								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
 									<a href="#" class="btn btn-primary">
 										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 									</a>
@@ -87,13 +95,29 @@
 								<td>Nome da Unidade</td>
 								<td>Endereço da Unidade</td>
 								<td>
-								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
 									<a href="#" class="btn btn-primary">
 										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 									</a>
 								</td>
 							</tr>
-		 				<%-- </c:forEach> --%>
+							<tr>
+								<td>Nome da Unidade</td>
+								<td>Endereço da Unidade</td>
+								<td>
+									<a href="#" class="btn btn-primary">
+										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>Nome da Unidade</td>
+								<td>Endereço da Unidade</td>
+								<td>
+									<a href="#" class="btn btn-primary">
+										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+									</a>
+								</td>
+							</tr> -->
 					</tbody>
 				</table>
 			</div>
@@ -110,6 +134,17 @@
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3wiTHEdnl0vLz_Z4FZbivw6JsnjT2Pg&signed_in=true&callback=initMap"></script>
 	
 	<script>
+	$(document).ready(function(){
+		$(".table").dataTable({
+			"lengthChange": false,
+			"pageLength": 6,
+			"searching": false,
+			"language": {
+				"url": "resources/i18n/datatables-pt_BR.json"
+			}
+		});		
+	});
+	
 	function initMap() {
 	  var bh = {lat: -19.9027163, lng: -43.9640501};
 	  var map = new google.maps.Map(document.getElementById('mapa'), {
