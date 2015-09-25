@@ -3,11 +3,8 @@
  */
 package br.newtonpaiva.psi.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -19,39 +16,55 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-public class TipoAtendimentoRepository implements ITipoAtendimentoRepository {
+public class TipoAtendimentoRepository {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@Override
+	@SuppressWarnings("unchecked")
+	public List<TipoAtendimento> listar() {
+		return manager.createQuery("select ta from TipoAtendimento ta").getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<TipoAtendimento> listarPorDescricao(String desc_tipo_atendimento) {
+		return manager.createQuery("select ta from TipoAtendimento ta where ta.desc_tipo_atendimento like :desc_tipo_atendimento")
+				.setParameter("desc_tipo_atendimento", desc_tipo_atendimento + "%").getResultList();
+	}
+	
+	public void remover(TipoAtendimento tipoAtendimento) {
+		manager.remove(tipoAtendimento);
+	}
+	
+	public void remover(Long cod_tipo_atendimento) {
+		TipoAtendimento tipoAtentimentoARemover = buscaPorId(cod_tipo_atendimento);
+		remover(tipoAtentimentoARemover);
+	}
+	
 	public void adiciona(TipoAtendimento tipo_atendimento) {
 		manager.persist(tipo_atendimento);
 	}
 
-	@Override
 	public void altera(TipoAtendimento tipo_atendimento) {
 		manager.merge(tipo_atendimento);
 	}
 	
-	@Override
-	public void remove(TipoAtendimento tipo_atendimento) {
-		TipoAtendimento tipoARemover = buscaPorId(tipo_atendimento.getCod_tipo_atendimento());
-		manager.remove(tipoARemover);
+	public TipoAtendimento buscaPorId(Long cod_tipo_atendimento) {
+		return manager.find(TipoAtendimento.class, cod_tipo_atendimento);
 	}
 	
-	@Override
-	public TipoAtendimento buscaPorId(Long id) {
-		return manager.find(TipoAtendimento.class, id);
-	}
+	
+	/*public void remove(TipoAtendimento tipo_atendimento) {
+		TipoAtendimento tipoARemover = buscaPorId(tipo_atendimento.getCod_tipo_atendimento());
+		manager.remove(tipoARemover);
+	}*/
 
-	@SuppressWarnings("unchecked")
-	@Override
+	/*@SuppressWarnings("unchecked")
 	public List<String> recuperaTodos() {
 		
 		//List<TipoAtendimento> tipos = manager.createQuery("SELECT e FROM TIPO_ATENDIMENTO e").getResultList();
 		 TypedQuery<String> query = (TypedQuery<String>) manager.createQuery("select e.desc_tipo_atendimento from TipoAtendimento e");
 	     return query.getResultList();
  
-	}
+	}*/
 
 }
