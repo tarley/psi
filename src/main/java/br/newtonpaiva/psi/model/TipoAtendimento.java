@@ -29,9 +29,7 @@ public class TipoAtendimento {
 	@OneToMany(mappedBy = "tipoAtendimento")
     private List<UnidadeAtendimento> unidadeSaudeList;
 	
-//	@NotNull
-//	@Size(min = 1, message="O Nome do Tipo de Atendimento deve ser preenchido.")
-	private String desc_tipo_atendimento;
+	private String des_tipo_atendimento;
 
 	public Long getCod_tipo_atendimento() {
 		return cod_tipo_atendimento;
@@ -42,11 +40,11 @@ public class TipoAtendimento {
 	}
 
 	public String getDesc_tipo_atendimento() {
-		return desc_tipo_atendimento;
+		return des_tipo_atendimento;
 	}
 
 	public void setDesc_tipo_atendimento(String desc_tipo_atendimento) {
-		this.desc_tipo_atendimento = desc_tipo_atendimento;
+		this.des_tipo_atendimento = desc_tipo_atendimento;
 	}
 
 	

@@ -3,6 +3,7 @@
  */
 package br.newtonpaiva.psi.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,21 +27,20 @@ public class UnidadeAtendimento {
 	private Long cod_unidade_atendimento;
 	
 	@ManyToOne
-    @JoinColumn(name = "bairro_cod_bairro")
+    @JoinColumn(name = "COD_BAIRRO")
 	private Bairro bairro;
 	
 	@ManyToOne
-    @JoinColumn(name = "regiao_cod_regiao")
+    @JoinColumn(name = "COD_REGIAO")
 	private Regiao regiao;
 	
 	@ManyToOne
-    @JoinColumn(name = "tipo_atendimento_cod_tipo_atendimento")
+    @JoinColumn(name = "COD_TIPO_ATENDIMENTO")
 	private TipoAtendimento tipoAtendimento;
 	
 	private String nom_logradouro;
 	
-//	@NotNull
-//	@Size(min = 1, message="O Nome do Unidade de Atendimento deve ser preenchido.")
+	@Column(name = "NOM_UNIDADE_ATENDIMENTO")
 	private String nom_uni_atendimento;
 
 	private String num_cep;

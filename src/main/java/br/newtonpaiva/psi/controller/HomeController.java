@@ -22,16 +22,15 @@ public class HomeController {
 	
 	@RequestMapping(value = "/")
 	public String home(Model model) {
-		List<UnidadeAtendimento> listaUnidadeAtendimentos = repository.listar();
+		List<UnidadeAtendimento> listaUnidadeAtendimento = repository.listar();
 		
-		model.addAttribute("listaUnidadeAtendimentos", listaUnidadeAtendimentos);
+		model.addAttribute("listaUnidadeAtendimento", listaUnidadeAtendimento);
 		
 		return "home";
 	}
 	
 	@RequestMapping(value = "/admin")
 	public String adminPanel() {
-
 		return "admin";
 	}
 	

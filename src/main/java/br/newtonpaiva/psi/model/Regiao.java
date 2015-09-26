@@ -31,9 +31,7 @@ public class Regiao {
 	
 	@OneToMany(mappedBy = "regiao")
     private List<UnidadeAtendimento> unidadeSaudeList;
-	
-//	@NotNull
-//	@Size(min = 1, message="O Nome do Unidade de Atendimento deve ser preenchido.")
+
 	private String des_regiao;
 
 	public Long getCod_regiao() {

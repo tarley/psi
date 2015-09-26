@@ -25,6 +25,11 @@ public class UnidadeAtendimentoRepository {
 	public List<UnidadeAtendimento> listar() {
 		return manager.createQuery("select ua from UnidadeAtendimento ua").getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<UnidadeAtendimento> listar(String columns) {
+		return manager.createQuery("select " + columns + " from UnidadeAtendimento ua").getResultList();
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<UnidadeAtendimento> listarPorDescricao(String nom_uni_atendimento) {

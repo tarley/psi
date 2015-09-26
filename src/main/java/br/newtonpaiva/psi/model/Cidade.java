@@ -28,9 +28,7 @@ public class Cidade {
 	
 	@OneToMany(mappedBy = "cidade")
     private List<Bairro> bairroList;
-	
-//	@NotNull
-//	@Size(min = 1, message="O Nome do Unidade de Atendimento deve ser preenchido.")
+
 	private String nom_cidade;
 
 	public Long getCod_cidade() {

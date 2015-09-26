@@ -52,72 +52,22 @@
 					</thead>
 	
 					<tbody>
-		 				<c:forEach items="${listaUnidadeAtendimentos}" var="unidadeAtendimentos">
+		 				<c:forEach items="${listaUnidadeAtendimento}" var="unidadeAtendimento">
 		 					<tr>
-								<td>${unidadeAtendimentos.nom_uni_atendimento}</td>
-								<td>Endereço da Unidade</td>
+								<td>${unidadeAtendimento.nom_uni_atendimento}</td>
 								<td>
-								<!-- <a href="#" class="btn btn-primary btn-sm">Localizar</a> -->
-									<a href="#" class="btn btn-primary">
+									${unidadeAtendimento.nom_logradouro}, 
+									${unidadeAtendimento.num_numero} - 
+									${unidadeAtendimento.bairro.des_bairro} -
+									${unidadeAtendimento.regiao.des_regiao}
+								</td>
+								<td>
+									<a href="${unidadeAtendimento.nom_logradouro}, ${unidadeAtendimento.num_numero} - ${unidadeAtendimento.bairro.des_bairro} - ${unidadeAtendimento.bairro.cidade.nom_cidade}" class="btn btn-primary">
 										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 									</a>
 								</td>
 							</tr>
 		 				</c:forEach>
-							<!-- <tr>
-								<td>Nome da Unidade</td>
-								<td>Endereço da Unidade</td>
-								<td>
-									<a href="#" class="btn btn-primary">
-										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Nome da Unidade</td>
-								<td>Endereço da Unidade</td>
-								<td>
-									<a href="#" class="btn btn-primary">
-										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Nome da Unidade</td>
-								<td>Endereço da Unidade</td>
-								<td>
-									<a href="#" class="btn btn-primary">
-										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Nome da Unidade</td>
-								<td>Endereço da Unidade</td>
-								<td>
-									<a href="#" class="btn btn-primary">
-										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Nome da Unidade</td>
-								<td>Endereço da Unidade</td>
-								<td>
-									<a href="#" class="btn btn-primary">
-										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-									</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Nome da Unidade</td>
-								<td>Endereço da Unidade</td>
-								<td>
-									<a href="#" class="btn btn-primary">
-										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-									</a>
-								</td>
-							</tr> -->
 					</tbody>
 				</table>
 			</div>
@@ -142,7 +92,12 @@
 			"language": {
 				"url": "resources/i18n/datatables-pt_BR.json"
 			}
-		});		
+		});
+		
+		$(".table a").click(function(e){
+			e.preventDefault();
+			alert($(this).attr("href"));
+		});
 	});
 	
 	function initMap() {

@@ -29,18 +29,16 @@ public class Bairro {
 	private Long cod_bairro;
 	
 	@ManyToOne
-    @JoinColumn(name = "cidade_cod_cidade")
+    @JoinColumn(name = "COD_CIDADE")
 	private Cidade cidade;
 	
 	@ManyToOne
-    @JoinColumn(name = "regiao_cod_regiao")
+    @JoinColumn(name = "COD_REGIAO")
 	private Regiao regiao;
 	
 	@OneToMany(mappedBy = "bairro")
     private List<UnidadeAtendimento> unidadeSaudeList;
-	
-//	@NotNull
-//	@Size(min = 1, message="O Nome do Unidade de Atendimento deve ser preenchido.")
+
 	private String des_bairro;
 
 	public Long getCod_bairro() {
