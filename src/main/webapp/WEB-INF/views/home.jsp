@@ -96,9 +96,43 @@
 		
 		$(".table a").click(function(e){
 			e.preventDefault();
-			alert($(this).attr("href"));
+			setLocation($(this).attr("href"));
 		});
 	});
+	
+
+	function setLocation (endereco) {
+		
+		var map = new google.maps.Map(document.getElementById('mapa'));
+		var geocoder = new google.maps.Geocoder();
+		var marker = new google.maps.Marker({
+             map: map
+         });
+		
+		var infowindow = new google.maps.InfoWindow(), marker;
+		 
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		    return function() {
+		        infowindow.setContent(endereco);
+		        infowindow.open(map, marker);
+		    }
+		})(marker))
+		
+		geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
+       	if (status == google.maps.GeocoderStatus.OK) {
+               if (results[0]) {
+                   var latitude = results[0].geometry.location.lat();
+                   var longitude = results[0].geometry.location.lng();
+                   var location = new google.maps.LatLng(latitude, longitude);
+                   
+                   marker.setPosition(location);
+                   map.setCenter(location);
+                   map.setZoom(16);
+               }
+           }
+   		});
+	}	
+
 	
 	function initMap() {
 	  var bh = {lat: -19.9027163, lng: -43.9640501};
@@ -106,23 +140,6 @@
 	    zoom: 11,
 	    center: bh
 	  });
-
-	  /*var contentString = '<div id="content">'+
-	      'Teste'+
-	      '</div>';
-
-	  var infowindow = new google.maps.InfoWindow({
-	    content: contentString,
-	  });
-
-	  var marker = new google.maps.Marker({
-	    position: bh,
-	    map: map,
-	    title: 'Belo Horizonte'
-	  });
-	  marker.addListener('click', function() {
-	    infowindow.open(map, marker);
-	  });*/
 	}
 	</script>
 </body>
