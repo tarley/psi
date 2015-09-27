@@ -63,84 +63,48 @@
 								</div>
 								<div class="span2">
 		                            <label class="">CEP:</label>
-		                            <input type="text" class="input-small span12">
+		                            <input type="text" name="num_cep" class="input-small span12">
 	                        	</div>
 							</div>
 
                 <div class="row-fluid">
                     <div class="span5">
                         <label class="">Endereço da Unidade:</label>
-                        <input type="text" class="input-small span12">
+                        <input type="text" name="nom_logradouro" class="input-small span12">
                     </div>
                     <div class="span1">
                         <label class="">N°:</label>
-                        <input type="text" class="input-small span12">
+                        <input type="text" name="num_numero" class="input-small span12">
                     </div>
                     <div class="span3">
-                        <label class="">Cidade:</label>
-                        <select class="span12">
-                            <option>Belo Horizonte</option>
-                            <option>Contagem</option>
-                            <option>Sabará</option>
+                        <label class="">Bairro:</label>
+                        <select name="cod_bairro" class="span12">
+                            <!--<forEach var="bairros" items="listarBairro">-->
+	                            <option>
+	                            	<!--<out value="${bairros.cod_bairro}">${bairros.des_bairro}</out>-->
+	                            </option>
+                            <!--</forEach>-->
                         </select>
                     </div>
                     <div class="span2">
                         <label class="">Região:</label>
-                        <select class="span12">
-                            <option>Selecione a Região</option>
-                            <option>Norte</option>
-                            <option>Nordeste</option>
-                            <option>Centro-Oeste</option>
-                            <option>Sudeste</option>
-                            <option>Sul</option>
+                        <select name="cod_regiao" class="span12">
+                        	<!--<forEach var="regioes" items="listarRegiao">-->
+	                            <option>
+	                            	<!--<out value="${regioes.cod_regiao}">${regioes.des_regiao}</out>-->
+								</option>
+							<!--</forEach>-->
                         </select>
-                    </div>
-                    <div class="span1">
-                        <label class="">UF:</label>
-                       	 	<select class="span12">
-					    		<option value="estado">Selecione o Estado</option> 
-					    		<option value="ac">AC</option> 
-					    		<option value="al">AL</option> 
-					    		<option value="am">AM</option> 
-					    		<option value="ap">AP</option> 
-					    		<option value="ba">BA</option> 
-					    		<option value="ce">CE</option> 
-					    		<option value="df">DF</option> 
-					    		<option value="es">ES</option> 
-					    		<option value="go">GO</option> 
-					    		<option value="ma">MA</option> 
-					    		<option value="mt">MG</option> 
-					    		<option value="ms">MS</option> 
-					    		<option value="mg">MG</option> 
-					    		<option value="pa">PA</option> 
-					    		<option value="pb">PB</option> 
-					    		<option value="pr">PR</option> 
-					    		<option value="pe">PE</option> 
-					    		<option value="pi">PI</option> 
-					    		<option value="rj">RJ</option> 
-					    		<option value="rn">RN</option> 
-					    		<option value="ro">RO</option> 
-					    		<option value="rs">RS</option> 
-					    		<option value="rr">RR</option> 
-					    		<option value="sc">SC</option> 
-					    		<option value="se">SE</option> 
-					    		<option value="sp">SP</option> 
-					    		<option value="to">TO</option> 
-                        	</select>
-                    </div>
+                    </div> 
                 </div>
 
                 <div class="row-fluid">
-                    <div class="span1">
-                        <label class="">DDD:</label>
-                        <input type="text" class="input-small span12">
-                    </div>
                     <div class="span2">
                         <label class="">Telefone:</label>
                         <input type="text" class="input-small span12">
                     </div>
-                    <div class="span1">
-                        <label class="">DDD:</label>
+                    <div class="span2">
+                        <label class="">Telefone:</label>
                         <input type="text" class="input-small span12">
                     </div>
                     <div class="span2">

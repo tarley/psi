@@ -90,6 +90,12 @@ public class UnidadeAtendimentoController {
 		return new ResponseEntity<String>("Unidade de atendimento removida com sucesso!", HttpStatus.OK); 
 	}
 	
+	@RequestMapping("cadastrarUnidadeAtendimento")
+	@Transactional
+	public String cadastrar() {
+		return "unidade-atendimento/unidade-atendimento";
+	}
+	
 	@RequestMapping("adicionarUnidadeAtendimento")
 	@Transactional
 	public String adicionar(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result) {
@@ -103,11 +109,6 @@ public class UnidadeAtendimentoController {
 		return "unidade-atendimento/listar-unidade-atendimento";
 	}
 	
-	@RequestMapping("cadastrarUnidadeAtendimento")
-	@Transactional
-	public String cadastrar() {
-		return "unidade-atendimento/unidade-atendimento";
-	}
 	
 	@RequestMapping("alterarUnidadeAtendimento")
 	@Transactional

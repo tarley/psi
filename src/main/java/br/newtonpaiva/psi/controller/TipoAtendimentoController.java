@@ -89,6 +89,12 @@ public class TipoAtendimentoController {
 		return new ResponseEntity<String>("Tipo atendimento removido com sucesso!", HttpStatus.OK); 
 	}
 	
+	@RequestMapping("cadastrarTipoAtendimento")
+	@Transactional
+	public String cadastrar() {
+		return "tipo-atendimento/tipo-atendimento";
+	}
+	
 	@RequestMapping("adicionarTipoAtendimento")
 	@Transactional
 	public String adicionar(@Valid TipoAtendimento tipo_antendimento, BindingResult result) {
@@ -102,11 +108,6 @@ public class TipoAtendimentoController {
 		return "tipo-atendimento/listar-tipo-atendimento";
 	}
 	
-	@RequestMapping("cadastrarTipoAtendimento")
-	@Transactional
-	public String cadastrar() {
-		return "tipo-atendimento/tipo-atendimento";
-	}
 	
 	@RequestMapping("alterarTipoAtendimento")
 	@Transactional

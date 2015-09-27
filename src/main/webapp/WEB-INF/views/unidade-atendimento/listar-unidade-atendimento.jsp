@@ -107,7 +107,6 @@ $(document).ready(function() {
 				<c:forEach items="${listaUnidadesAtendimento}" var="unidadeAtendimento">
 					<tr>
 							<td style="text-align: center">${unidadeAtendimento.nom_uni_atendimento}</td>
-							
 							<td style="text-align: center">${unidadeAtendimento.bairro.des_bairro}</td>
 							<td style="text-align: center">${unidadeAtendimento.regiao.des_regiao}</td>
 							<td style="text-align: center">${unidadeAtendimento.tipoAtendimento.desc_tipo_atendimento}</td>		
