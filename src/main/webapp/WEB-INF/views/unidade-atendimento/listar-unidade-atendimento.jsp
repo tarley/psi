@@ -104,18 +104,18 @@ $(document).ready(function() {
 				</thead>
 
 				<tbody>
-				<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
+				<c:forEach items="${listaUnidadesAtendimento}" var="tipoAtendimentos">
 					<tr>
 							<td style="text-align: center">${tipoAtendimentos.nom_uni_atendimento}</td>
 							<td style="text-align: center">da erro</td>
 							<td style="text-align: center">da erro</td>
 							<td style="text-align: center">da erro</td>
-							<td style="text-align: center">${tipoAtendimentos.nom_logradouro}</td>
-							<td style="text-align: center">${tipoAtendimentos.num_numero}</td>
-							<td style="text-align: center">${tipoAtendimentos.num_cep}</td>
-							<td style="text-align: center">${tipoAtendimentos.num_tel1}</td>
-							<td style="text-align: center">${tipoAtendimentos.num_tel2}</td>
-							<td style="text-align: center">${tipoAtendimentos.num_tel3}</td>
+							<td style="text-align: center">${tipoAtendimento.nom_logradouro}</td>
+							<td style="text-align: center">${tipoAtendimento.num_numero}</td>
+							<td style="text-align: center">${tipoAtendimento.num_cep}</td>
+							<td style="text-align: center">${tipoAtendimento.num_tel1}</td>
+							<td style="text-align: center">${tipoAtendimento.num_tel2}</td>
+							<td style="text-align: center">${tipoAtendimento.num_tel3}</td>
 							<td style="width: 100px; text-align: center" >
 							<a href="#"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > 
 							<img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
