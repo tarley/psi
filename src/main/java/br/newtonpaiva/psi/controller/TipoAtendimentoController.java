@@ -30,18 +30,10 @@ import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 @Controller
 @RequestMapping("tipoAtendimento")
 public class TipoAtendimentoController {
+
 	
-	//(Amanda)
-	
-	//LISTAR TUDO FUNCIONA
-	
-	
-	
-	//FALTA FAZER O CAMPO BUSCAR FUNCIONAR
 	//FALTA O EDITAR FUNCIONAR
-	//NAO TESTEI O CADASTRO
-	//NAO TESTEI O EXCLUIR
-	
+	//FALTA O EXCLUIR FUNCIONAR
 	
 	
 	@Autowired
@@ -110,7 +102,7 @@ public class TipoAtendimentoController {
 		return "tipo-atendimento/listar-tipo-atendimento";
 	}
 	
-	/*@RequestMapping("cadastrarTipoAtendimento")
+	@RequestMapping("cadastrarTipoAtendimento")
 	@Transactional
 	public String cadastrar() {
 		return "tipo-atendimento/tipo-atendimento";
@@ -136,6 +128,6 @@ public class TipoAtendimentoController {
 		repository.remover(tipo_antendimento);
 		
 		return "tipo-atendimento/sucesso";
-	}*/
+	}
 
 }

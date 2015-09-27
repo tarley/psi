@@ -31,15 +31,11 @@ import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
 @RequestMapping("unidadeAtendimento")
 public class UnidadeAtendimentoController {
 	
-	//(Amanda)
-	
 	//LISTAR TUDO NAO FUNCIONA (INNER-MAPEAMENTO)
 	
-	
-	//FALTA FAZER O CAMPO BUSCAR FUNCIONAR
 	//FALTA O EDITAR FUNCIONAR
-	//NAO TESTEI O CADASTRO
-	//NAO TESTEI O EXCLUIR
+	//FALTA O CADASTRO FUNCIONAR
+	//FALTA O EXCLUIR FUNCIONAR
 	
 	//FALTA APARECER O NOME DOS CODIGOS FKS
 	//FALTA APARECER O NOME DOS CODIGOS FKS NO MOMENTO DE CADASTRO
@@ -107,7 +103,7 @@ public class UnidadeAtendimentoController {
 		return "unidade-atendimento/listar-unidade-atendimento";
 	}
 	
-	/*@RequestMapping("cadastrarUnidadeAtendimento")
+	@RequestMapping("cadastrarUnidadeAtendimento")
 	@Transactional
 	public String cadastrar() {
 		return "unidade-atendimento/unidade-atendimento";
@@ -133,6 +129,6 @@ public class UnidadeAtendimentoController {
 		repository.remover(unidade_antendimento);
 		
 		return "unidade-atendimento/sucesso";
-	}*/
+	}
 
 }

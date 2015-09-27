@@ -20,7 +20,6 @@ public class UnidadeAtendimentoRepository {
 	@PersistenceContext
 	private EntityManager manager;
 
-	//(Amanda)FALTA FAZER O INNER JOIN COM AS FKS(BAIRRO, REGIAO, TIPOUNIDADE) PARA A LISTAGEM FUNCIONAR
 	@SuppressWarnings("unchecked")
 	public List<UnidadeAtendimento> listar() {
 		return manager.createQuery("select ua from UnidadeAtendimento ua").getResultList();
@@ -30,7 +29,7 @@ public class UnidadeAtendimentoRepository {
 	public List<UnidadeAtendimento> listar(String columns) {
 		return manager.createQuery("select " + columns + " from UnidadeAtendimento ua").getResultList();
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	public List<UnidadeAtendimento> listarPorDescricao(String nom_uni_atendimento) {
 		return manager.createQuery("select ua from UnidadeAtendimento ua where ua.nom_uni_atendimento like :nom_uni_atendimento")

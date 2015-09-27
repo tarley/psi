@@ -169,4 +169,16 @@
 	</div>
 
 </body>
+
+<script src="../resources/js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("form").submit(function(e){
+				e.preventDefault();
+				alert("Inserido com sucesso"); //?
+				this.submit();
+			});
+		});
+	</script>
+
 </html>

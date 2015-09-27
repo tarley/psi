@@ -56,7 +56,7 @@
 				<div class="row-fluid">
 					<div class="span12">
 						<div class="well">
-							<h4>Formulário de Cadástro de Tipo de Atendimento</h4>
+							<h4>Formulário de Cadastro de Tipo de Atendimento</h4>
 						</div>
 						<div class="row-fluid">
 							<div class="span12">
