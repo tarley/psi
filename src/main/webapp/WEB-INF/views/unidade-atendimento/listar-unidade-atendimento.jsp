@@ -107,9 +107,11 @@ $(document).ready(function() {
 				<c:forEach items="${listaUnidadesAtendimento}" var="tipoAtendimentos">
 					<tr>
 							<td style="text-align: center">${tipoAtendimentos.nom_uni_atendimento}</td>
-							<td style="text-align: center">da erro</td>
-							<td style="text-align: center">da erro</td>
-							<td style="text-align: center">da erro</td>
+							
+							<td style="text-align: center">erro</td>
+							<td style="text-align: center">erro</td>
+							<td style="text-align: center">erro</td>
+							
 							<td style="text-align: center">${tipoAtendimentos.nom_logradouro}</td>
 							<td style="text-align: center">${tipoAtendimentos.num_numero}</td>
 							<td style="text-align: center">${tipoAtendimentos.num_cep}</td>
