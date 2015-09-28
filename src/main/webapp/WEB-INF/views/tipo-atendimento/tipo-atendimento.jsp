@@ -11,45 +11,47 @@
 <meta charset="UTF-8">
 <meta name=description content="Psy - Painel Administrativo" />
 <meta name=viewport content="width=device-width, initial-scale=1" />
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> PSI | Cadastrar Tipo de Unidade</title>
+	<link href="../resources/css/bootstrap.css" rel="stylesheet">
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
+	<link href="../resources/css/psi.css" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
 
-<title>Psi - Tipo de Atendimento</title>
+<script src="../resources/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="../resources/js/jquery.dataTables.min.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../resources/css/bootstrap.css">
-<link rel="stylesheet" href="../resources/css/bootstrap-responsive.css">
-<link rel="stylesheet" href="../resources/css/theme.css">
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#unidadeAtendimentoTable').DataTable({
+		"language": {
+			"url": "../resources/i18n/datatables-pt_BR.json"
+		}
+	});
+} );
+</script>
+
 </head>
 <body>
 
 	<!-- Barra | Cabeçalho  -->
 
-	<div class="navbar navbar-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="navbar-brand" href="index.html"><img src="../resources/img/logo11.png" alt="Logo PSI" title="Ir para Página Inicial" /> </a>
+	<nav class="navbar navbar-default navbar-fixed-top  barra">
+		<div class="container-fluid">	
+		
+			<div class="navbar-header">
+				<a class="navbar-brand logo" href="#"><img  alt="Brand" src="../resources/img/logo.png"  /></a>
+
 			</div>
+			
+			<d><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Olá, Usuário | Sair </d>
+
+			
 		</div>
-	</div>
-
-	<!-- Barra | Container  -->
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span10 "></div>
-			<div class="span2 text-right">
-				<span class="icon-user status"></span> Olá, <a href="#">Usuário	| Sair</a>
-			</div>
-		</div>
-
-
-		<div class="container-fluid">
-			<div class="row-fluid ">
-				<div class="span12 titulo">
-					<h6>Tipo de Atendimento</h6>
-				</div>
-			</div>
-		</div>
-
-		<br/>
-		<br/>
+		
+	</nav>
 
 		<div class="container-fluid">
 			<div class="container-fluid">
@@ -63,8 +65,8 @@
 								<form action="adicionarTipoAtendimento" method="post">
 									<div class="span12">
 										<label>Nome do Tipo de Atendimento</label> <input type="text"
-											name="desc_tipo_atendimento" id="desc_tipo_atendimento" style="width: 98.5%"
-											maxlength="100"><br>
+											name="desc_tipo_atendimento" id="desc_tipo_atendimento" 
+											maxlength="100" class="input-small span12"><br>
 										<form:errors path="tipoAtendimento.desc_tipo_atendimento"
 											cssStyle="color:red" />
 									</div>
