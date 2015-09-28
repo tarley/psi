@@ -11,12 +11,13 @@
 <meta charset="UTF-8">
 <meta name=description content="Psy - Painel Administrativo" />
 <meta name=viewport content="width=device-width, initial-scale=1" />
-
-<title>Psi - Unidade de Atendimento</title>
-
-<link rel="stylesheet" href="../resources/css/bootstrap.css">
-<link rel="stylesheet" href="../resources/css/bootstrap-responsive.css">
-<link rel="stylesheet" href="../resources/css/theme.css">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> PSI| Listar Unidade</title>
+	<link href="../resources/css/bootstrap.css" rel="stylesheet">
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
+	<link href="../resources/css/psi.css" rel="stylesheet">
 <link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
 
 <script src="../resources/js/jquery-1.11.3.min.js" type="text/javascript"></script>
@@ -37,33 +38,23 @@ $(document).ready(function() {
 
 	<!-- Barra | Cabeçalho  -->
 
-	<div class="navbar navbar-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="navbar-brand" href="index.html"><img src="../resources/img/logo11.png" alt="Logo PSI" title="Ir para Página Inicial" /> </a>
-			</div>
-		</div>
-	</div>
+	<nav class="navbar navbar-default navbar-fixed-top  barra">
+		<div class="container-fluid">	
+		
+			<div class="navbar-header">
+				<a class="navbar-brand logo" href="#"><img  alt="Brand" src="../resources/img/logo.png"  /></a>
 
-	<!-- Barra | Container  -->
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span10 "></div>
-			<div class="span2 text-right">
-				<span class="icon-user status"></span> Olá, <a href="#">Usuário | Sair</a>
 			</div>
-		</div>
+			
+			<d><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Olá, Usuário | Sair </d>
 
-
-		<div class="container-fluid">
-			<div class="row-fluid ">
-				<div class="span12 titulo">
-					<h6> Unidade de Atendimento </h6>
-				</div>
-			</div>
+			
 		</div>
 		
-		<br>
+	</nav>
+
+
+	
 		
 		<!-- Text field - Nome Unidade Atendimento  -->
 		<div class="container-fluid">
@@ -117,8 +108,8 @@ $(document).ready(function() {
 							<td style="text-align: center">${unidadeAtendimento.num_tel2}</td>
 							<td style="text-align: center">${unidadeAtendimento.num_tel3}</td>
 							<td style="width: 100px; text-align: center" >
-							<a href="#"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > 
-							<img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
+							<a href="#"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > </a>
+							<a href="#"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
 					</tr>
 					
 					</c:forEach>
@@ -128,7 +119,7 @@ $(document).ready(function() {
 		
 		</div>
 </div>
-	</div>
+	</div></br></br></br>
 
 </body>
 </html>
