@@ -11,43 +11,38 @@
 <meta charset="UTF-8">
 <meta name=description content="Psy - Painel Administrativo" />
 <meta name=viewport content="width=device-width, initial-scale=1" />
-
-<title>Psi - Unidade de Atendimento</title>
-
-<link rel="stylesheet" href="../resources/css/bootstrap.css">
-<link rel="stylesheet" href="../resources/css/bootstrap-responsive.css">
-<link rel="stylesheet" href="../resources/css/theme.css">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> PSI | Cadastrar Unidade</title>
+	<link href="../resources/css/bootstrap.css" rel="stylesheet">
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
+	<link href="../resources/css/psi.css" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
 </head>
 <body>
 
 	<!-- Barra | Cabeçalho  -->
 
-	<div class="navbar navbar-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="navbar-brand" href="index.html"><img src="../resources/img/logo11.png" alt="Logo PSI" title="Ir para Página Inicial" /> </a>
+	<nav class="navbar navbar-default navbar-fixed-top  barra">
+		<div class="container-fluid">	
+		
+			<div class="navbar-header">
+				<a class="navbar-brand logo" href="#"><img  alt="Brand" src="../resources/img/logo.png"  /></a>
+
 			</div>
+			
+			<d><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Olá, Usuário | Sair </d>
+
+			
 		</div>
-	</div>
+		
+	</nav>
 
 	<!-- Barra | Container  -->
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span10 "></div>
-			<div class="span2 text-right">
-				<span class="icon-user status"></span> Olá, <a href="#">Usuário | Sair</a>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row-fluid ">
-				<div class="span12 titulo">
-					<h6>Unidade de Atendimento</h6>
-				</div>
-			</div>
-		</div>
-		<br>
-		<br>
-		<div class="span12">
+
+		<div class="container">
+
 			<div class="well">
 				<h4>Formulário de Cadastro de Unidade de Atendimento</h4>
 			</div>
@@ -59,7 +54,7 @@
 							<div class="row-fluid">
 	                        	<div class="span10">
 									<label>Nome da Unidade de Atendimento</label> 
-									<input type="text" name="desc_unidade_atendimento" style="width:99%;"  maxlength="100"><br>
+									<input class="input-small span12" type="text" name="desc_unidade_atendimento" ><br>
 								</div>
 								<div class="span2">
 		                            <label class="">CEP:</label>
@@ -86,7 +81,7 @@
                             <!--</forEach>-->
                         </select>
                     </div>
-                    <div class="span2">
+                    <div class="span3">
                         <label class="">Região:</label>
                         <select name="cod_regiao" class="span12">
                         	<!--<forEach var="regioes" items="listarRegiao">-->
@@ -113,10 +108,10 @@
                     </div>
                     <div class="span6">
                         <label class="">Tipo de Atendimento:</label>
-                        <input style="padding: 0 5px;" type="checkbox" class="input-small">&nbsp; Atendimento Urgente &nbsp;
+                        <br/><input style="padding: 0 5px;" type="checkbox" class="input-small">&nbsp; Atendimento Urgente &nbsp;
                         <input style="padding: 0 5px;"type="checkbox" class="input-small">&nbsp; Casa de Reabilitação 
                         <input style="padding: 0 5px;"type="checkbox" class="input-small">&nbsp; Posto de Atendimento  
-                        <input style="padding: 0 5px;"type="checkbox" class="input-small"> Acompanhamento Clínico  
+                    
                     </div>
                 </div>
                 <form:errors path="unidadeAtendimento.desc_unidade_atendimento"	cssStyle="color:red" />
@@ -130,7 +125,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+</div>
 
 </body>
 
