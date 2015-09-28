@@ -1,4 +1,12 @@
-body { padding-top: 138px; }
+
+body{
+	padding-bottom:70px;
+}
+
+
+body{
+	padding-top:170px;
+}
 
 
 .logo{
@@ -17,6 +25,8 @@ padding-top: 1px;
 		border-bottom: 4px solid #1E90FF;
 		color:#fff;
 		clear: fixed;
+
+	
  	
 }
 

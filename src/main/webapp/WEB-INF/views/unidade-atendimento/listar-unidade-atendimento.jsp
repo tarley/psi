@@ -8,7 +8,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
 <meta name=description content="Psy - Painel Administrativo" />
 <meta name=viewport content="width=device-width, initial-scale=1" />
     
@@ -18,6 +17,7 @@
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
 	<link href="../resources/css/psi.css" rel="stylesheet">
+	<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
 <link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
 
 <script src="../resources/js/jquery-1.11.3.min.js" type="text/javascript"></script>

@@ -18,6 +18,7 @@
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
 	<link href="../resources/css/psi.css" rel="stylesheet">
+	<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
 <link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
 
 <script src="../resources/js/jquery-1.11.3.min.js" type="text/javascript"></script>
