@@ -27,9 +27,10 @@
 		
 		<div class="row" id="bloco-pesquisa">
 			<div class="col-md-12">
-				<form>
+				<form action="/psi/pesquisar" method="get">
 					<div class="input-group">
-						<input type="text" id="des-bairro" class="form-control input-lg" placeholder="DIGITE O BAIRRO">
+						<input type="text" id="des_bairro" name="descricao" value="${empty filtro ? '' : filtro}" 
+							class="form-control input-lg" placeholder="DIGITE O BAIRRO">
 						<span class="input-group-btn">
 							<button class="btn btn-primary btn-lg" type="submit">
 								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Pesquisar
@@ -89,58 +90,67 @@
 			"lengthChange": false,
 			"pageLength": 6,
 			"searching": false,
-			"language": {
-				"url": "resources/i18n/datatables-pt_BR.json"
-			}
-		});
-		
-		$(".table a").click(function(e){
-			e.preventDefault();
-			setLocation($(this).attr("href"));
-		});
-	});
-	
+			"columnDefs" : [ 
+			   { "orderable" : false, "targets" : 2
+				} ],
+				"language" : {
+					"url" : "resources/i18n/datatables-pt_BR.json"
+				}
+			});
 
-	function setLocation (endereco) {
-		
-		var map = new google.maps.Map(document.getElementById('mapa'));
-		var geocoder = new google.maps.Geocoder();
-		var marker = new google.maps.Marker({
-             map: map
-         });
-		
-		var infowindow = new google.maps.InfoWindow(), marker;
-		 
-		google.maps.event.addListener(marker, 'click', (function(marker, i) {
-		    return function() {
-		        infowindow.setContent(endereco);
-		        infowindow.open(map, marker);
-		    }
-		})(marker))
-		
-		geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
-       	if (status == google.maps.GeocoderStatus.OK) {
-               if (results[0]) {
-                   var latitude = results[0].geometry.location.lat();
-                   var longitude = results[0].geometry.location.lng();
-                   var location = new google.maps.LatLng(latitude, longitude);
-                   
-                   marker.setPosition(location);
-                   map.setCenter(location);
-                   map.setZoom(16);
-               }
-           }
-   		});
-	}	
+			$(".table a").click(function(e) {
+				e.preventDefault();
+				setLocation($(this).attr("href"));
+			});
+		});
 
-	
-	function initMap() {
-	  var bh = {lat: -19.9027163, lng: -43.9640501};
-	  var map = new google.maps.Map(document.getElementById('mapa'), {
-	    zoom: 11,
-	    center: bh
-	  });
-	}
+		function setLocation(endereco) {
+
+			var map = new google.maps.Map(document.getElementById('mapa'));
+			var geocoder = new google.maps.Geocoder();
+			var marker = new google.maps.Marker({
+				map : map
+			});
+
+			var infowindow = new google.maps.InfoWindow(), marker;
+
+			google.maps.event.addListener(marker, 'click',
+					(function(marker, i) {
+						return function() {
+							infowindow.setContent(endereco);
+							infowindow.open(map, marker);
+						}
+					})(marker))
+
+			geocoder.geocode({
+				'address' : endereco + ', Brasil',
+				'region' : 'BR'
+			}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					if (results[0]) {
+						var latitude = results[0].geometry.location.lat();
+						var longitude = results[0].geometry.location.lng();
+						var location = new google.maps.LatLng(latitude,
+								longitude);
+
+						marker.setPosition(location);
+						map.setCenter(location);
+						map.setZoom(16);
+					}
+				}
+			});
+		}
+
+		function initMap() {
+			var bh = {
+				lat : -19.9027163,
+				lng : -43.9640501
+			};
+			var map = new google.maps.Map(document.getElementById('mapa'), {
+				zoom : 11,
+				center : bh
+			});
+		}
 	</script>
 </body>
 </html>
