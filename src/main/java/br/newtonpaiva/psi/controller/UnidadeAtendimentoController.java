@@ -19,43 +19,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import br.newtonpaiva.psi.model.Bairro;
+import br.newtonpaiva.psi.model.BairroRepository;
+import br.newtonpaiva.psi.model.Regiao;
+import br.newtonpaiva.psi.model.RegiaoRepository;
 import br.newtonpaiva.psi.model.TipoAtendimento;
+import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 import br.newtonpaiva.psi.model.UnidadeAtendimento;
 import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
 
 /**
- * @author Mari Braga
+ * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
  *
  */
 @Controller
 @RequestMapping("unidadeAtendimento")
 public class UnidadeAtendimentoController {
 	
-	//LISTAR TUDO NAO FUNCIONA (INNER-MAPEAMENTO)
-	
 	//FALTA O EDITAR FUNCIONAR
-	//FALTA O CADASTRO FUNCIONAR
-	//FALTA O EXCLUIR FUNCIONAR
-	
-	//FALTA APARECER O NOME DOS CODIGOS FKS
-	//FALTA APARECER O NOME DOS CODIGOS FKS NO MOMENTO DE CADASTRO
-	
+	//FALTA O EXCLUIR FUNCIONAR	
 	
 	@Autowired
 	UnidadeAtendimentoRepository repository;
-	
-	/*@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView index() {
-		//Recupera todos os unidades para exibir na lista
-		List<String> unidades = repository.recuperaTodos();
-		
-		//Cria o model
-		ModelAndView model = new ModelAndView("unidade-atendimento/listar-unidade-atendimento");
-		model.addObject("lists", unidades);
-		
-		//Chama a página inicial Unidade de Atendimento
-		return model;
-	}*/
+	@Autowired
+	RegiaoRepository regiaoRepository;
+	@Autowired
+	BairroRepository bairroRepository;
+	@Autowired
+	TipoAtendimentoRepository tipoAtendimentoRepository;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(Model model) {
@@ -90,9 +81,19 @@ public class UnidadeAtendimentoController {
 		return new ResponseEntity<String>("Unidade de atendimento removida com sucesso!", HttpStatus.OK); 
 	}
 	
+	//Só deixa salvar o tipo atendimento PSICOLOGIA
 	@RequestMapping("cadastrarUnidadeAtendimento")
 	@Transactional
-	public String cadastrar() {
+	public String cadastrar(Model model) {
+		
+		List<Regiao> listaRegioes = regiaoRepository.listar();
+		List<Bairro> listaBairros = bairroRepository.listar();
+		List<TipoAtendimento> listaTiposAtendimentos = tipoAtendimentoRepository.listar();
+		
+		model.addAttribute("listaRegioes", listaRegioes);
+		model.addAttribute("listaBairros", listaBairros);
+		model.addAttribute("listaTiposAtendimentos", listaTiposAtendimentos);
+		
 		return "unidade-atendimento/unidade-atendimento";
 	}
 	

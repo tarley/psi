@@ -3,19 +3,21 @@
  */
 package br.newtonpaiva.psi.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
- * @author Mari Braga
+ * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
  *
  */
 @Entity
@@ -52,6 +54,12 @@ public class UnidadeAtendimento {
 	private String num_tel2;
 	
 	private String num_tel3;
+	
+	/* Nao funciona - Salva somente 1
+	@ManyToMany
+	@JoinTable(name="TIPO_ATENDIMENTO_UNIDADE", joinColumns={@JoinColumn(name="cod_tipo_atendimento")}, inverseJoinColumns={@JoinColumn(name="cod_unidade_atendimento")})
+	private List<TipoAtendimento> tiposAtendimento;
+	*/
 	
 	public Long getCod_unidade_atendimento() {
 		return cod_unidade_atendimento;

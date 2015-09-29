@@ -24,7 +24,7 @@ import br.newtonpaiva.psi.model.TipoAtendimento;
 import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 
 /**
- * @author Mari Braga
+ * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
  *
  */
 @Controller
@@ -39,20 +39,6 @@ public class TipoAtendimentoController {
 	@Autowired
 	TipoAtendimentoRepository repository;
 	
-	/*@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView index() {
-		//Recupera todos os tipos para exibir na lista
-		List<TipoAtendimento> tipos = repository.listar();
-		
-		//Cria o model
-		ModelAndView model = new ModelAndView("tipo-atendimento/listar-tipo-atendimento");
-		model.addObject("listaTipoAtendimentos", tipos);
-		
-		//Chama a página inicial Tipo de Atendimento
-		return model;
-	}*/
-
-	
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(Model model) {
 		List<TipoAtendimento> listaTipoAtendimentos = repository.listar();
@@ -62,21 +48,19 @@ public class TipoAtendimentoController {
 		return "tipo-atendimento/listar-tipo-atendimento";
 	}
 	
-	
-	
 	@RequestMapping(value="/pesquisar", method = RequestMethod.GET)
-	public String pesquisar(String desc_tipo_atendimento, Model model) {
-		List<TipoAtendimento> listaTipoAtendimentos = repository.listarPorDescricao(desc_tipo_atendimento);
+	public String pesquisar(String des_tipo_atendimento, Model model) {
+		List<TipoAtendimento> listaTipoAtendimentos = repository.listarPorDescricao(des_tipo_atendimento);
 				
-		model.addAttribute("filtro", desc_tipo_atendimento);
+		model.addAttribute("filtro", des_tipo_atendimento);
 		model.addAttribute("listaTipoAtendimentos", listaTipoAtendimentos);
 		
 		return "tipo-atendimento/listar-tipo-atendimento";
 	}
 	
-	@RequestMapping(value="/pesquisar/{desc_tipo_atendimento}", method = RequestMethod.GET)
-	public  @ResponseBody ResponseEntity<TipoAtendimento> pesquisarJson(@PathVariable("desc_tipo_atendimento") String desc_tipo_atendimento) {
-		List<TipoAtendimento> listaTipoAtendimentos = repository.listarPorDescricao(desc_tipo_atendimento);
+	@RequestMapping(value="/pesquisar/{des_tipo_atendimento}", method = RequestMethod.GET)
+	public  @ResponseBody ResponseEntity<TipoAtendimento> pesquisarJson(@PathVariable("des_tipo_atendimento") String des_tipo_atendimento) {
+		List<TipoAtendimento> listaTipoAtendimentos = repository.listarPorDescricao(des_tipo_atendimento);
 		
 		return new ResponseEntity<TipoAtendimento>(listaTipoAtendimentos.get(0), HttpStatus.OK);
 	}
@@ -99,7 +83,7 @@ public class TipoAtendimentoController {
 	@Transactional
 	public String adicionar(@Valid TipoAtendimento tipo_antendimento, BindingResult result) {
 
-		/*if (result.hasFieldErrors("desc_tipo_atendimento")) {
+		/*if (result.hasFieldErrors("des_tipo_atendimento")) {
 			return "tipo-atendimento/tipo-atendimento";
 		}*/
 
@@ -113,7 +97,7 @@ public class TipoAtendimentoController {
 	@Transactional
 	public String altera(@Valid TipoAtendimento tipo_antendimento, BindingResult result) {
 
-		if (result.hasFieldErrors("desc_tipo_atendimento")) {
+		if (result.hasFieldErrors("des_tipo_atendimento")) {
 			return "tipo-atendimento/tipo-atendimento";
 		}
 

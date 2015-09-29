@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * @author Mari Braga
+ * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
  *
  */
 @Entity
@@ -39,12 +39,12 @@ public class TipoAtendimento {
 		this.cod_tipo_atendimento = cod_tipo_atendimento;
 	}
 
-	public String getDesc_tipo_atendimento() {
+	public String getDes_tipo_atendimento() {
 		return des_tipo_atendimento;
 	}
 
-	public void setDesc_tipo_atendimento(String desc_tipo_atendimento) {
-		this.des_tipo_atendimento = desc_tipo_atendimento;
+	public void setDes_tipo_atendimento(String des_tipo_atendimento) {
+		this.des_tipo_atendimento = des_tipo_atendimento;
 	}
 
 	

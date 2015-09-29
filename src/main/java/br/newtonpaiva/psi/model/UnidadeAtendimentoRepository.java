@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
 /**
- * @author Mari Braga
+ * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
  *
  */
 @Repository

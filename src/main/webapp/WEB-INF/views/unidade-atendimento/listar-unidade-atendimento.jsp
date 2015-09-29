@@ -100,7 +100,7 @@ $(document).ready(function() {
 							<td style="text-align: center">${unidadeAtendimento.nom_uni_atendimento}</td>
 							<td style="text-align: center">${unidadeAtendimento.bairro.des_bairro}</td>
 							<td style="text-align: center">${unidadeAtendimento.regiao.des_regiao}</td>
-							<td style="text-align: center">${unidadeAtendimento.tipoAtendimento.desc_tipo_atendimento}</td>		
+							<td style="text-align: center">${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}</td>		
 							<td style="text-align: center">${unidadeAtendimento.nom_logradouro}</td>
 							<td style="text-align: center">${unidadeAtendimento.num_numero}</td>
 							<td style="text-align: center">${unidadeAtendimento.num_cep}</td>

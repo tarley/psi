@@ -66,9 +66,9 @@ $(document).ready(function() {
 								<form action="adicionarTipoAtendimento" method="post">
 									<div class="span12">
 										<label>Nome do Tipo de Atendimento</label> <input type="text"
-											name="desc_tipo_atendimento" id="desc_tipo_atendimento" 
+											name="des_tipo_atendimento" id="des_tipo_atendimento" 
 											maxlength="100" class="input-small span12"><br>
-										<form:errors path="tipoAtendimento.desc_tipo_atendimento"
+										<form:errors path="tipoAtendimento.des_tipo_atendimento"
 											cssStyle="color:red" />
 									</div>
 									<div class="container-fluid">
@@ -95,7 +95,7 @@ $(document).ready(function() {
 				alert("Inserido com sucesso"); //?
 				this.submit();
 				
-				/*var tipo_atendimento = document.getElementById("desc_tipo_atendimento").value;
+				/*var tipo_atendimento = document.getElementById("des_tipo_atendimento").value;
 				if (tipo_atendimento == "") {
 					alert("Insira o nome do tipo");
 				} else {

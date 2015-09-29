@@ -55,7 +55,7 @@
 							<div class="row-fluid">
 	                        	<div class="span10">
 									<label>Nome da Unidade de Atendimento</label> 
-									<input class="input-small span12" type="text" name="desc_unidade_atendimento" ><br>
+									<input class="input-small span12" type="text" name="nom_uni_atendimento" ><br>
 								</div>
 								<div class="span2">
 		                            <label class="">CEP:</label>
@@ -74,45 +74,47 @@
                     </div>
                     <div class="span3">
                         <label class="">Bairro:</label>
-                        <select name="cod_bairro" class="span12">
-                            <!--<forEach var="bairros" items="listarBairro">-->
-	                            <option>
-	                            	<!--<out value="${bairros.cod_bairro}">${bairros.des_bairro}</out>-->
-	                            </option>
-                            <!--</forEach>-->
+                        <select name="bairro.cod_bairro" class="span12">
+							<c:forEach var="bairro" items="${listaBairros}">
+	                            <option value="${bairro.cod_bairro}">
+	                            	<out>${bairro.des_bairro}</out>
+								</option>
+							</c:forEach>
                         </select>
                     </div>
                     <div class="span3">
                         <label class="">Região:</label>
-                        <select name="cod_regiao" class="span12">
-                        	<!--<forEach var="regioes" items="listarRegiao">-->
-	                            <option>
-	                            	<!--<out value="${regioes.cod_regiao}">${regioes.des_regiao}</out>-->
+                        <select name="regiao.cod_regiao" class="span12">
+                        	<c:forEach var="regiao" items="${listaRegioes}">
+	                            <option value="${regiao.cod_regiao}">
+	                            	<out>${regiao.des_regiao}</out>
 								</option>
-							<!--</forEach>-->
+							</c:forEach>
                         </select>
                     </div> 
                 </div>
 
                 <div class="row-fluid">
                     <div class="span2">
-                        <label class="">Telefone:</label>
-                        <input type="text" class="input-small span12">
+                        <label class="">Telefone 1:</label>
+                        <input type="text" name="num_tel1" class="input-small span12">
                     </div>
                     <div class="span2">
-                        <label class="">Telefone:</label>
-                        <input type="text" class="input-small span12">
+                        <label class="">Telefone 2:</label>
+                        <input type="text" name="num_tel2" class="input-small span12">
                     </div>
                     <div class="span2">
-                        <label class="">Telefone:</label>
-                        <input type="text" class="input-small span12">
+                        <label class="">Telefone 3:</label>
+                        <input type="text" name="num_tel3" class="input-small span12">
                     </div>
                     <div class="span6">
                         <label class="">Tipo de Atendimento:</label>
-                        <br/><input style="padding: 0 5px;" type="checkbox" class="input-small">&nbsp; Atendimento Urgente &nbsp;
-                        <input style="padding: 0 5px;"type="checkbox" class="input-small">&nbsp; Casa de Reabilitação 
-                        <input style="padding: 0 5px;"type="checkbox" class="input-small">&nbsp; Posto de Atendimento  
-                    
+                        <br/>
+                        <c:forEach var="tipoAtendimento" items="${listaTiposAtendimentos}">	                            	
+							<input style="margin: 0 10px;" type="checkbox" name="tipoAtendimento.cod_tipo_atendimento" 
+							value="${tipoAtendimento.cod_tipo_atendimento}" class="input-small">
+							<out>${tipoAtendimento.des_tipo_atendimento}</out>
+						</c:forEach>                    
                     </div>
                 </div>
                 <form:errors path="unidadeAtendimento.desc_unidade_atendimento"	cssStyle="color:red" />

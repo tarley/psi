@@ -12,7 +12,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author Mari Braga
+ * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
  *
  */
 @Repository
@@ -26,9 +26,9 @@ public class TipoAtendimentoRepository {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<TipoAtendimento> listarPorDescricao(String desc_tipo_atendimento) {
-		return manager.createQuery("select ta from TipoAtendimento ta where ta.desc_tipo_atendimento like :desc_tipo_atendimento")
-				.setParameter("desc_tipo_atendimento", desc_tipo_atendimento + "%").getResultList();
+	public List<TipoAtendimento> listarPorDescricao(String des_tipo_atendimento) {
+		return manager.createQuery("select ta from TipoAtendimento ta where ta.des_tipo_atendimento like :des_tipo_atendimento")
+				.setParameter("des_tipo_atendimento", des_tipo_atendimento + "%").getResultList();
 	}
 	
 	public void remover(TipoAtendimento tipoAtendimento) {
@@ -62,7 +62,7 @@ public class TipoAtendimentoRepository {
 	public List<String> recuperaTodos() {
 		
 		//List<TipoAtendimento> tipos = manager.createQuery("SELECT e FROM TIPO_ATENDIMENTO e").getResultList();
-		 TypedQuery<String> query = (TypedQuery<String>) manager.createQuery("select e.desc_tipo_atendimento from TipoAtendimento e");
+		 TypedQuery<String> query = (TypedQuery<String>) manager.createQuery("select e.des_tipo_atendimento from TipoAtendimento e");
 	     return query.getResultList();
  
 	}*/

@@ -88,7 +88,7 @@ $(document).ready(function() {
 				<tbody>
 				<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
 					<tr>
-							<td style="text-align: center">${tipoAtendimentos.desc_tipo_atendimento}</td>
+							<td style="text-align: center">${tipoAtendimentos.des_tipo_atendimento}</td>
 							<td style="width: 100px; text-align: center" >
 							<a href="#"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > 
 							<img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
