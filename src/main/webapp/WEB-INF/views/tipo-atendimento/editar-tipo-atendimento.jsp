@@ -13,7 +13,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1" />
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> PSI | Cadastrar Tipo de Atendimento</title>
+	<title> PSI | Editar Tipo de Atendimento</title>
 	<link href="../resources/css/bootstrap.css" rel="stylesheet">
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
@@ -49,15 +49,15 @@
 				<div class="row-fluid">
 					<div class="span12">
 						<div class="well">
-							<h4>Formulário de Cadastro de Tipo de Atendimento</h4>
+							<h4>Formulário de Edição de Tipo de Atendimento - ${tipoAtendimento.cod_tipo_atendimento}</h4>
 						</div>
 						<div class="row-fluid">
 							<div class="span12">
-								<form action="adicionarTipoAtendimento" method="post">
+								<form action="alterarTipoAtendimento" method="post">
 									<div class="span12">
+										<input type="hidden" name="cod_tipo_atendimento" value="${tipoAtendimento.cod_tipo_atendimento}" />
 										<label>Nome do Tipo de Atendimento</label> <input type="text"
-											name="des_tipo_atendimento" id="des_tipo_atendimento" 
-											maxlength="100" class="input-small span12"><br>
+											name="des_tipo_atendimento" id="des_tipo_atendimento" value="${tipoAtendimento.des_tipo_atendimento}" maxlength="100" class="input-small span12"><br>
 										<form:errors path="tipoAtendimento.des_tipo_atendimento"
 											cssStyle="color:red" />
 									</div>
@@ -82,7 +82,7 @@
 		$(document).ready(function(){
 			$("form").submit(function(e){
 				e.preventDefault();
-				alert("Inserido com sucesso"); //?
+				alert("Editado com sucesso"); //?
 				this.submit();
 				
 				/*var tipo_atendimento = document.getElementById("des_tipo_atendimento").value;

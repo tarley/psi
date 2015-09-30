@@ -12,7 +12,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1" />
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> PSI| Listar Unidade</title>
+	<title> PSI| Listar Unidade de Atendimento</title>
 	<link href="../resources/css/bootstrap.css" rel="stylesheet">
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
@@ -108,8 +108,8 @@ $(document).ready(function() {
 							<td style="text-align: center">${unidadeAtendimento.num_tel2}</td>
 							<td style="text-align: center">${unidadeAtendimento.num_tel3}</td>
 							<td style="width: 100px; text-align: center" >
-							<a href="#"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > </a>
-							<a href="#"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
+							<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > </a>
+							<a href="excluirUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
 					</tr>
 					
 					</c:forEach>

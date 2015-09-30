@@ -13,7 +13,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1" />
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> PSI | Listar Unidade</title>
+	<title> PSI | Listar Tipo Atendimento</title>
 	<link href="../resources/css/bootstrap.css" rel="stylesheet">
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
@@ -88,10 +88,11 @@ $(document).ready(function() {
 				<tbody>
 				<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
 					<tr>
-							<td style="text-align: center">${tipoAtendimentos.des_tipo_atendimento}</td>
-							<td style="width: 100px; text-align: center" >
-							<a href="#"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > 
-							<img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
+						<td style="text-align: center">${tipoAtendimentos.des_tipo_atendimento}</td>
+						<td style="width: 100px; text-align: center" >
+							<a href="editarTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > </a>
+							<a href="excluirTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a>
+						</td>
 					</tr>
 					
 					</c:forEach>

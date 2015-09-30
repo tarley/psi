@@ -36,7 +36,7 @@ import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
 @RequestMapping("unidadeAtendimento")
 public class UnidadeAtendimentoController {
 	
-	//FALTA O EDITAR FUNCIONAR
+	//FALTA O EDITAR FUNCIONAR (VIR BAIRRO, REGIAO E TIPO ATENDIMENTO)
 	//FALTA O EXCLUIR FUNCIONAR	
 	
 	@Autowired
@@ -110,6 +110,12 @@ public class UnidadeAtendimentoController {
 		return "unidade-atendimento/listar-unidade-atendimento";
 	}
 	
+	@RequestMapping("editarUnidadeAtendimento")
+	@Transactional
+	public String editar(Long id, Model model) {
+		  model.addAttribute("unidadeAtendimento", repository.buscaPorId(id));
+		return "unidade-atendimento/editar-unidade-atendimento";
+	}
 	
 	@RequestMapping("alterarUnidadeAtendimento")
 	@Transactional
@@ -121,7 +127,7 @@ public class UnidadeAtendimentoController {
 
 		repository.altera(unidade_antendimento);
 		
-		return "unidade-atendimento/sucesso";
+		return "unidade-atendimento/listar-unidade-atendimento";
 	}
 	
 	@RequestMapping("removerUnidadeAtendimento")

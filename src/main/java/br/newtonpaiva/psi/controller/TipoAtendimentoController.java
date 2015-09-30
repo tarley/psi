@@ -31,8 +31,6 @@ import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 @RequestMapping("tipoAtendimento")
 public class TipoAtendimentoController {
 
-	
-	//FALTA O EDITAR FUNCIONAR
 	//FALTA O EXCLUIR FUNCIONAR
 	
 	
@@ -92,18 +90,24 @@ public class TipoAtendimentoController {
 		return "tipo-atendimento/listar-tipo-atendimento";
 	}
 	
+	@RequestMapping("editarTipoAtendimento")
+	@Transactional
+	public String editar(Long id, Model model) {
+		  model.addAttribute("tipoAtendimento", repository.buscaPorId(id));
+		return "tipo-atendimento/editar-tipo-atendimento";
+	}
 	
 	@RequestMapping("alterarTipoAtendimento")
 	@Transactional
 	public String altera(@Valid TipoAtendimento tipo_antendimento, BindingResult result) {
 
-		if (result.hasFieldErrors("des_tipo_atendimento")) {
-			return "tipo-atendimento/tipo-atendimento";
-		}
+		//if (result.hasFieldErrors("des_tipo_atendimento")) {
+			//return "tipo-atendimento/tipo-atendimento";
+		//}
 
 		repository.altera(tipo_antendimento);
 		
-		return "tipo-atendimento/sucesso";
+		return "tipo-atendimento/listar-tipo-atendimento";
 	}
 	
 	@RequestMapping("removerTipoAtendimento")
