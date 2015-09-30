@@ -41,4 +41,6 @@ header {
 
 #bloco-resultado { padding-top: 30px; }
 
+.highlight { background-color: #b3ffb9 !important; }
+
 #mapa { height: 400px; }

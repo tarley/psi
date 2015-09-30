@@ -54,7 +54,7 @@
 	
 					<tbody>
 		 				<c:forEach items="${listaUnidadeAtendimento}" var="unidadeAtendimento">
-		 					<tr>
+		 					<tr class="${unidadeAtendimento.bairro.des_bairro.equalsIgnoreCase(filtro) ? 'highlight' : ''}">
 								<td>${unidadeAtendimento.nom_uni_atendimento}</td>
 								<td>
 									${unidadeAtendimento.nom_logradouro}, 
