@@ -65,7 +65,7 @@
 								<td>
 									<a class="btn btn-primary" 
 									onclick="javascript:setLocation('${unidadeAtendimento.nom_logradouro}, ${unidadeAtendimento.num_numero} - ${unidadeAtendimento.bairro.des_bairro} - ${unidadeAtendimento.bairro.cidade.nom_cidade}',
-									'${unidadeAtendimento.nom_uni_atendimento}', '${unidadeAtendimento.num_tel1}', '${unidadeAtendimento.num_tel2}', '${unidadeAtendimento.num_tel3}');">
+									'${unidadeAtendimento.nom_uni_atendimento}', '${unidadeAtendimento.num_tel1}', '${unidadeAtendimento.num_tel2}', '${unidadeAtendimento.num_tel3}', '${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}');">
 										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 									</a>
 								</td>
@@ -101,7 +101,7 @@
 			});
 		});
 
-		function setLocation(endereco, nome, tel1, tel2, tel3) {
+		function setLocation(endereco, nome, tel1, tel2, tel3, tipoAtendimento) {
 	
 			var map = new google.maps.Map(document.getElementById('mapa'));
 			var geocoder = new google.maps.Geocoder();
@@ -113,6 +113,7 @@
 			var infowindow = new google.maps.InfoWindow(), marker;
 			var contentString =
 		      '<p><b>' + nome + '</b></p>'+
+		      '<p><b> Tipo de Atendimento: </b>' + tipoAtendimento + '</p>'+
 		      '<p>' + endereco + '</p>'+
 		      '<p>' + tel1 + '</p>'+
 		      '<p>' + tel2 + '</p>'+
