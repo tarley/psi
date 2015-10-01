@@ -1,7 +1,7 @@
 {
-	"sEmptyTable":   	"Não existem dados na tabela",
+	"sEmptyTable":   	"Não foi encontrada nenhuma unidade",
 	"sInfo":         	"Exibindo _START_ a _END_ de _TOTAL_ registros",
-	"sInfoEmpty":    	"Exibindo 0 a 0 de 0 refistros",
+	"sInfoEmpty":    	"Exibindo 0 a 0 de 0 registros",
 	"sInfoFiltered": 	"(filtrado de _MAX_ registros)",
 	"sInfoPostFix":  	"",
 	"sInfoThousands":  	".",
