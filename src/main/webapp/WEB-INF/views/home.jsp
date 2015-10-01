@@ -15,19 +15,31 @@
 </head>
 <body>
 
-	<header>
+	<!-- <header>
 		<div class="row">
 			<div class="col-md-12">
 				<img src="resources/img/logo11.png" alt="PSI Logo" title="Ir para Página Inicial" class="pull-left">
 			</div>
 		</div>
-	</header>
+	</header> -->
+	
+	<nav class="navbar navbar-default navbar-fixed-top  barra">
+		<div class="container-fluid">	
+		
+			<div class="navbar-header">
+				<a class="navbar-brand logo" href="#"><img alt="Brand" src="resources/img/logo.png"></a>
+
+			</div>
+			
+		</div>
+		
+	</nav>
 	
 	<section class="container">
 		
 		<div class="row" id="bloco-pesquisa">
 			<div class="col-md-12">
-				<form action="/psi/pesquisar" method="get">
+				<form action="pesquisar" method="get">
 					<div class="input-group">
 						<input type="text" id="des_bairro" name="descricao" value="${empty filtro ? '' : filtro}" 
 							class="form-control input-lg" placeholder="DIGITE O BAIRRO">
