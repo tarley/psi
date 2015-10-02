@@ -1,36 +1,11 @@
-.status{ border: 1px solid silver; }
-
-.titulo {
-	border-bottom: 1px solid silver;
-	margin-top: 40px;
-}
-
-.responsive {
-	border: 1px solid silver;
-	float: left;
-	margin: 8.8px;
-	max-width: 100px;
-	min-width: 50px;
-	padding: 10px;
-	text-align: left;
-	text-decoration: none;
-	width: 35%;
-}
-
-.responsive:hover
-{
-	box-shadow: 0 0 10px #ccc;
-	-moz-box-shadow: 0 0 10px #ccc;
-	-webkit-box-shadow: 0 0 10px #ccc;
-}
-
 /*
  * Estilos utilizados na home.jsp
  */
-header { 
-	background: #eee;
+header {
+	background: #006da3;
+	border-bottom: 4px solid #1e90ff;
 	margin-bottom: 50px;
-	padding: 20px 40px; 
+	padding-left: 20px; 
 }
 
 .input-lg { text-align: center; }
