@@ -97,6 +97,8 @@ public class UnidadeAtendimentoController {
 		return "unidade-atendimento/unidade-atendimento";
 	}
 	
+	
+	
 	@RequestMapping("adicionarUnidadeAtendimento")
 	@Transactional
 	public String adicionar(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result) {
@@ -107,7 +109,7 @@ public class UnidadeAtendimentoController {
 
 		repository.adiciona(unidade_antendimento);
 		
-		return "unidade-atendimento/listar-unidade-atendimento";
+		return ("redirect:/unidadeAtendimento/"); 	
 	}
 	
 	@RequestMapping("editarUnidadeAtendimento")
