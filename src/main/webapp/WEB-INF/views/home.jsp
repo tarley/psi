@@ -1,14 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
-<%@ page session="false"%>
 
 <!DOCTYPE html>
 <html class="no-margin no-padding">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PSI</title>
 
 <%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
@@ -16,10 +12,8 @@
 <body>
 
 	<header>
-		<div class="row">
-			<div class="col-md-12">
-				<img src="resources/img/logo.png" alt="PSI Logo" title="Ir para Página Inicial" class="pull-left">
-			</div>
+		<div>
+			<img src="resources/img/logo.png" alt="PSI Logo" title="Ir para Página Inicial" class="pull-left">
 		</div>
 	</header>
 	
@@ -41,38 +35,40 @@
 			</div>
 		</div>
 		
-		<div class="row table-responsive" id="bloco-resultado">
+		<div class="row" id="bloco-resultado">
 			<div class="col-md-6">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Unidade</th>
-							<th>Endereço</th>
-							<th>Mapa</th>
-						</tr>
-					</thead>
-	
-					<tbody>
-		 				<c:forEach items="${listaUnidadeAtendimento}" var="unidadeAtendimento">
-		 					<tr class="${unidadeAtendimento.bairro.des_bairro.equalsIgnoreCase(filtro) ? 'highlight' : ''}">
-								<td>${unidadeAtendimento.nom_uni_atendimento}</td>
-								<td>
-									${unidadeAtendimento.nom_logradouro}, 
-									${unidadeAtendimento.num_numero} - 
-									${unidadeAtendimento.bairro.des_bairro} -
-									${unidadeAtendimento.regiao.des_regiao}
-								</td>
-								<td>
-									<a class="btn btn-primary" 
-									onclick="javascript:setLocation('${unidadeAtendimento.nom_logradouro}, ${unidadeAtendimento.num_numero} - ${unidadeAtendimento.bairro.des_bairro} - ${unidadeAtendimento.bairro.cidade.nom_cidade}',
-									'${unidadeAtendimento.nom_uni_atendimento}', '${unidadeAtendimento.num_tel1}', '${unidadeAtendimento.num_tel2}', '${unidadeAtendimento.num_tel3}', '${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}');">
-										<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-									</a>
-								</td>
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Unidade</th>
+								<th>Endereço</th>
+								<th>Mapa</th>
 							</tr>
-		 				</c:forEach>
-					</tbody>
-				</table>
+						</thead>
+		
+						<tbody>
+			 				<c:forEach items="${listaUnidadeAtendimento}" var="unidadeAtendimento">
+			 					<tr class="${unidadeAtendimento.bairro.des_bairro.equalsIgnoreCase(filtro) ? 'highlight' : ''}">
+									<td>${unidadeAtendimento.nom_uni_atendimento}</td>
+									<td>
+										${unidadeAtendimento.nom_logradouro}, 
+										${unidadeAtendimento.num_numero} - 
+										${unidadeAtendimento.bairro.des_bairro} -
+										${unidadeAtendimento.regiao.des_regiao}
+									</td>
+									<td>
+										<a class="btn btn-primary" 
+										onclick="javascript:setLocation('${unidadeAtendimento.nom_logradouro}, ${unidadeAtendimento.num_numero} - ${unidadeAtendimento.bairro.des_bairro} - ${unidadeAtendimento.bairro.cidade.nom_cidade}',
+										'${unidadeAtendimento.nom_uni_atendimento}', '${unidadeAtendimento.num_tel1}', '${unidadeAtendimento.num_tel2}', '${unidadeAtendimento.num_tel3}', '${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}');">
+											<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+										</a>
+									</td>
+								</tr>
+			 				</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		
 			<div class="col-md-6">
