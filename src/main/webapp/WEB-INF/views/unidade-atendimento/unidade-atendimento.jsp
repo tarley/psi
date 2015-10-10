@@ -76,6 +76,7 @@
                     <div class="span3">
                         <label class="">Bairro:</label>
                         <select name="bairro.cod_bairro" class="span12">
+							<option value="">Selecione...</option>
 							<c:forEach var="bairro" items="${listaBairros}">
 	                            <option value="${bairro.cod_bairro}">
 	                            	<out>${bairro.des_bairro}</out>
@@ -86,6 +87,7 @@
                     <div class="span3">
                         <label class="">Região:</label>
                         <select name="regiao.cod_regiao" class="span12">
+                        	<option value="">Selecione...</option>
                         	<c:forEach var="regiao" items="${listaRegioes}">
 	                            <option value="${regiao.cod_regiao}">
 	                            	<out>${regiao.des_regiao}</out>

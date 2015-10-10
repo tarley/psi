@@ -50,9 +50,6 @@ $(document).ready(function() {
 			</div>
 		</div>
 	</nav>
-	
-
-
 		<!-- Text field - Nome Tipo Atendimento  -->
 		<div class="container blocoPai ">
 		<div class="container-fluid">
@@ -61,7 +58,6 @@ $(document).ready(function() {
 			<div class="well">
 				<h4>Pesquisar Tipo de Atendimento</h4>
 			</div>
-			
 			<div class="row-fluid">
 			<form>
 				<div class="span12 text-right">
@@ -71,8 +67,7 @@ $(document).ready(function() {
 			</form>
 			</div>	
 			
-			<br/>
-			<br/>
+			<br/><br/>
 			
 			<table id="tipoAtendimentoTable" class="display" cellspacing="0" width="100%">
 				<thead>
@@ -83,23 +78,21 @@ $(document).ready(function() {
 				</thead>
 
 				<tbody>
-				<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
-					<tr>
-						<td style="text-align: center">${tipoAtendimentos.des_tipo_atendimento}</td>
-						<td style="width: 100px; text-align: center" >
-							<a href="editarTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > </a>
-							<a href="excluirTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a>
-						</td>
-					</tr>
-					
+					<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
+						<tr>
+							<td style="text-align: center">${tipoAtendimentos.des_tipo_atendimento}</td>
+							<td style="width: 100px; text-align: center" >
+								<a href="editarTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > </a>
+								<!-- <a href="excluirTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a> -->
+							</td>
+						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
-		
-		</div>
-</div>
 	</div>
+	</div>
+</div>
 
 </body>
 </html>

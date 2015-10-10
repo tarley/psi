@@ -94,10 +94,9 @@ $(document).ready(function() {
 						<th>Ações</th>
 					</tr>
 				</thead>
-
 				<tbody>
-				<c:forEach items="${listaUnidadesAtendimento}" var="unidadeAtendimento">
-					<tr>
+					<c:forEach items="${listaUnidadesAtendimento}" var="unidadeAtendimento">
+						<tr id="row${unidadeAtendimento.cod_unidade_atendimento}">
 							<td style="text-align: center">${unidadeAtendimento.nom_uni_atendimento}</td>
 							<td style="text-align: center">${unidadeAtendimento.bairro.des_bairro}</td>
 							<td style="text-align: center">${unidadeAtendimento.regiao.des_regiao}</td>
@@ -110,19 +109,32 @@ $(document).ready(function() {
 							<td style="text-align: center">${unidadeAtendimento.num_tel3}</td>
 							<td style="width: 100px; text-align: center" >
 							<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}"><img alt="Editar" src="../resources/img/editar.png" title="Editar" > </a>
-							<a href="excluirUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
-					</tr>
-					
+							<a href="#"onclick="remover(${unidadeAtendimento.cod_unidade_atendimento})"><img alt="Excluir" src="../resources/img/excluir.png" title="Excluir" ></a></td>
+						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
-		
-		</div>
-</br></br></br>
-</div>
-	</div></br></br></br>
+		</div></br></br></br>
+	</div>
+</div></br></br></br>
+
+<script>
+		function remover(cod_unidade_atendimento) {
+			var resposta = confirm("Deseja remover esse registro?");
+		     if (resposta == true) {
+				jQuery.ajax({ 
+					  url: 'remover/' + cod_unidade_atendimento,
+					  async: true,
+					  success: function(data) {
+					  	alert(data);				  	
+					  	$("#row" + cod_unidade_atendimento).remove();
+					  	
+					  }
+				});
+		     }
+		}
+	</script>
 
 </body>
 </html>
-
