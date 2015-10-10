@@ -11,13 +11,16 @@
 </head>
 <body>
 
-	<header>
-		<div>
-			<img src="resources/img/logo.png" alt="PSI Logo" title="Ir para Página Inicial" class="pull-left">
+	<nav class="navbar navbar-default navbar-fixed-top  barra">
+		<div class="container-fluid">	
+			<div class="navbar-header">
+				<a class="navbar-brand logo" href="#"><img  alt="PSI" src="resources/img/logo.png"  /></a>
+			</div>
+			
 		</div>
-	</header>
+	</nav>
 	
-	<section class="container">
+	<section class="container blocoPai">
 		
 		<div class="row" id="bloco-pesquisa">
 			<div class="col-md-12">

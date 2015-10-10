@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -14,13 +13,14 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title> PSI | Listar Tipo Atendimento</title>
-	<link href="../resources/css/bootstrap.css" rel="stylesheet">
-    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
-	<link href="../resources/css/psi.css" rel="stylesheet">
-	<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
-
+	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
+	<link rel="stylesheet" href="../resources/css/bootstrap.css"/>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 <script src="../resources/js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script src="../resources/js/jquery.dataTables.min.js" type="text/javascript"></script>
 
@@ -39,25 +39,22 @@ $(document).ready(function() {
 
 	<!-- Barra | Cabeçalho  -->
 
-	<!-- Barra | Cabeçalho  -->
 
-	<nav class="navbar navbar-default navbar-fixed-top  barra">
+		<nav class="navbar navbar-default navbar-fixed-top  barra">
 		<div class="container-fluid">	
-		
 			<div class="navbar-header">
 				<a class="navbar-brand logo" href="#"><img  alt="Brand" src="../resources/img/logo.png"  /></a>
-
 			</div>
-			
-			<d><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Olá, Usuário | Sair </d>
-
-			
+			<div class="blocoLogin">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário | Sair 
+			</div>
 		</div>
-		
 	</nav>
+	
+
 
 		<!-- Text field - Nome Tipo Atendimento  -->
-		<div class="container-fluid">
+		<div class="container blocoPai ">
 		<div class="container-fluid">
 		<div class="row-fluid">
 		<div class="span12">

@@ -14,12 +14,17 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title> PSI | Cadastrar Unidade</title>
-	<link href="../resources/css/bootstrap.css" rel="stylesheet">
-    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
-	<link href="../resources/css/psi.css" rel="stylesheet">
-	<link href="../resources/css/bootstrap-responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
+	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
+	<link rel="stylesheet" href="../resources/css/bootstrap.css"/>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
 </head>
 <body>
 
@@ -27,22 +32,18 @@
 
 	<nav class="navbar navbar-default navbar-fixed-top  barra">
 		<div class="container-fluid">	
-		
 			<div class="navbar-header">
 				<a class="navbar-brand logo" href="#"><img  alt="Brand" src="../resources/img/logo.png"  /></a>
-
 			</div>
-			
-			<d><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Olá, Usuário | Sair </d>
-
-			
+			<div class="blocoLogin">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário | Sair 
+			</div>
 		</div>
-		
 	</nav>
 
 	<!-- Barra | Container  -->
 
-		<div class="container">
+		<div class="container blocoPai borda-form">
 
 			<div class="well">
 				<h4>Formulário de Cadastro de Unidade de Atendimento</h4>
@@ -109,9 +110,9 @@
                     </div>
                     <div class="span6">
                         <label class="">Tipo de Atendimento:</label>
-                        <br/>
+      
                         <c:forEach var="tipoAtendimento" items="${listaTiposAtendimentos}">	                            	
-							<input style="margin: 0 10px;" type="checkbox" name="tipoAtendimento.cod_tipo_atendimento" 
+							<input style="margin:10px;" type="checkbox" name="tipoAtendimento.cod_tipo_atendimento" 
 							value="${tipoAtendimento.cod_tipo_atendimento}" class="input-small">
 							<out>${tipoAtendimento.des_tipo_atendimento}</out>
 						</c:forEach>                    

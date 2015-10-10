@@ -1,51 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
 <%@ page session="false"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name=description content="Psy - Painel Administrativo" />
-<meta name=viewport content="width=device-width, initial-scale=1" />
-    
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> PSI | Editar Unidade</title>
-	<link href="../resources/css/bootstrap.css" rel="stylesheet">
-    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../resources/css/bootstrap-theme.min" rel="stylesheet">
-	<link href="../resources/css/psi.css" rel="stylesheet">
-	<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="../resources/css/jquery.dataTables.min.css">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> PSI | Painel Administrativo</title>
+	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
+	<link rel="stylesheet" href="../resources/css/bootstrap.css"/>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-	<!-- Barra | Cabeçalho  -->
+  </head>
+  <body>
+
+
 
 	<nav class="navbar navbar-default navbar-fixed-top  barra">
 		<div class="container-fluid">	
-		
 			<div class="navbar-header">
 				<a class="navbar-brand logo" href="#"><img  alt="Brand" src="../resources/img/logo.png"  /></a>
-
 			</div>
-			
-			<d><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Olá, Usuário | Sair </d>
-
-			
+			<div class="blocoLogin">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário | Sair 
+			</div>
 		</div>
-		
 	</nav>
+	
 
 	<!-- Barra | Container  -->
 
-		<div class="container">
-
+		<div class="container blocoPai borda-form">
+		<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span12">
 			<div class="well">
-				<h4>Formulário de Edição de Unidade de Atendimento - ${unidadeAtendimento.cod_unidade_atendimento}</h4>
+				<h4>Editar Unidade de Atendimento</h4>
 			</div>
 			<!-- Text field - Nome Unidade Atendimento  -->
 			<div class="container-fluid">
@@ -118,9 +113,9 @@
                     </div>
                     <div class="span6">
                         <label class="">Tipo de Atendimento:</label>
-                        <br/>
+
                         <c:forEach var="tipoAtendimento" items="${listaTiposAtendimentos}">	                            	
-							<input style="margin: 0 10px;" type="checkbox" name="tipoAtendimento.cod_tipo_atendimento" 
+							<input style="margin:5px;margin-top:8px" type="checkbox" name="tipoAtendimento.cod_tipo_atendimento" 
 							value="${tipoAtendimento.cod_tipo_atendimento}" class="input-small">
 							<out>${tipoAtendimento.des_tipo_atendimento}</out>
 						</c:forEach>                    
@@ -135,15 +130,17 @@
 						</form>
 					</div>
 				</div>
+				</div>
+				</div>
 			</div>
 		</div>
 </div>
+
 
 </body>
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 
-<script src="../resources/js/jquery-1.11.3.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			$("#salvarEdicacao").submit(function(e){

@@ -7,11 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title> PSI | Painel Administrativo</title>
-	<link href="resources/css/bootstrap.css" rel="stylesheet">
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-	<link href="resources/css/bootstrap-theme.min" rel="stylesheet">
-	<link href="resources/css/psi.css" rel="stylesheet">
-	<link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
+	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -22,23 +18,22 @@
   </head>
   <body>
 
+
+
 	<nav class="navbar navbar-default navbar-fixed-top  barra">
 		<div class="container-fluid">	
-		
 			<div class="navbar-header">
 				<a class="navbar-brand logo" href="#"><img  alt="Brand" src="resources/img/logo.png"  /></a>
-
 			</div>
-			
-			<d><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Olá, Usuário | Sair </d>
-
-			
+			<div class="blocoLogin">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário | Sair 
+			</div>
 		</div>
-		
 	</nav>
 	
 
-	<div class="container">
+
+	<div class="container blocoPai">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="linha">
@@ -52,26 +47,26 @@
 			
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-3">
-					<a href="unidadeAtendimento/" title="Permite Gerenciar a Unidade de Atendimento"><div class="box">
+					<a href="unidadeAtendimento/" title="Permite Gerenciar a Unidade de Atendimento"><div class="boxLink">
 						<span class="glyphicon glyphicon-home tamanho" > </span> <br /> <span>&nbsp;Gerenciar Unidade</span>
 					</div></a>
 				</div>
 
 				<div class="col-xs-6 col-sm-6 col-md-3"> 					
-				<a href="tipoAtendimento/"><div class="box">
+				<a href="tipoAtendimento/"><div class="boxLink">
 						<span class="glyphicon glyphicon-list-alt tamanho" title="Permite Gerenciar o Tipo de Atendimento"> </span> <br /> <span>Tipo de Atendimento</span>
 					</div></a>
 				</div>
 
 				<div class="col-xs-6 col-sm-6 col-md-3"> 					
-					<a href="#"><div class="box">
+					<a href="#"><div class="boxLink">
 						<span class="glyphicon glyphicon-search tamanho"> </span> <br /> <span>&nbsp; Pesquisar &nbsp;Clínica</span>
 					</div></a>
 				</div>
 
 
 				<div class="col-xs-6 col-sm-6 col-md-3"> 					
-					<a href="#"><div class="box">
+					<a href="#"><div class="boxLink">
 						<span class="glyphicon glyphicon-wrench tamanho"> </span> <br /> <span>Alterar Dados de Conta</span>
 					</div></a>
 				</div>

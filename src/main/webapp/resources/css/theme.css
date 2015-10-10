@@ -2,9 +2,8 @@
  * Estilos utilizados na home.jsp
  */
 header {
-	background: #006da3;
+	background-color: #006da3;
 	border-bottom: 4px solid #1e90ff;
-	height: 54px;
 	margin-bottom: 50px;
 	padding-left: 20px; 
 }
@@ -21,46 +20,53 @@ header {
 
 #mapa { height: 400px; }
 
-/*
- * Estilos utilizados na tela de login
- */
-.body-form-signin {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
+
+/*******************************************************
+ * Estilos utilizados nas páginas administrativas.jsp  *
+ *******************************************************/
+
+.blocoPai { margin-top:150px; }
+
+.logo { padding-top: 1px; }
+
+.barra{
+		background-color:#006da3;
+		border-bottom: 4px solid #1E90FF;
+		color:#fff;
+		clear: fixed;
+		}
+		
+.blocoLogin {
+			float:right;
+			background-color:#1E90FF;
+			margin-top:16px;
+			padding:11px;
 }
 
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+ .borda-form{ border: 1px solid silver; padding:8px; }
+
+.linha {
+			border:none;
+			border-bottom: 2px solid #1E90FF;
 }
 
-.form-signin .form-signin-heading,
-.form-signin .checkbox { margin-bottom: 10px; }
+.tamanho { font-size:3em; }
 
-.form-signin .checkbox { font-weight: normal; }
-
-.form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+.boxLink {
+		   text-align:center;
+		   border: solid 2px silver;
+		   padding:15px;
+	       margin-bottom:20px;
+		   text-decoration: none;
 }
 
-.form-signin .form-control:focus { z-index: 2; }
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+.boxLink:hover {
+		   background-color: #1E90FF;;
+		   color:#fff;
+		   text-decoration: none;
 }
 
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+a:link, a:visited, a:active {
+		text-decoration: none;
+		color: #333;
 }
