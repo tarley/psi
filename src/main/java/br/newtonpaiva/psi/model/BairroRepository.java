@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import org.springframework.stereotype.Repository;
 
 /**
@@ -20,8 +19,8 @@ public class BairroRepository {
 	private EntityManager manager;
 
 	@SuppressWarnings("unchecked")
-	public List<Bairro> listar() {
+	public List<Bairro> listar() 
+	{
 		return manager.createQuery("select b from Bairro b").getResultList();
 	}
-
 }

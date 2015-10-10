@@ -23,6 +23,7 @@ import br.newtonpaiva.psi.model.Bairro;
 import br.newtonpaiva.psi.model.BairroRepository;
 import br.newtonpaiva.psi.model.Regiao;
 import br.newtonpaiva.psi.model.RegiaoRepository;
+import br.newtonpaiva.psi.model.Tarefa;
 import br.newtonpaiva.psi.model.TipoAtendimento;
 import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 import br.newtonpaiva.psi.model.UnidadeAtendimento;
@@ -114,8 +115,16 @@ public class UnidadeAtendimentoController {
 	
 	@RequestMapping("editarUnidadeAtendimento")
 	@Transactional
-	public String editar(Long id, Model model) {
-		  model.addAttribute("unidadeAtendimento", repository.buscaPorId(id));
+	public String editar(Long id, Model model) 
+	{
+		List<Regiao> listaRegioes = regiaoRepository.listar();
+		List<Bairro> listaBairros = bairroRepository.listar();
+		List<TipoAtendimento> listaTiposAtendimentos = tipoAtendimentoRepository.listar();
+		
+		model.addAttribute("listaRegioes", listaRegioes);
+		model.addAttribute("listaBairros", listaBairros);
+		model.addAttribute("listaTiposAtendimentos", listaTiposAtendimentos);
+		model.addAttribute("unidadeAtendimento", repository.buscaPorId(id));
 		return "unidade-atendimento/editar-unidade-atendimento";
 	}
 	
@@ -130,6 +139,17 @@ public class UnidadeAtendimentoController {
 		repository.altera(unidade_antendimento);
 		
 		return "unidade-atendimento/listar-unidade-atendimento";
+	}
+	
+	@RequestMapping(value="/regiao/{regiao}")
+	@Transactional
+	public @ResponseBody ResponseEntity<Bairro> pesquisarBairroRegiao(@PathVariable("regiao") Long cod_regiao) 
+	{
+		List<Bairro> listarBairrosPorRegiao = repository.listarBairrosDaRegiao(cod_regiao);
+		
+		System.out.println(listarBairrosPorRegiao);
+		
+		return new ResponseEntity<Bairro>(listarBairrosPorRegiao.get(0), HttpStatus.OK);
 	}
 	
 	@RequestMapping("removerUnidadeAtendimento")

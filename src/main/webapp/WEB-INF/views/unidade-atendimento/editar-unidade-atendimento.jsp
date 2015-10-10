@@ -73,24 +73,33 @@
                         <input type="text" name="num_numero" value="${unidadeAtendimento.num_numero}" class="input-small span12">
                     </div>
                     <div class="span3">
-                        <label class="">Bairro:</label>
-                        <select name="bairro.cod_bairro" class="span12">
-							<c:forEach var="bairro" items="${listaBairros}">
-	                            <option value="${bairro.cod_bairro}">
-	                            	<out>${bairro.des_bairro}</out>
-								</option>
-							</c:forEach>
-                        </select>
-                    </div>
-                    <div class="span3">
                         <label class="">Região:</label>
-                        <select name="regiao.cod_regiao" class="span12">
+                        <select name="regiao" id="regiao" class="span12">
+                        	<option value="${unidadeAtendimento.regiao.cod_regiao}">
+	                            	<out>${unidadeAtendimento.regiao.des_regiao}</out>
+							</option>
                         	<c:forEach var="regiao" items="${listaRegioes}">
 	                            <option value="${regiao.cod_regiao}">
 	                            	<out>${regiao.des_regiao}</out>
 								</option>
 							</c:forEach>
                         </select>
+                    </div>
+                    <div class="span3">
+                        <label class="">Bairro:</label>
+                        	<select name="bairro" id="bairro" class="span12">
+	                        	<option value="${unidadeAtendimento.bairro.cod_bairro}">
+	                        		<out>${unidadeAtendimento.bairro.des_bairro}</out>
+	                        	</option>
+	                        	 
+								<c:forEach var="bairro" items="${listaBairros}">
+									<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">
+										<option value="${bairro.regiao.cod_regiao}">
+			                            	<out>${bairro.des_bairro}</out>
+		                            	</option>
+	                            	</c:if>
+								</c:forEach> 
+                        	</select>
                     </div> 
                 </div>
 
@@ -120,8 +129,8 @@
                 <form:errors path="unidadeAtendimento.nom_uni_atendimento"	cssStyle="color:red" />
 							<br>
 							<div class="span12 text-right">
-								<input type="submit" class="btn btn-primary" value="Salvar" />
-								<input type="submit" class="btn btn-primary" value="Cancelar" />
+								<input type="submit" class="btn btn-primary" value="Salvar" name="salvarEdicacao" id="salvarEdicacao" />
+								<input type="button" class="btn btn-primary" value="Cancelar" />
 							</div>
 						</form>
 					</div>
@@ -132,15 +141,38 @@
 
 </body>
 
+<%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
+
 <script src="../resources/js/jquery-1.11.3.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$("form").submit(function(e){
+			$("#salvarEdicacao").submit(function(e){
 				e.preventDefault();
 				alert("Editado com sucesso"); //?
 				this.submit();
 			});
 		});
 	</script>
-
+	<script>
+		$('#regiao').change(function(){
+			
+			var regiao = $('#regiao').val();
+			
+			//alert(regiao);
+			
+			jQuery.ajax({ 
+					
+				  url: 'regiao/' + regiao,
+				  async: true,
+				  success: function(data) 
+				  {
+					  	alert(data);				  	
+					  	//$("#row" + id).remove();
+				  },
+				  error:function(){
+					  alert("deu erro");
+				  }
+			});
+		})
+	</script>
 </html>
