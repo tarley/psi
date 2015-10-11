@@ -87,7 +87,7 @@ public class TipoAtendimentoController {
 
 		repository.adiciona(tipo_antendimento);
 		
-		return "tipo-atendimento/listar-tipo-atendimento";
+		return "redirect:/tipoAtendimento/";
 	}
 	
 	@RequestMapping("editarTipoAtendimento")

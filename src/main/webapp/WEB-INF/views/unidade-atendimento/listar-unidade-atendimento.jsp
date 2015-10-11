@@ -120,7 +120,7 @@
 						      <th>Tel1</th>
 						      <th>Tel2</th>
 						      <th>Tel3</th>
-							<th width="10%">Editar | Excluir</th>
+							<th width="12%">Editar | Excluir</th>
 
 						</tr>
 					</thead>
@@ -174,49 +174,25 @@
 		language: {
 			"url": "../resources/i18n/datatables-pt_BR.json"
 			},
-				});
+	});
+
+	function remover(cod_unidade_atendimento) {
+		var resposta = confirm("Deseja remover esse registro?");
+	     if (resposta == true) {
+			jQuery.ajax({ 
+				  url: 'remover/' + cod_unidade_atendimento,
+				  async: true,
+				  success: function(data) {
+				  	alert(data);				  	
+				  	$("#row" + cod_unidade_atendimento).remove();
+				  	
+				  }
+			});
+	     }
+	}
 </script>
 
-
-
-
-<script>
-		function remover(cod_unidade_atendimento) {
-			var resposta = confirm("Deseja remover esse registro?");
-		     if (resposta == true) {
-				jQuery.ajax({ 
-					  url: 'remover/' + cod_unidade_atendimento,
-					  async: true,
-					  success: function(data) {
-					  	alert(data);				  	
-					  	$("#row" + cod_unidade_atendimento).remove();
-					  	
-					  }
-				});
-		     }
-		}
-	</script>
-
-		</br></br></br>
-
-
-
-<script>
-		function remover(cod_unidade_atendimento) {
-			var resposta = confirm("Deseja remover esse registro?");
-		     if (resposta == true) {
-				jQuery.ajax({ 
-					  url: 'remover/' + cod_unidade_atendimento,
-					  async: true,
-					  success: function(data) {
-					  	alert(data);				  	
-					  	$("#row" + cod_unidade_atendimento).remove();
-					  	
-					  }
-				});
-		     }
-		}
-	</script>
+</br></br></br>
 
 </body>
 </html>
