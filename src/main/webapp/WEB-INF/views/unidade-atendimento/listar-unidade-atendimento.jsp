@@ -31,17 +31,69 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top  barra">
-	    <div class="container-fluid">	
-		    	<div class="navbar-header">
-		            <a class="navbar-brand logo" href=""><img  alt="PSI" src="../resources/img/logo.png"  /></a>
-		    	</div>
-		  
-		  	<div class="blocoLogin">
-		    	<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário | Sair 
-		  	</div>
-		</div>
-	</nav>
+	
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+					      </button>
+			     <div class="navbar-header">
+					<a class="navbar-brand logo" href=""><img  alt="PSI" src="../resources/img/logo.png"  /></a>
+				 </div>
+      	</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Listar</a></li>-->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-align-justify" aria-hidden="true">&nbsp;Listar<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Unidades Cadastradas</a></li>
+            <li><a href="#">Tipos de Unidades Cadastradas</a></li>
+          </ul>
+          
+        </li>
+      </ul>
+      
+      
+            <ul class="nav navbar-nav">
+        <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Listar</a></li>-->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pencil" aria-hidden="true">
+          Cadastrar<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Unidade</a></li>
+            <li><a href="#">Tipo de Unidade</a></li>
+          </ul>
+        </li>
+         <li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"> Pesquisar</a></li>
+      </ul>
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Alterar dados de conta</a></li>
+            <li><a href="#">Gerenciar contas de usuário</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Finalizar sessão</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    
+	
 
 	<div class="container-fluid centralizarBox">
 	<form action="unidade-atendimento" method="post">
@@ -59,7 +111,7 @@
 
 					<thead>
 						<tr class="tr_padrao"> 
-						      <th width="250px">Nome</th>
+						      <th width="25%">Nome</th>
 						      <th>Bairro</th>
 						      <th>Regiao</th>
 						      <th>Atendimento</th>
@@ -68,7 +120,7 @@
 						      <th>Tel1</th>
 						      <th>Tel2</th>
 						      <th>Tel3</th>
-							<th width="105px">Editar | Excluir</th>
+							<th width="10%">Editar | Excluir</th>
 
 						</tr>
 					</thead>
@@ -108,9 +160,8 @@
 	</div>
 
 </div>
-		</div></br></br></br>
-	</div>
-</div></br></br></br>
+
+</br></br>
 
 <script type="text/javascript">
 	// Ativar conteúdo de Busca e Estilização

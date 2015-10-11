@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-fixed-top  barra">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">	
 			<div class="navbar-header">
 				<a class="navbar-brand logo" href="#"><img  alt="PSI" src="resources/img/logo.png"  /></a>
