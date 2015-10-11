@@ -25,7 +25,8 @@ header {
  * Estilos utilizados nas páginas administrativas.jsp  *
  *******************************************************/
 
-.blocoPai { margin-top:150px; }
+.centralizarBox { margin:100px 0 10px 0; }
+.blocoPai { margin:140px auto}
 
 .logo { padding-top: 1px; }
 
@@ -70,3 +71,20 @@ a:link, a:visited, a:active {
 		text-decoration: none;
 		color: #333;
 }
+.tr_padrao:hover { background-color: #e8e8e8 !important; }
+
+.centralizadora{ margin-left:22px; }
+
+.botao{
+		padding:1px;   
+		text-align:center;
+		background-color:#e5c100;
+		width:32px;
+		border: 1px solid #fff;
+		border-radius: 5px; float:left; margin:0 5px
+}
+
+
+
+.botao-datableUnidade{ color:#fff; margin:0 7px; }
+										
