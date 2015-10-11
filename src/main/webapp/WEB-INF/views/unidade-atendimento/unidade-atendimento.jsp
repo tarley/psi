@@ -91,12 +91,16 @@
 
 	<!-- Barra | Container  -->
 
-		<div class="container blocoPai borda-form">
+			<br /> <br/>
 
-			<div class="well">
-				<h4>Formulário de Cadastro de Unidade de Atendimento</h4>
+	<!-- Barra | Container  -->
+		<div class="container centralizarBox">
+		<div class="panel panel-primary ">
+			<div class="panel-heading">
+				<h3 class="panel-title"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Cadastrar Unidade</h3>
 			</div>
-			<!-- Text field - Nome Unidade Atendimento  -->
+
+			<div class="panel-body">
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span12">
@@ -179,6 +183,8 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		
 </div>
 
 </body>
