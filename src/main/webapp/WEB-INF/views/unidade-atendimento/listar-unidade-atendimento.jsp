@@ -77,7 +77,7 @@
 					</thead>
 					<tbody>
 					 <c:forEach items="${listaUnidadesAtendimento}" var="unidadeAtendimento">
-							<tr id="row${unidadeAtendimento.cod_unidade_atendimento}">
+						<tr class="tr_padrao" id="row${unidadeAtendimento.cod_unidade_atendimento}">
 	   						 <td style="text-align: left">${unidadeAtendimento.nom_uni_atendimento}</td>
 						     <td style="text-align: center">${unidadeAtendimento.bairro.des_bairro}</td>
 						     <td style="text-align: center">${unidadeAtendimento.regiao.des_regiao}</td>
