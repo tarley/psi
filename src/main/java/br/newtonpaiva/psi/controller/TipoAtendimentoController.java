@@ -31,9 +31,6 @@ import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 @RequestMapping("tipoAtendimento")
 public class TipoAtendimentoController {
 
-	//FALTA O EXCLUIR FUNCIONAR
-	
-	
 	@Autowired
 	TipoAtendimentoRepository repository;
 	

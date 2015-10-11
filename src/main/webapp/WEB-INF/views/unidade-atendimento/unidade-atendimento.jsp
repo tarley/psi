@@ -23,11 +23,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-
 </head>
 <body>
-
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,8 +55,7 @@
         </li>
       </ul>
       
-      
-            <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav">
         <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
         <li><a href="#">Listar</a></li>-->
         <li class="dropdown">
@@ -87,11 +83,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-	<!-- Barra | Container  -->
-
-			<br /> <br/>
+<br /><br/>
 
 	<!-- Barra | Container  -->
 		<div class="container centralizarBox">
@@ -126,17 +118,6 @@
                         <input type="text" name="num_numero" class="input-small span12">
                     </div>
                     <div class="span3">
-                        <label class="">Bairro:</label>
-                        <select name="bairro.cod_bairro" class="span12">
-							<option value="">Selecione...</option>
-							<c:forEach var="bairro" items="${listaBairros}">
-	                            <option value="${bairro.cod_bairro}">
-	                            	<out>${bairro.des_bairro}</out>
-								</option>
-							</c:forEach>
-                        </select>
-                    </div>
-                    <div class="span3">
                         <label class="">Região:</label>
                         <select name="regiao.cod_regiao" class="span12">
                         	<option value="">Selecione...</option>
@@ -147,6 +128,17 @@
 							</c:forEach>
                         </select>
                     </div> 
+                    <div class="span3">
+                        <label class="">Bairro:</label>
+                        <select name="bairro.cod_bairro" class="span12">
+							<option value="">Selecione...</option>
+							<c:forEach var="bairro" items="${listaBairros}">
+	                            <option value="${bairro.cod_bairro}">
+	                            	<out>${bairro.des_bairro}</out>
+								</option>
+							</c:forEach>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="row-fluid">

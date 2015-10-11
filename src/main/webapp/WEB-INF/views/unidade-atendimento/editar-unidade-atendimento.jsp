@@ -13,8 +13,6 @@
 
   </head>
   <body>
-
-
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,8 +43,7 @@
         </li>
       </ul>
       
-      
-            <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav">
         <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
         <li><a href="#">Listar</a></li>-->
         <li class="dropdown">
@@ -74,7 +71,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
 	<br /> <br/>
 
 	<!-- Barra | Container  -->
@@ -112,12 +108,9 @@
                     </div>
                     <div class="span3">
                         <label class="">Região:</label>
-                        <select name="regiao" id="regiao" class="span12">
-                        	<option value="${unidadeAtendimento.regiao.cod_regiao}">
-	                            	<out>${unidadeAtendimento.regiao.des_regiao}</out>
-							</option>
+                        <select name="regiao.cod_regiao" id="regiao" class="span12">
                         	<c:forEach var="regiao" items="${listaRegioes}">
-	                            <option value="${regiao.cod_regiao}">
+	                            <option value="${regiao.cod_regiao}" ${regiao.cod_regiao == unidadeAtendimento.regiao.cod_regiao ? 'selected' : ''}>
 	                            	<out>${regiao.des_regiao}</out>
 								</option>
 							</c:forEach>
@@ -125,17 +118,13 @@
                     </div>
                     <div class="span3">
                         <label class="">Bairro:</label>
-                        	<select name="bairro" id="bairro" class="span12">
-	                        	<option value="${unidadeAtendimento.bairro.cod_bairro}">
-	                        		<out>${unidadeAtendimento.bairro.des_bairro}</out>
-	                        	</option>
-	                        	 
+                        	<select name="bairro.cod_bairro" id="bairro" class="span12">
 								<c:forEach var="bairro" items="${listaBairros}">
-									<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">
-										<option value="${bairro.regiao.cod_regiao}">
+									<!--<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">-->
+										<option value="${bairro.cod_bairro}" ${bairro.cod_bairro == unidadeAtendimento.bairro.cod_bairro ? 'selected' : ''}>
 			                            	<out>${bairro.des_bairro}</out>
 		                            	</option>
-	                            	</c:if>
+	                            	<!--</c:if>-->
 								</c:forEach> 
                         	</select>
                     </div> 
@@ -156,9 +145,8 @@
                     </div>
                     <div class="span6">
                         <label class="">Tipo de Atendimento:</label>
-
                         <c:forEach var="tipoAtendimento" items="${listaTiposAtendimentos}">	                            	
-							<input style="margin:5px;margin-top:8px" type="checkbox" name="tipoAtendimento.cod_tipo_atendimento" 
+							<input style="margin:5px;margin-top:8px" type="checkbox" ${tipoAtendimento.cod_tipo_atendimento == unidadeAtendimento.tipoAtendimento.cod_tipo_atendimento ? 'checked' : ''} name="tipoAtendimento.cod_tipo_atendimento" 
 							value="${tipoAtendimento.cod_tipo_atendimento}" class="input-small">
 							<out>${tipoAtendimento.des_tipo_atendimento}</out>
 						</c:forEach>                    
@@ -167,7 +155,7 @@
                 <form:errors path="unidadeAtendimento.nom_uni_atendimento"	cssStyle="color:red" />
 							<br>
 							<div class="span12 text-right">
-								<input type="submit" class="btn btn-primary" value="Salvar" name="salvarEdicacao" id="salvarEdicacao" />
+								<input type="submit" class="btn btn-primary" value="Salvar" />
 								<a href="../unidadeAtendimento/" style="color:#fff" class="btn btn-primary" value="Cancelar" />Cancelar</a>
 							</div>
 						</form>
@@ -189,7 +177,7 @@
 
 	<script>
 		$(document).ready(function(){
-			$("#salvarEdicacao").submit(function(e){
+			$("form").submit(function(e){
 				e.preventDefault();
 				alert("Editado com sucesso"); //?
 				this.submit();

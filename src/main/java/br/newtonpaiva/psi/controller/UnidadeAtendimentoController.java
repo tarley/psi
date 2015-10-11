@@ -38,7 +38,6 @@ import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
 public class UnidadeAtendimentoController {
 	
 	//FALTA O EDITAR FUNCIONAR (VIR BAIRRO, REGIAO E TIPO ATENDIMENTO)
-	//FALTA O EXCLUIR FUNCIONAR	
 	
 	@Autowired
 	UnidadeAtendimentoRepository repository;
@@ -131,9 +130,9 @@ public class UnidadeAtendimentoController {
 	@Transactional
 	public String altera(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result) {
 
-		if (result.hasFieldErrors("desc_unidade_atendimento")) {
-			return "unidade-atendimento/unidade-atendimento";
-		}
+		//if (result.hasFieldErrors("desc_unidade_atendimento")) {
+			//return "unidade-atendimento/unidade-atendimento";
+		//}
 
 		repository.altera(unidade_antendimento);
 		
@@ -144,7 +143,7 @@ public class UnidadeAtendimentoController {
 	@Transactional
 	public @ResponseBody ResponseEntity<Bairro> pesquisarBairroRegiao(@PathVariable("regiao") Long cod_regiao) 
 	{
-		List<Bairro> listarBairrosPorRegiao = repository.listarBairrosDaRegiao(cod_regiao);
+		List<Bairro> listarBairrosPorRegiao = bairroRepository.listarBairrosDaRegiao(cod_regiao);
 		
 		System.out.println(listarBairrosPorRegiao);
 		
