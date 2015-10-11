@@ -44,7 +44,7 @@
 	</nav>
 
 	<div class="container-fluid centralizarBox">
-	<form>
+	<form action="unidade-atendimento" method="post">
 			<div class="span12 text-right" style="margin-bottom:10px">
 				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="Cadastrar Novo"/>
 			</div>
