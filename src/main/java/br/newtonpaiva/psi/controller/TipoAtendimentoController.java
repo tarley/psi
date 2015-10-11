@@ -107,7 +107,7 @@ public class TipoAtendimentoController {
 
 		repository.altera(tipo_antendimento);
 		
-		return "tipo-atendimento/listar-tipo-atendimento";
+		return "redirect:/tipoAtendimento/";
 	}
 	
 	@RequestMapping("removerTipoAtendimento")
@@ -117,6 +117,7 @@ public class TipoAtendimentoController {
 		repository.remover(tipo_antendimento);
 		
 		return "tipo-atendimento/sucesso";
+			
 	}
 
 }

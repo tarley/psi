@@ -24,9 +24,6 @@
 	$(document).ready(function() {
 		$('#GerenciarUnidade').DataTable();
 	} );	
-	
-	
-	
 	</script>
 
 
