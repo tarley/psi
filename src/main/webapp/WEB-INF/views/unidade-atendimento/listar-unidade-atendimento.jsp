@@ -10,7 +10,7 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-	<title>PSI | Gerencia Unidade</title>
+	<title>PSI | Gerenciar Unidade</title>
 
 	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
