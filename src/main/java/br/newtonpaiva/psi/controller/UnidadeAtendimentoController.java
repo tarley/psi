@@ -95,7 +95,7 @@ public class UnidadeAtendimentoController {
 		model.addAttribute("listaBairros", listaBairros);
 		model.addAttribute("listaTiposAtendimentos", listaTiposAtendimentos);
 		
-		return "unidade-atendimento/unidade-atendimento";
+		return "redirect:unidade-atendimento/unidade-atendimento";
 	}
 	
 	
