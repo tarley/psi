@@ -46,7 +46,7 @@
 	<div class="container blocoPai">
 	<form>
 			<div class="span12 text-right" style="margin-bottom:10px">
-				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="Cadastrar Novo"/>
+				<input type="submit" class="btn btn-success" formaction="cadastrarTipoAtendimento" value="Cadastrar Novo"/>
 			</div>
 	</form>
 		<div class="panel panel-primary">

@@ -46,7 +46,7 @@
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span12">
-						<form action="adicionarUnidadeAtendimento" method="post">
+						<form action="alterarUnidadeAtendimento" method="post">
 							<div class="row-fluid">
 	                        	<div class="span10">
 									<label>Nome da Unidade de Atendimento</label> 
@@ -125,7 +125,7 @@
 							<br>
 							<div class="span12 text-right">
 								<input type="submit" class="btn btn-primary" value="Salvar" name="salvarEdicacao" id="salvarEdicacao" />
-								<input type="button" class="btn btn-primary" value="Cancelar" />
+								<a href="../unidadeAtendimento/" style="color:#fff" class="btn btn-primary" value="Cancelar" />Cancelar</a>
 							</div>
 						</form>
 					</div>

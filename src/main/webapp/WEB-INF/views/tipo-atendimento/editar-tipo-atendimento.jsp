@@ -58,7 +58,7 @@
 									<div class="container-fluid">
 										<div class="span12 text-right">
 											<input type="submit" class="btn btn-primary" value="Salvar" />
-											<a href="../tipoAtendimento/" class="btn btn-primary" value="Cancelar" />Cancelar</a>
+											<a href="../tipoAtendimento/" style="color:#fff" class="btn btn-primary" value="Cancelar" />Cancelar</a>
 										</div>
 									</div>
 								</form>

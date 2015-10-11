@@ -138,7 +138,7 @@ public class UnidadeAtendimentoController {
 
 		repository.altera(unidade_antendimento);
 		
-		return "unidade-atendimento/listar-unidade-atendimento";
+		return "redirect:/unidadeAtendimento/";
 	}
 	
 	@RequestMapping(value="/regiao/{regiao}")
@@ -160,5 +160,5 @@ public class UnidadeAtendimentoController {
 		
 		return "unidade-atendimento/sucesso";
 	}
-
+	
 }

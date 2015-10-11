@@ -34,7 +34,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top  barra">
 	    <div class="container-fluid">	
 		    	<div class="navbar-header">
-		            <a class="navbar-brand logo" href="#"><img  alt="Brand" src="../resources/img/logo.png"  /></a>
+		            <a class="navbar-brand logo" href=""><img  alt="PSI" src="../resources/img/logo.png"  /></a>
 		    	</div>
 		  
 		  	<div class="blocoLogin">
@@ -87,11 +87,13 @@
 
 							<td>
 								<div class="centralizadora" style="margin-left:22px">
-									<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}"><div class="botao" title="Editar">
-										<span class="glyphicon glyphicon-pencil botao-datableUnidade" aria-hidden="true"></span>
+									<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}">
+										<div class="botao" title="Editar">
+											<span class="glyphicon glyphicon-pencil botao-datableUnidade" aria-hidden="true"></span>
+										</div>
 									</a>
-								</div>
-								<a href="#"onclick="remover(${unidadeAtendimento.cod_unidade_atendimento})">
+
+								<a href="#" onclick="remover(${unidadeAtendimento.cod_unidade_atendimento})">
 									<div class="botao" style="background-color:#d9534f" title="Excluir">
 											<span class="glyphicon glyphicon-trash botao-datableUnidade" aria-hidden="true"></span>
 									</div>

@@ -59,7 +59,7 @@
 				</div>
 
 				<div class="col-xs-6 col-sm-6 col-md-3"> 					
-					<a href="#"><div class="boxLink">
+					<a href="/admin"><div class="boxLink">
 						<span class="glyphicon glyphicon-search tamanho"> </span> <br /> <span>&nbsp; Pesquisar &nbsp;Clínica</span>
 					</div></a>
 				</div>
