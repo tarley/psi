@@ -100,26 +100,26 @@
 							<div class="row-fluid">
 	                        	<div class="span10">
 									<label>Nome da Unidade de Atendimento</label> 
-									<input class="input-small span12" type="text" name="nom_uni_atendimento" ><br>
+									<input class="input-small span12" type="text" name="nom_uni_atendimento" required=""><br>
 								</div>
 								<div class="span2">
 		                            <label class="">CEP:</label>
-		                            <input type="text" name="num_cep" class="input-small span12">
+		                            <input type="text" name="num_cep" class="input-small span12" required="">
 	                        	</div>
 							</div>
 
                 <div class="row-fluid">
                     <div class="span5">
                         <label class="">Endereço da Unidade:</label>
-                        <input type="text" name="nom_logradouro" class="input-small span12">
+                        <input type="text" name="nom_logradouro" class="input-small span12" required="">
                     </div>
                     <div class="span1">
                         <label class="">N°:</label>
-                        <input type="text" name="num_numero" class="input-small span12">
+                        <input type="text" name="num_numero" class="input-small span12" required="">
                     </div>
                     <div class="span3">
                         <label class="">Região:</label>
-                        <select name="regiao.cod_regiao" class="span12">
+                        <select name="regiao.cod_regiao" class="span12" required="">
                         	<option value="">Selecione...</option>
                         	<c:forEach var="regiao" items="${listaRegioes}">
 	                            <option value="${regiao.cod_regiao}">
@@ -130,7 +130,7 @@
                     </div> 
                     <div class="span3">
                         <label class="">Bairro:</label>
-                        <select name="bairro.cod_bairro" class="span12">
+                        <select name="bairro.cod_bairro" class="span12" required="">
 							<option value="">Selecione...</option>
 							<c:forEach var="bairro" items="${listaBairros}">
 	                            <option value="${bairro.cod_bairro}">
@@ -144,7 +144,7 @@
                 <div class="row-fluid">
                     <div class="span2">
                         <label class="">Telefone 1:</label>
-                        <input type="text" name="num_tel1" class="input-small span12">
+                        <input type="text" name="num_tel1" class="input-small span12" required="">
                     </div>
                     <div class="span2">
                         <label class="">Telefone 2:</label>
@@ -159,8 +159,8 @@
       
                         <c:forEach var="tipoAtendimento" items="${listaTiposAtendimentos}">	                            	
 							<input style="margin:10px;" type="checkbox" name="tipoAtendimento.cod_tipo_atendimento" 
-							value="${tipoAtendimento.cod_tipo_atendimento}" class="input-small">
-							<out>${tipoAtendimento.des_tipo_atendimento}</out>
+							value="${tipoAtendimento.cod_tipo_atendimento}" class="input-small" >
+							<out >${tipoAtendimento.des_tipo_atendimento}</out>
 						</c:forEach>                    
                     </div>
                 </div>

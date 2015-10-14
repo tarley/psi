@@ -32,38 +32,37 @@
 
 <body>
 	
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-					      </button>
-			     <div class="navbar-header">
-					<a class="navbar-brand logo" href=""><img  alt="PSI" src="../resources/img/logo.png"  /></a>
-				 </div>
-      	</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+			      </button>
+	     <div class="navbar-header">
+			<a class="navbar-brand logo" href=""><img  alt="PSI" src="../resources/img/logo.png"  /></a>
+		 </div>
+    	</div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	   <!-- Collect the nav links, forms, and other content for toggling -->
+	   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	     <ul class="nav navbar-nav">
+	       <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
+	       <li><a href="#">Listar</a></li>-->
+	       <li class="dropdown">
+	         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-align-justify" aria-hidden="true">&nbsp;Listar<span class="caret"></span></a>
+	         <ul class="dropdown-menu">
+	           <li><a href="#">Unidades Cadastradas</a></li>
+	           <li><a href="#">Tipos de Unidades Cadastradas</a></li>
+	         </ul>
+	       </li>
+	     </ul>
+      
+      
       <ul class="nav navbar-nav">
-        <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Listar</a></li>-->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-align-justify" aria-hidden="true">&nbsp;Listar<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Unidades Cadastradas</a></li>
-            <li><a href="#">Tipos de Unidades Cadastradas</a></li>
-          </ul>
-          
-        </li>
-      </ul>
-      
-      
-            <ul class="nav navbar-nav">
         <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
         <li><a href="#">Listar</a></li>-->
         <li class="dropdown">
@@ -88,6 +87,7 @@
           </ul>
         </li>
       </ul>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -111,11 +111,11 @@
 
 					<thead>
 						<tr class="tr_padrao"> 
-						      <th width="25%">Nome</th>
+						      <th width="15%">Nome</th>
 						      <th>Bairro</th>
 						      <th>Regiao</th>
 						      <th>Atendimento</th>
-						      <th>Logradouro</th>
+						      <th width="15%">Logradouro</th>
 						      <th>CEP</th>
 						      <th>Tel1</th>
 						      <th>Tel2</th>
@@ -138,7 +138,7 @@
 						     <td style="text-align: center">${unidadeAtendimento.num_tel3}</td>
 
 							<td>
-								<div class="centralizadora" style="margin-left:22px">
+								<div class="centralizadora" style="margin-left:27px">
 									<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}">
 										<div class="botao" title="Editar">
 											<span class="glyphicon glyphicon-pencil botao-datableUnidade" aria-hidden="true"></span>
@@ -191,8 +191,6 @@
 	     }
 	}
 </script>
-
-</br></br></br>
 
 </body>
 </html>
