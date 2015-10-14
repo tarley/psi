@@ -112,7 +112,7 @@
 					<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
 						<tr class="tr_padrao">
 							<td style="text-align: center">${tipoAtendimentos.des_tipo_atendimento}</td>
-							<td style="width: 125px; text-align: center" >
+							<td style="width: 90px; text-align: center" >
 								<div class="centralizadora">
 									<a href="editarTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><div class="botao" title="Editar">
 										<span class="glyphicon glyphicon-pencil botao-datableUnidade" aria-hidden="true"></span>

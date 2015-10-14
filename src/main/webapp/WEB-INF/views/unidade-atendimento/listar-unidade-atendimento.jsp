@@ -120,7 +120,7 @@
 						      <th>Tel1</th>
 						      <th>Tel2</th>
 						      <th>Tel3</th>
-							<th width="12%">Editar | Excluir</th>
+							<th width="10%">Editar | Excluir</th>
 
 						</tr>
 					</thead>
