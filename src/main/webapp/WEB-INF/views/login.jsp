@@ -12,7 +12,7 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" action="efetuaLogin" method="post">
         <h2 class="form-signin-heading">Credenciais</h2>
         <label for="usuario" class="sr-only">Usuário</label>
         <input type="text" id="usuario" class="form-control" placeholder="Usuário" required autofocus>

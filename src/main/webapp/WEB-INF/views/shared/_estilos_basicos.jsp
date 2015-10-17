@@ -12,5 +12,5 @@
 
 <!-- Estilos: Telas Administrativas -->
 
-<spring:url value="/resources/css/datatables.min" var="datatable_min"></spring:url>
+<spring:url value="/resources/css/datatables.min.css" var="datatable_min"></spring:url>
 <link rel="stylesheet" href="${datatable_min}"/>
