@@ -13,51 +13,46 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @JoinColumn(name = "COD_USUARIO")
-	private Long CodUsuario;
+	private Long Cod_Usuario;
 	
-    @JoinColumn(name = "DES_EMAIL")
-	private String Email;
+	private String Des_Email;
 	
-    @JoinColumn(name = "DES_LOGIN")
-	private String Login;
+	private String Des_Login;
 	
-    @JoinColumn(name = "NOM_USUARIO")
-	private String Nome;
+	private String Nom_Usuario;
 	
-    @JoinColumn(name = "SENHA")
 	private String Senha;
 	
 	public Long getCodUsuario() {
-		return CodUsuario;
+		return Cod_Usuario;
 	}
 
 	public void setCodUsuario(Long codUsuario) {
-		CodUsuario = codUsuario;
+		Cod_Usuario = codUsuario;
 	}
 
 	public String getEmail() {
-		return Email;
+		return Des_Email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		Des_Email = email;
 	}
 
 	public String getLogin() {
-		return Login;
+		return Des_Login;
 	}
 
 	public void setLogin(String login) {
-		Login = login;
+		Des_Login = login;
 	}
 
 	public String getNome() {
-		return Nome;
+		return Nom_Usuario;
 	}
 
 	public void setNome(String nome) {
-		Nome = nome;
+		Nom_Usuario = nome;
 	}
 
 	public String getSenha() {

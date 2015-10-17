@@ -1,33 +1,24 @@
-/**
- * 
- */
 package br.newtonpaiva.psi.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import org.springframework.stereotype.Repository;
-import org.springframework.util.StringUtils;
 
 @Repository
 public class UsuarioRepository {
 	@PersistenceContext
 	private EntityManager manager;
 
-	public boolean verificaUsuario(String login) {
+	@SuppressWarnings("unchecked")
+	public List<Usuario> verificaUsuario(String login, String senha) {
 		
-		Usuario usuario = (Usuario) manager.createQuery("select u from Usuario u where u.Login = :login")
-				.setParameter(":login", login);
+		List<Usuario> usuarios = manager
+				.createQuery("select u from Usuario u where u.Des_Login = :login and u.Senha = :senha")
+				.setParameter("login", login).setParameter("senha", senha).getResultList();
 		
-		if	(usuario != null){
-			return true;
-		} else{
-			return false;
-		}
+		return	usuarios;
 	}
 
 }

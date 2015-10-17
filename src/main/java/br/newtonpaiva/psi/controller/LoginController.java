@@ -1,8 +1,13 @@
 package br.newtonpaiva.psi.controller;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import br.newtonpaiva.psi.model.Usuario;
 import br.newtonpaiva.psi.model.UsuarioRepository;
 
@@ -13,13 +18,17 @@ public class LoginController {
 	UsuarioRepository repository;
 	
 	@RequestMapping("efetuaLogin")
-	public String efetuaLogin(Usuario usuario, HttpSession session) {
-		if(repository.verificaUsuario(usuario.getLogin())) {
+	public String efetuaLogin(Usuario usuario, Model model, HttpSession session) {
+		
+		List<Usuario> usuarios = repository.verificaUsuario(usuario.getLogin(), usuario.getSenha());
+		
+		if(!usuarios.isEmpty()) {
 		    session.setAttribute("usuarioLogado", usuario);
 		    return "admin";
-		  }
+		}
 		
-	    //Mostrar mensagem de erro
+		 model.addAttribute("error", "Usuário ou senha incorretos.");
+
 		return "redirect:login";
 	}
 }

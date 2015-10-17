@@ -30,7 +30,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/login")
-	public String login() {
+	public String login(Model model) {
+		
+		System.out.print(model);
 		return "login";
 	}
 	
