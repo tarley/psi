@@ -29,5 +29,10 @@
 	<tx:annotation-driven transaction-manager="txManager" />
 
 	<context:component-scan base-package="br.newtonpaiva.psi" />
+	
+	
+	<interceptors>
+		<beans:bean class="br.newtonpaiva.psi.interceptor.AutorizadorInterceptor" />
+	</interceptors>
 
 </beans:beans>
