@@ -17,6 +17,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.newtonpaiva.psi.model.Bairro;
@@ -126,17 +127,19 @@ public class UnidadeAtendimentoController {
 		return "unidade-atendimento/editar-unidade-atendimento";
 	}
 	
-	@RequestMapping("alterarUnidadeAtendimento")
+	@RequestMapping(value="alterarUnidadeAtendimento", method=RequestMethod.POST)
 	@Transactional
-	public String altera(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result) {
+	public String altera(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result,@RequestParam("cod_unidade_atendimento")Long cod_unidade_atendimento) {
 
 		//if (result.hasFieldErrors("desc_unidade_atendimento")) {
 			//return "unidade-atendimento/unidade-atendimento";
 		//}
 
-		repository.altera(unidade_antendimento);
+		//JOptionPane.showMessageDialog(null, cod_unidade_atendimento);
 		
-		return "redirect:/unidadeAtendimento/";
+		repository.altera(unidade_antendimento,cod_unidade_atendimento);
+		
+		return ("redirect:/unidadeAtendimento/"+"?edicao=true");
 	}
 	
 	@RequestMapping(value="/regiao/{regiao}")

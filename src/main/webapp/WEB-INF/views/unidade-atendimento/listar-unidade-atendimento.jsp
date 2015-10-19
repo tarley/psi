@@ -101,6 +101,11 @@
 				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="Cadastrar Novo"/>
 			</div>
 	</form>
+	<c:if test="${param.edicao == 'true' }">
+		<div class="alert alert-success text-center">
+		  <strong >Edição realizada com sucesso!</strong>
+		</div>
+	</c:if>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Gerenciar Unidade</h3>
@@ -191,7 +196,11 @@
 	     }
 	}
 </script>
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		window.setTimeout('$(".alert").remove()',10000);	
+	});
+</script>
 </body>
 </html>
 </html>

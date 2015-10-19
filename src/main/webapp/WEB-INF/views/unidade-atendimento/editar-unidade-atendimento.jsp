@@ -79,7 +79,6 @@
 			<div class="panel-heading">
 				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Gerenciar Unidade</h3>
 			</div>
-
 			<div class="panel-body">
 			<!-- Text field - Nome Unidade Atendimento  -->
 			<div class="container-fluid">
@@ -89,26 +88,26 @@
 							<div class="row-fluid">
 	                        	<div class="span10">
 									<label>Nome da Unidade de Atendimento</label> 
-									<input class="input-small span12" value="${unidadeAtendimento.nom_uni_atendimento}" type="text" name="nom_uni_atendimento" ><br>
+									<input required="required" class="input-small span12" value="${unidadeAtendimento.nom_uni_atendimento}" type="text" name="nom_uni_atendimento" ><br>
 								</div>
 								<div class="span2">
 		                            <label class="">CEP:</label>
-		                            <input type="text" name="num_cep" value="${unidadeAtendimento.num_cep}" class="input-small span12">
+		                            <input required="required" type="text" name="num_cep" value="${unidadeAtendimento.num_cep}" class="input-small span12">
 	                        	</div>
 							</div>
 
                 <div class="row-fluid">
                     <div class="span5">
                         <label class="">Endereço da Unidade:</label>
-                        <input type="text" name="nom_logradouro" value="${unidadeAtendimento.nom_logradouro}" class="input-small span12">
+                        <input required="required" type="text" name="nom_logradouro" value="${unidadeAtendimento.nom_logradouro}" class="input-small span12">
                     </div>
                     <div class="span1">
                         <label class="">N°:</label>
-                        <input type="text" name="num_numero" value="${unidadeAtendimento.num_numero}" class="input-small span12">
+                        <input required="required" type="text" name="num_numero" value="${unidadeAtendimento.num_numero}" class="input-small span12">
                     </div>
                     <div class="span3">
                         <label class="">Região:</label>
-                        <select name="regiao.cod_regiao" id="regiao" class="span12">
+                        <select required="required" name="regiao.cod_regiao" id="regiao" class="span12">
                         	<c:forEach var="regiao" items="${listaRegioes}">
 	                            <option value="${regiao.cod_regiao}" ${regiao.cod_regiao == unidadeAtendimento.regiao.cod_regiao ? 'selected' : ''}>
 	                            	<out>${regiao.des_regiao}</out>
@@ -118,7 +117,7 @@
                     </div>
                     <div class="span3">
                         <label class="">Bairro:</label>
-                        	<select name="bairro.cod_bairro" id="bairro" class="span12">
+                        	<select required="required" name="bairro.cod_bairro" id="bairro" class="span12">
 								<c:forEach var="bairro" items="${listaBairros}">
 									<!--<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">-->
 										<option value="${bairro.cod_bairro}" ${bairro.cod_bairro == unidadeAtendimento.bairro.cod_bairro ? 'selected' : ''}>
@@ -133,7 +132,7 @@
                 <div class="row-fluid">
                     <div class="span2">
                         <label class="">Telefone 1:</label>
-                        <input type="text" name="num_tel1" value="${unidadeAtendimento.num_tel1}" class="input-small span12">
+                        <input required="required" type="text" name="num_tel1" value="${unidadeAtendimento.num_tel1}" class="input-small span12">
                     </div>
                     <div class="span2">
                         <label class="">Telefone 2:</label>
@@ -155,6 +154,7 @@
                 <form:errors path="unidadeAtendimento.nom_uni_atendimento"	cssStyle="color:red" />
 							<br>
 							<div class="span12 text-right">
+								<input type="hidden" name="cod_unidade_atendimento" id="cod_unidade_atendimento" value="${unidadeAtendimento.cod_unidade_atendimento}"/>
 								<input type="submit" class="btn btn-primary" value="Salvar" />
 								<a href="../unidadeAtendimento/" style="color:#fff" class="btn btn-primary" value="Cancelar" />Cancelar</a>
 							</div>
@@ -175,7 +175,7 @@
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 
-	<script>
+	<!--  <script>
 		$(document).ready(function(){
 			$("form").submit(function(e){
 				e.preventDefault();
@@ -205,5 +205,5 @@
 				  }
 			});
 		})
-	</script>
+	</script>-->
 </html>

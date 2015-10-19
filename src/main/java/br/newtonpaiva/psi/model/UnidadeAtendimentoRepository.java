@@ -53,7 +53,9 @@ public class UnidadeAtendimentoRepository {
 		manager.persist(unidade_atendimento);
 	}
 
-	public void altera(UnidadeAtendimento unidade_atendimento) {
+	public void altera(UnidadeAtendimento unidade_atendimento,Long cod_unidade_atendimento) 
+	{
+		manager.find(UnidadeAtendimento.class, cod_unidade_atendimento);
 		manager.merge(unidade_atendimento);
 	}
 
