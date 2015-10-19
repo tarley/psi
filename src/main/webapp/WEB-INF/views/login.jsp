@@ -22,7 +22,7 @@
 	</c:if>
 
       <form class="form-signin" action="efetuaLogin" method="post">
-        <h2 class="form-signin-heading">Credenciais</h2>
+        <div class="form-signin-heading"><img src="resources/img/logo.png"></div>
         <label for="usuario" class="sr-only">Usuário</label>
         <input type="text" id="login" name="login" class="form-control" placeholder="Usuário" required autofocus>
         <label for="senha" class="sr-only">Senha</label>
