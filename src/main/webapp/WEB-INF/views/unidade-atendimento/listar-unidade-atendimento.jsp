@@ -83,7 +83,7 @@
             <li><a href="#">Alterar dados de conta</a></li>
             <li><a href="#">Gerenciar contas de usuário</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Finalizar sessão</a></li>
+            <li><a href="../logout">Finalizar sessão</a></li>
           </ul>
         </li>
       </ul>
