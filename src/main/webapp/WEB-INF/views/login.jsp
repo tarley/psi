@@ -17,10 +17,6 @@
 
     <div class="container">
     
-    <c:if test="${not empty error}">
-   		${error}
-	</c:if>
-
       <form class="form-signin" action="efetuaLogin" method="post">
         <div class="form-signin-heading"><img src="resources/img/logo.png"></div>
         <label for="usuario" class="sr-only">Usuário</label>
@@ -28,6 +24,10 @@
         <label for="senha" class="sr-only">Senha</label>
         <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+       		
+        <c:if test="${not empty param.error}">
+	   		<div class="signin-msg">${param.error}</div>
+		</c:if>
       </form>
 
     </div> <!-- /container -->

@@ -80,6 +80,13 @@ header {
     border-color: #00AAFF;
 }
 
+.form-signin .signin-msg {
+	color: red;
+	font-size: 16pt;
+	padding-top: 10px;
+	text-align: center;
+}
+
 /*******************************************************
  * Estilos utilizados nas páginas administrativas.jsp  *
  *******************************************************/

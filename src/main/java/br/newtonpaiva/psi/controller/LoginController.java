@@ -24,10 +24,10 @@ public class LoginController {
 		
 		if(!usuarios.isEmpty()) {
 		    session.setAttribute("usuarioLogado", usuario);
-		    return "admin";
+		    return "redirect:admin";
 		}
 		
-		 model.addAttribute("error", "Usuário ou senha incorretos.");
+		 model.addAttribute("error", "Usuário ou senha inválidos");
 
 		return "redirect:login";
 	}
