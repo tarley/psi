@@ -1,6 +1,12 @@
 /*
  * Estilos utilizados na home.jsp
  */
+ 
+ *{
+ 	text-decoration:none;
+ 	padding:0;
+ 	
+ }
 header {
 	background-color: #006da3;
 	border-bottom: 4px solid #1e90ff;
@@ -94,7 +100,7 @@ header {
 .centralizarBox { margin:25px auto 10px auto; }
 .blocoPai { margin:110px auto}
 
-.logo { padding-top: 1px; }
+.logo { margin-top: -14px; }
 
 .barra{
 		background-color:#006da3;

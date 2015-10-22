@@ -77,7 +77,7 @@
 		<div class="container centralizarBox">
 		<div class="panel panel-primary ">
 			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Gerenciar Unidade</h3>
+				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Alterar Unidade de Atendimento</h3>
 			</div>
 			<div class="panel-body">
 			<!-- Text field - Nome Unidade Atendimento  -->

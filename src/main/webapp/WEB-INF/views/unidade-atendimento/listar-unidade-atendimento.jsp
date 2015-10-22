@@ -24,6 +24,7 @@
 	$(document).ready(function() {
 		$('#GerenciarUnidade').DataTable();
 	} );	
+	
 	</script>
 
 
@@ -97,18 +98,18 @@
 
 	<div class="container-fluid centralizarBox">
 	<form action="unidade-atendimento" method="post">
-			<div class="span12 text-right" style="margin-bottom:10px">
+			<div class="span12 text-right" style="margin-bottom:11px; margin-top:-10px">
 				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="Cadastrar Novo"/>
 			</div>
 	</form>
 	<c:if test="${param.msg == '1' }">
-		<div class="alert alert-success text-center">
+		<div class="alert alert-success text-center" >
 		  <strong >Cadastro realizado com sucesso!</strong>
 		</div>
 	</c:if>
 	<c:if test="${param.msg == '2' }">
 		<div class="alert alert-success text-center">
-		  <strong >Edição realizada com sucesso!</strong>
+		  <strong >Edição realizada com sucesso!</strong><br  />
 		</div>
 	</c:if>
 		<div class="panel panel-primary">
@@ -125,7 +126,7 @@
 						      <th>Bairro</th>
 						      <th>Regiao</th>
 						      <th>Atendimento</th>
-						      <th width="15%">Logradouro</th>
+						      <th width="18%">Logradouro</th>
 						      <th>CEP</th>
 						      <th>Tel1</th>
 						      <th>Tel2</th>
@@ -171,12 +172,10 @@
 
 </div>
 
-</br></br>
+
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		
-		window.setTimeout('$(".alert").remove()',10000);
+
 	
 		// Ativar conteúdo de Busca e Estilização
 		$('#GerenciarUnidade')
@@ -190,6 +189,11 @@
 				},
 		});
 	
+		
+	
+		window.setTimeout('$(".alert").remove()',5000);
+		
+		
 		function remover(cod_unidade_atendimento) {
 			var resposta = confirm("Deseja remover esse registro?");
 		     if (resposta == true) {
@@ -204,7 +208,6 @@
 				});
 		     }
 		}
-	});
 
 </script>
 </body>

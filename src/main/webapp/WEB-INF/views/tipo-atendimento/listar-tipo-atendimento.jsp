@@ -146,8 +146,11 @@
 </div></br></br></br>
 
 <script type="text/javascript">
-	$(document).ready(function(){
-		window.setTimeout('$(".alert").remove()',10000);
+	
+		$(document).ready(function(){
+			window.setTimeout('$(".alert").remove()',10000);
+		});
+	
 		// Ativar conteúdo de Busca e Estilização
 		$('#tipoAtendimentoTable')
 		.removeClass( 'display' )
@@ -156,10 +159,16 @@
 		$('#tipoAtendimentoTable').DataTable( {
 			language: {
 				"url": "../resources/i18n/datatables-pt_BR.json"
-				},
+				}
+				
+			
 		});
+		
+		
+		
+
 	
-	});
+
 </script>
 
 </body>

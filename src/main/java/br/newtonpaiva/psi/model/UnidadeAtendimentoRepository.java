@@ -40,7 +40,7 @@ public class UnidadeAtendimentoRepository {
 				.setParameter("nom_uni_atendimento", nom_uni_atendimento + "%").getResultList();
 	}
 	
-	public void remover(UnidadeAtendimento unidadeAtendimento) {
+	public  void remover(UnidadeAtendimento unidadeAtendimento) {
 		manager.remove(unidadeAtendimento);
 	}
 

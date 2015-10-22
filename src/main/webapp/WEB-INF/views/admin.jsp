@@ -45,26 +45,26 @@
 			
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-3">
-					<a href="unidadeAtendimento/" title="Permite Gerenciar a Unidade de Atendimento"><div class="boxLink">
+					<a href="unidadeAtendimento/" title="Permite Gerenciar a Unidade de Atendimento" style="text-decoration:none"><div class="boxLink">
 						<span class="glyphicon glyphicon-home tamanho" > </span> <br /> <span>&nbsp;Gerenciar Unidade</span>
 					</div></a>
 				</div>
 
 				<div class="col-xs-6 col-sm-6 col-md-3"> 					
-				<a href="tipoAtendimento/"><div class="boxLink">
+				<a href="tipoAtendimento/" style="text-decoration:none"><div class="boxLink">
 						<span class="glyphicon glyphicon-list-alt tamanho" title="Permite Gerenciar o Tipo de Atendimento"> </span> <br /> <span>Tipo de Atendimento</span>
 					</div></a>
 				</div>
 
 				<div class="col-xs-6 col-sm-6 col-md-3"> 					
-					<a href="/admin"><div class="boxLink">
+					<a href="/admin" style="text-decoration:none"><div class="boxLink">
 						<span class="glyphicon glyphicon-search tamanho"> </span> <br /> <span>&nbsp; Pesquisar &nbsp;Clínica</span>
 					</div></a>
 				</div>
 
 
 				<div class="col-xs-6 col-sm-6 col-md-3"> 					
-					<a href="#"><div class="boxLink">
+					<a href="#" style="text-decoration:none"><div class="boxLink">
 						<span class="glyphicon glyphicon-wrench tamanho"> </span> <br /> <span>Alterar Dados de Conta</span>
 					</div></a>
 				</div>

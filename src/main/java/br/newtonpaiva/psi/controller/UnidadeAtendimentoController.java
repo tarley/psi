@@ -79,9 +79,12 @@ public class UnidadeAtendimentoController {
 	@Transactional
 	public ResponseEntity<String> remover(@PathVariable("cod_unidade_atendimento") Long cod_unidade_atendimento) {
 		repository.remover(cod_unidade_atendimento);
-		return new ResponseEntity<String>("Unidade de atendimento removida com sucesso!", HttpStatus.OK); 
+		return new ResponseEntity<String>("Unidade de atendimento removida com sucesso!", HttpStatus.OK);
+		
 	}
 	
+
+
 	//Só deixa salvar o tipo atendimento PSICOLOGIA
 	@RequestMapping("cadastrarUnidadeAtendimento")
 	@Transactional
