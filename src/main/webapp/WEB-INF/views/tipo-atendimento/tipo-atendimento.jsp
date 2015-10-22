@@ -46,8 +46,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-align-justify" aria-hidden="true">&nbsp;Listar<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Unidades Cadastradas</a></li>
-            <li><a href="#">Tipos de Unidades Cadastradas</a></li>
+            <li><a href="../unidadeAtendimento/">Unidades Cadastradas</a></li>
+            <li><a href="../tipoAtendimento/">Tipos de Unidades Cadastradas</a></li>
           </ul>
           
         </li>
@@ -121,13 +121,13 @@
 	
 	<script src="../resources/js/jquery-1.11.3.min.js"></script>
 	<script>
-		$(document).ready(function(){
+	/*$(document).ready(function(){
 			$("form").submit(function(e){
 				e.preventDefault();
 				alert("Inserido com sucesso"); //?
 				this.submit();
 				
-				/*var tipo_atendimento = document.getElementById("des_tipo_atendimento").value;
+				var tipo_atendimento = document.getElementById("des_tipo_atendimento").value;
 				if (tipo_atendimento == "") {
 					alert("Insira o nome do tipo");
 				} else {
@@ -146,8 +146,8 @@
 						alert("Erro na resposta do servidor");
 						console.log(result);
 					});
-				}*/
+				}
 			});
-		});
+		});*/
 	</script>
 </html>

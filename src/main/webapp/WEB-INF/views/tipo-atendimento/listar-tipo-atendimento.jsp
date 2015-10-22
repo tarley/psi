@@ -52,8 +52,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-align-justify" aria-hidden="true">&nbsp;Listar<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Unidades Cadastradas</a></li>
-            <li><a href="#">Tipos de Unidades Cadastradas</a></li>
+            <li><a href="../unidadeAtendimento/">Unidades Cadastradas</a></li>
+            <li><a href="../tipoAtendimento/">Tipos de Unidades Cadastradas</a></li>
           </ul>
           
         </li>
@@ -96,18 +96,58 @@
 		</div>
 	</form>
 	<c:if test="${param.msg == '1' }">
-		<div class="alert alert-success text-center">
-		  <strong >Cadastro realizado com sucesso!</strong>
-		</div>
-	</c:if>
-	<c:if test="${param.msg == '2' }">
-		<div class="alert alert-success text-center">
-		  <strong >Edição realizada com sucesso!</strong>
-		</div>
-	</c:if>
+			
+			<div class="modal fade" id="Modal-Cadastrado_Sucesso">
+	  			<div class="modal-dialog" >
+	    			<div class="modal-content">
+	      				<div class="modal-header">
+	        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	       					 <h4 class="modal-title"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Mensagem de Notificação</h4>
+	     				 </div>
+		      			<div class="modal-body">
+		        			<center>
+		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
+		        				<h4>Novo Tipo de Unidade Cadastrado com Sucesso !</h4>
+		        			</center>
+		      			</div>
+		      		
+		      			<div class="modal-footer" style="text-align:center">
+		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      			</div>
+	    			</div><!-- /.modal-content -->
+	  			</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+			
+		</c:if>
+		
+		<c:if test="${param.msg == '2' }">
+		
+			<div class="modal fade" id="Modal-Editado_Sucesso">
+	  			<div class="modal-dialog" >
+	    			<div class="modal-content">
+	      				<div class="modal-header">
+	        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	       					 <h4 class="modal-title"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Mensagem de Notificação</h4>
+	     				 </div>
+		      			<div class="modal-body">
+		        			<center>
+		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
+		        				<h4>Dados de Tipo de Atendimento Editados Com Sucesso !</h4>
+		        			</center>
+		      			</div>
+		      		
+		      			<div class="modal-footer" style="text-align:center">
+		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      			</div>
+	    			</div><!-- /.modal-content -->
+	  			</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+			
+		</c:if>
+		
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Gerenciar Tipo de Unidade</h3>
+				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Listar Tipos de Unidades Cadastradas</h3>
 			</div>
 
 			<div class="panel-body">
@@ -164,10 +204,12 @@
 			
 		});
 		
-		
-		
-
-	
+		$(document).ready(function() {
+			   $('#Modal-Editado_Sucesso').modal('show');
+			});
+		$(document).ready(function() {
+			   $('#Modal-Cadastrado_Sucesso').modal('show');
+			});
 
 </script>
 
