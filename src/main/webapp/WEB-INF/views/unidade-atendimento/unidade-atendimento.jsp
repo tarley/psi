@@ -168,7 +168,7 @@
 							<br>
 							<div class="span12 text-right">
 								<input type="submit" class="btn btn-primary" value="Salvar" />
-								<input type="submit" class="btn btn-primary" value="Cancelar" />
+								<a href="../unidadeAtendimento/" style="color:#fff" class="btn btn-primary" value="Cancelar" />Cancelar</a>
 							</div>
 						</form>
 					</div>

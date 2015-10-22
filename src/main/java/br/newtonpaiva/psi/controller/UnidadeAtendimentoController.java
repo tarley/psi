@@ -38,7 +38,7 @@ import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
 @RequestMapping("unidadeAtendimento")
 public class UnidadeAtendimentoController {
 	
-	//FALTA O EDITAR FUNCIONAR (VIR BAIRRO, REGIAO E TIPO ATENDIMENTO)
+	//FALTA O EDITAR E CADASTRAR FUNCIONAR (MUITOS PRA MUITOS)
 	
 	@Autowired
 	UnidadeAtendimentoRepository repository;
@@ -103,13 +103,9 @@ public class UnidadeAtendimentoController {
 	@Transactional
 	public String adicionar(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result) {
 
-		/*if (result.hasFieldErrors("desc_unidade_atendimento")) {
-			return "unidade-atendimento/unidade-atendimento";
-		}*/
-
 		repository.adiciona(unidade_antendimento);
 		
-		return ("redirect:/unidadeAtendimento/"); 	
+		return ("redirect:/unidadeAtendimento/?msg=1"); 	
 	}
 	
 	@RequestMapping("editarUnidadeAtendimento")
@@ -130,16 +126,10 @@ public class UnidadeAtendimentoController {
 	@RequestMapping(value="alterarUnidadeAtendimento", method=RequestMethod.POST)
 	@Transactional
 	public String altera(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result,@RequestParam("cod_unidade_atendimento")Long cod_unidade_atendimento) {
-
-		//if (result.hasFieldErrors("desc_unidade_atendimento")) {
-			//return "unidade-atendimento/unidade-atendimento";
-		//}
-
-		//JOptionPane.showMessageDialog(null, cod_unidade_atendimento);
 		
 		repository.altera(unidade_antendimento,cod_unidade_atendimento);
 		
-		return ("redirect:/unidadeAtendimento/"+"?edicao=true");
+		return ("redirect:/unidadeAtendimento/"+"?msg=2");
 	}
 	
 	@RequestMapping(value="/regiao/{regiao}")

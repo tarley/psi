@@ -118,13 +118,16 @@
                     <div class="span3">
                         <label class="">Bairro:</label>
                         	<select required="required" name="bairro.cod_bairro" id="bairro" class="span12">
+                        		<option value="${bairro.cod_bairro}">
+                        			<out>${unidadeAtendimento.bairro.des_bairro}</out>
+                       			</option>
 								<c:forEach var="bairro" items="${listaBairros}">
 									<!--<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">-->
-										<option value="${bairro.cod_bairro}" ${bairro.cod_bairro == unidadeAtendimento.bairro.cod_bairro ? 'selected' : ''}>
+										<option value="${bairro.cod_bairro}">
 			                            	<out>${bairro.des_bairro}</out>
 		                            	</option>
 	                            	<!--</c:if>-->
-								</c:forEach> 
+								</c:forEach>
                         	</select>
                     </div> 
                 </div>

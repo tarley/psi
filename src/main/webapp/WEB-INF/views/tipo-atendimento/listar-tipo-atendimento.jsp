@@ -95,6 +95,16 @@
 			<input type="submit" class="btn btn-success" formaction="cadastrarTipoAtendimento" value="Cadastrar Novo"/>
 		</div>
 	</form>
+	<c:if test="${param.msg == '1' }">
+		<div class="alert alert-success text-center">
+		  <strong >Cadastro realizado com sucesso!</strong>
+		</div>
+	</c:if>
+	<c:if test="${param.msg == '2' }">
+		<div class="alert alert-success text-center">
+		  <strong >Edição realizada com sucesso!</strong>
+		</div>
+	</c:if>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Gerenciar Tipo de Unidade</h3>
@@ -136,15 +146,19 @@
 </div></br></br></br>
 
 <script type="text/javascript">
-	// Ativar conteúdo de Busca e Estilização
-	$('#tipoAtendimentoTable')
-	.removeClass( 'display' )
-	.addClass('table table-striped table-bordered');
-
-	$('#tipoAtendimentoTable').DataTable( {
-		language: {
-			"url": "../resources/i18n/datatables-pt_BR.json"
-			},
+	$(document).ready(function(){
+		window.setTimeout('$(".alert").remove()',10000);
+		// Ativar conteúdo de Busca e Estilização
+		$('#tipoAtendimentoTable')
+		.removeClass( 'display' )
+		.addClass('table table-striped table-bordered');
+	
+		$('#tipoAtendimentoTable').DataTable( {
+			language: {
+				"url": "../resources/i18n/datatables-pt_BR.json"
+				},
+		});
+	
 	});
 </script>
 

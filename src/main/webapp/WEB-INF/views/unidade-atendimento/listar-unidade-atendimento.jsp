@@ -101,7 +101,12 @@
 				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="Cadastrar Novo"/>
 			</div>
 	</form>
-	<c:if test="${param.edicao == 'true' }">
+	<c:if test="${param.msg == '1' }">
+		<div class="alert alert-success text-center">
+		  <strong >Cadastro realizado com sucesso!</strong>
+		</div>
+	</c:if>
+	<c:if test="${param.msg == '2' }">
 		<div class="alert alert-success text-center">
 		  <strong >Edição realizada com sucesso!</strong>
 		</div>
@@ -169,37 +174,38 @@
 </br></br>
 
 <script type="text/javascript">
-	// Ativar conteúdo de Busca e Estilização
-	$('#GerenciarUnidade')
-	.removeClass( 'display' )
-	.addClass('table table-striped table-bordered');
-
-
-	$('#GerenciarUnidade').DataTable( {
-		language: {
-			"url": "../resources/i18n/datatables-pt_BR.json"
-			},
-	});
-
-	function remover(cod_unidade_atendimento) {
-		var resposta = confirm("Deseja remover esse registro?");
-	     if (resposta == true) {
-			jQuery.ajax({ 
-				  url: 'remover/' + cod_unidade_atendimento,
-				  async: true,
-				  success: function(data) {
-				  	alert(data);				  	
-				  	$("#row" + cod_unidade_atendimento).remove();
-				  	
-				  }
-			});
-	     }
-	}
-</script>
-<script type="text/javascript">
 	$(document).ready(function(){
-		window.setTimeout('$(".alert").remove()',10000);	
+		
+		window.setTimeout('$(".alert").remove()',10000);
+	
+		// Ativar conteúdo de Busca e Estilização
+		$('#GerenciarUnidade')
+		.removeClass( 'display' )
+		.addClass('table table-striped table-bordered');
+	
+	
+		$('#GerenciarUnidade').DataTable( {
+			language: {
+				"url": "../resources/i18n/datatables-pt_BR.json"
+				},
+		});
+	
+		function remover(cod_unidade_atendimento) {
+			var resposta = confirm("Deseja remover esse registro?");
+		     if (resposta == true) {
+				jQuery.ajax({ 
+					  url: 'remover/' + cod_unidade_atendimento,
+					  async: true,
+					  success: function(data) {
+					  	alert(data);				  	
+					  	$("#row" + cod_unidade_atendimento).remove();
+					  	
+					  }
+				});
+		     }
+		}
 	});
+
 </script>
 </body>
 </html>

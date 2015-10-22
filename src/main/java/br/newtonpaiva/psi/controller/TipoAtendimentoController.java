@@ -79,14 +79,9 @@ public class TipoAtendimentoController {
 	@Transactional
 	public String adicionar(@Valid TipoAtendimento tipo_antendimento, BindingResult result) {
 
-		/*
-		 * if (result.hasFieldErrors("des_tipo_atendimento")) { return
-		 * "tipo-atendimento/tipo-atendimento"; }
-		 */
-
 		repository.adiciona(tipo_antendimento);
 
-		return "redirect:/tipoAtendimento/";
+		return "redirect:/tipoAtendimento/?msg=1";
 	}
 
 	@RequestMapping("editarTipoAtendimento")
@@ -97,16 +92,12 @@ public class TipoAtendimentoController {
 	}
 
 	@RequestMapping("alterarTipoAtendimento")
-	@Transactional
+	@Transactional//aNtendimento??
 	public String altera(@Valid TipoAtendimento tipo_antendimento, BindingResult result) {
-
-		// if (result.hasFieldErrors("des_tipo_atendimento")) {
-		// return "tipo-atendimento/tipo-atendimento";
-		// }
 
 		repository.altera(tipo_antendimento);
 
-		return "redirect:/tipoAtendimento/";
+		return "redirect:/tipoAtendimento/?msg=2";
 	}
 
 	@RequestMapping("removerTipoAtendimento")

@@ -57,7 +57,9 @@ public class UnidadeAtendimento {
 	
 	/* Nao funciona - Salva somente 1*/
 	@ManyToMany
-	@JoinTable(name="TIPO_ATENDIMENTO_UNIDADE", joinColumns={@JoinColumn(name="cod_tipo_atendimento")}, inverseJoinColumns={@JoinColumn(name="cod_unidade_atendimento")})
+	@JoinTable(name="TIPO_ATENDIMENTO_UNIDADE", joinColumns={
+			@JoinColumn(name="cod_tipo_atendimento")}, inverseJoinColumns={
+					@JoinColumn(name="cod_unidade_atendimento")})
 	private List<TipoAtendimento> tiposAtendimento;
 	
 	public Long getCod_unidade_atendimento() {
