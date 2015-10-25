@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
@@ -21,6 +22,9 @@ import org.springframework.util.StringUtils;
 public class UnidadeAtendimentoRepository {
 	@PersistenceContext
 	private EntityManager manager;
+	
+	@Autowired
+	private TipoAtendimentoRepository tipoAtendimentoRepository;
 
 	@SuppressWarnings("unchecked")
 	public List<UnidadeAtendimento> listar() {
@@ -50,12 +54,25 @@ public class UnidadeAtendimentoRepository {
 	}
 
 	public void adiciona(UnidadeAtendimento unidade_atendimento) {
+		
+		mergeTipoAtendimento(unidade_atendimento);
+		
 		manager.persist(unidade_atendimento);
 	}
 
-	public void altera(UnidadeAtendimento unidade_atendimento,Long cod_unidade_atendimento) 
+	private void mergeTipoAtendimento(UnidadeAtendimento unidade_atendimento) {
+		if(unidade_atendimento.getTiposAtendimentoAux() != null) {
+			for(Long cod_tipo_atendimento : unidade_atendimento.getTiposAtendimentoAux()) {
+				TipoAtendimento t = tipoAtendimentoRepository.buscaPorId(cod_tipo_atendimento);
+				unidade_atendimento.add(t);
+			}
+		}
+	}
+
+	public void altera(UnidadeAtendimento unidade_atendimento) 
 	{
-		manager.find(UnidadeAtendimento.class, cod_unidade_atendimento);
+		mergeTipoAtendimento(unidade_atendimento);
+		
 		manager.merge(unidade_atendimento);
 	}
 

@@ -3,7 +3,9 @@
  */
 package br.newtonpaiva.psi.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -24,7 +26,6 @@ import br.newtonpaiva.psi.model.Bairro;
 import br.newtonpaiva.psi.model.BairroRepository;
 import br.newtonpaiva.psi.model.Regiao;
 import br.newtonpaiva.psi.model.RegiaoRepository;
-import br.newtonpaiva.psi.model.Tarefa;
 import br.newtonpaiva.psi.model.TipoAtendimento;
 import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 import br.newtonpaiva.psi.model.UnidadeAtendimento;
@@ -92,11 +93,13 @@ public class UnidadeAtendimentoController {
 		
 		List<Regiao> listaRegioes = regiaoRepository.listar();
 		List<Bairro> listaBairros = bairroRepository.listar();
-		List<TipoAtendimento> listaTiposAtendimentos = tipoAtendimentoRepository.listar();
+		Map<Long, String> tiposAtendimentosMap = tipoAtendimentoRepository.map();
 		
 		model.addAttribute("listaRegioes", listaRegioes);
 		model.addAttribute("listaBairros", listaBairros);
-		model.addAttribute("listaTiposAtendimentos", listaTiposAtendimentos);
+		model.addAttribute("tiposAtendimentosMap", tiposAtendimentosMap);
+		
+		model.addAttribute("unidadeAtendimento", new UnidadeAtendimento());
 		
 		return "unidade-atendimento/unidade-atendimento";
 	}
@@ -117,21 +120,24 @@ public class UnidadeAtendimentoController {
 	{
 		List<Regiao> listaRegioes = regiaoRepository.listar();
 		List<Bairro> listaBairros = bairroRepository.listar();
-		List<TipoAtendimento> listaTiposAtendimentos = tipoAtendimentoRepository.listar();
+		Map<Long, String> tiposAtendimentosMap = tipoAtendimentoRepository.map();
 		
 		model.addAttribute("listaRegioes", listaRegioes);
 		model.addAttribute("listaBairros", listaBairros);
-		model.addAttribute("listaTiposAtendimentos", listaTiposAtendimentos);
-		model.addAttribute("unidadeAtendimento", repository.buscaPorId(id));
+		model.addAttribute("tiposAtendimentosMap", tiposAtendimentosMap);
+		
+		UnidadeAtendimento un = repository.buscaPorId(id);
+		un.createTiposAtendimentoAux();
+		
+		model.addAttribute("unidadeAtendimento", un);
+				
 		return "unidade-atendimento/editar-unidade-atendimento";
 	}
 	
 	@RequestMapping(value="alterarUnidadeAtendimento", method=RequestMethod.POST)
 	@Transactional
-	public String altera(@Valid UnidadeAtendimento unidade_antendimento, BindingResult result,@RequestParam("cod_unidade_atendimento")Long cod_unidade_atendimento) {
-		
-		repository.altera(unidade_antendimento,cod_unidade_atendimento);
-		
+	public String altera(@Valid UnidadeAtendimento unidade_antendimento) {
+		repository.altera(unidade_antendimento);
 		return ("redirect:/unidadeAtendimento/"+"?msg=2");
 	}
 	

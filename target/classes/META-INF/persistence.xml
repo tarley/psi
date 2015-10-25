@@ -6,8 +6,6 @@
 
 	<persistence-unit name="psiPU">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>br.newtonpaiva.psi.model.Tarefa</class>
-		<class>br.newtonpaiva.psi.model.TipoAtendimento</class> 
 		
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />

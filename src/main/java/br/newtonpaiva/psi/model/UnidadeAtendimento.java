@@ -3,6 +3,7 @@
  */
 package br.newtonpaiva.psi.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -15,6 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
@@ -57,10 +59,48 @@ public class UnidadeAtendimento {
 	
 	/* Nao funciona - Salva somente 1*/
 	@ManyToMany
-	@JoinTable(name="TIPO_ATENDIMENTO_UNIDADE", joinColumns={
-			@JoinColumn(name="cod_tipo_atendimento")}, inverseJoinColumns={
-					@JoinColumn(name="cod_unidade_atendimento")})
+	@JoinTable(name="UN_ATENDIMENTO_TIPO_ATENDIMENTO", joinColumns={
+			@JoinColumn(name="cod_unidade_atendimento")}, inverseJoinColumns={
+					@JoinColumn(name="cod_tipo_atendimento")})
 	private List<TipoAtendimento> tiposAtendimento;
+	
+	@Transient
+	private List<Long> tiposAtendimentoAux; 
+	
+	public void createTiposAtendimentoAux() {
+		if(tiposAtendimentoAux == null)
+			tiposAtendimentoAux = new ArrayList<Long>();
+		else
+			tiposAtendimentoAux.clear();
+		
+		for(TipoAtendimento t: tiposAtendimento) {
+			tiposAtendimentoAux.add(t.getCod_tipo_atendimento());
+		}
+	}
+	
+	public List<Long> getTiposAtendimentoAux() {
+		return tiposAtendimentoAux;
+	}
+
+	public void setTiposAtendimentoAux(List<Long> tiposAtendimentoAux) {
+		this.tiposAtendimentoAux = tiposAtendimentoAux;
+	}
+
+	public void add(TipoAtendimento tipoAtendimento) {
+		if(tiposAtendimento == null) {
+			tiposAtendimento = new ArrayList<TipoAtendimento>();
+		}
+		
+		tiposAtendimento.add(tipoAtendimento);
+	}
+	
+	public List<TipoAtendimento> getTiposAtendimento() {
+		return tiposAtendimento;
+	}
+
+	public void setTiposAtendimento(List<TipoAtendimento> tiposAtendimento) {
+		this.tiposAtendimento = tiposAtendimento;	
+	}
 	
 	public Long getCod_unidade_atendimento() {
 		return cod_unidade_atendimento;

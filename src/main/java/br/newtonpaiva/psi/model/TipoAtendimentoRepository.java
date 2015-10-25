@@ -3,11 +3,12 @@
  */
 package br.newtonpaiva.psi.model;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -23,6 +24,17 @@ public class TipoAtendimentoRepository {
 	@SuppressWarnings("unchecked")
 	public List<TipoAtendimento> listar() {
 		return manager.createQuery("select ta from TipoAtendimento ta").getResultList();
+	}
+	
+	public Map<Long, String> map() {
+		List<TipoAtendimento> list = listar();
+		Map<Long, String> retorno = new LinkedHashMap<>();
+		
+		for(TipoAtendimento t : list) {
+			retorno.put(t.getCod_tipo_atendimento(), t.getDes_tipo_atendimento());
+		}
+		
+		return retorno;
 	}
 	
 	@SuppressWarnings("unchecked")
