@@ -99,7 +99,7 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">
 					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-					Cadastrar Unidade
+					Cadastrar Unidade de Atendimento
 				</h3>
 			</div>
 

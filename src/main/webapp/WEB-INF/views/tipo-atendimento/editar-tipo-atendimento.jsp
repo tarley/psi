@@ -93,7 +93,7 @@
 		<div class="container centralizarBox">
 		<div class="panel panel-primary ">
 			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Gerenciar Unidade</h3>
+				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Editar Tipo de Atendimento</h3>
 			</div>
 			<div class="panel-body">
 						<div class="row-fluid">
@@ -124,12 +124,6 @@
 	
 	<script src="../resources/js/jquery-1.11.3.min.js"></script>
 	<script>
-		$(document).ready(function(){
-			$("form").submit(function(e){
-				e.preventDefault();
-				alert("Editado com sucesso"); //?
-				this.submit();
-				
 				/*var tipo_atendimento = document.getElementById("des_tipo_atendimento").value;
 				if (tipo_atendimento == "") {
 					alert("Insira o nome do tipo");

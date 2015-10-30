@@ -89,7 +89,7 @@
 		<div class="container centralizarBox">
 		<div class="panel panel-primary ">
 			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Formulário de Cadastro de Tipo de Atendimento</h3>
+				<h3 class="panel-title"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Cadastrar Tipo de Atendimento</h3>
 			</div>
 
 			<div class="panel-body">
@@ -99,7 +99,7 @@
 									<div class="span12">
 										<label>Nome do Tipo de Atendimento</label> <input type="text"
 											name="des_tipo_atendimento" id="des_tipo_atendimento" 
-											maxlength="100" class="input-small span12"><br>
+											maxlength="100" class="input-small span12" required=""><br>
 										<form:errors path="tipoAtendimento.des_tipo_atendimento"
 											cssStyle="color:red" />
 									</div>
@@ -121,12 +121,7 @@
 	
 	<script src="../resources/js/jquery-1.11.3.min.js"></script>
 	<script>
-	/*$(document).ready(function(){
-			$("form").submit(function(e){
-				e.preventDefault();
-				alert("Inserido com sucesso"); //?
-				this.submit();
-				
+	/*				
 				var tipo_atendimento = document.getElementById("des_tipo_atendimento").value;
 				if (tipo_atendimento == "") {
 					alert("Insira o nome do tipo");

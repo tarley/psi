@@ -10,7 +10,7 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-	<title>PSI | Gerenciar Unidade</title>
+	<title>PSI | Tipo Atendimento</title>
 
 	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
@@ -107,7 +107,7 @@
 		      			<div class="modal-body">
 		        			<center>
 		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
-		        				<h4>Novo Tipo de Unidade Cadastrado com Sucesso !</h4>
+		        				<h4>Novo Tipo de Atendimento Cadastrado com Sucesso !</h4>
 		        			</center>
 		      			</div>
 		      		
@@ -147,7 +147,7 @@
 		
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Listar Tipos de Unidades Cadastradas</h3>
+				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Tipos de Atendimento Cadastrados</h3>
 			</div>
 
 			<div class="panel-body">

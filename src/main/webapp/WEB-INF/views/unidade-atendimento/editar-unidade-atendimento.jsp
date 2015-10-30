@@ -89,7 +89,7 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">
 					<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-					Alterar Unidade de Atendimento
+					Editar Unidade de Atendimento
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -192,25 +192,11 @@
 		</div>
 	</div>
 
-
-
-
-
-
 </body>
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 
 <!--  <script>
-		$(document).ready(function(){
-			$("form").submit(function(e){
-				e.preventDefault();
-				alert("Editado com sucesso"); //?
-				this.submit();
-			});
-		});
-	</script>
-	<script>
 		$('#regiao').change(function(){
 			
 			var regiao = $('#regiao').val();
