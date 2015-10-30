@@ -159,7 +159,10 @@
 		<div class="panel panel-primary">
 			
 			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Unidades de Atendimento Cadastradas</h3>
+				<h3 class="panel-title">
+					<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+					Unidades de Atendimento Cadastradas
+				</h3>
 			</div>
 			
 			<div class="panel-body">
@@ -194,7 +197,7 @@
 							     <td style="text-align: center">${unidadeAtendimento.num_tel3}</td>
 								 
 								 <td>
-									<div class="centralizadora" style="margin-left:27px">
+									<div class="centralizadora" style="margin-left:15px">
 										<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}">
 											<div class="botao" title="Editar">
 												<span class="glyphicon glyphicon-pencil botao-datableUnidade" aria-hidden="true"></span>

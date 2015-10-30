@@ -101,7 +101,7 @@
 								<form action="alterarTipoAtendimento" method="post">
 									<div class="span12">
 										<input type="hidden" name="cod_tipo_atendimento" value="${tipoAtendimento.cod_tipo_atendimento}" />
-										<label>Nome do Tipo de Atendimento</label> <input type="text"
+										<label>Nome do Tipo de Atendimento</label> <input type="text" required=""
 											name="des_tipo_atendimento" id="des_tipo_atendimento" value="${tipoAtendimento.des_tipo_atendimento}" maxlength="100" class="input-small span12"><br>
 										<form:errors path="tipoAtendimento.des_tipo_atendimento"
 											cssStyle="color:red" />
