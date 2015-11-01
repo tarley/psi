@@ -145,18 +145,19 @@ a:link, a:visited, a:active {
 }
 .tr_padrao:hover { background-color: #e8e8e8 !important; }
 
-.centralizadora{ margin-left:22px; }
+.centralizadora{ text-align:center; padding:1px;}
 
 .botao{
-		padding:1px;   
-		text-align:center;
+		padding:5px;   
+		margin:0 3px;
 		background-color:#e5c100;
 		width:32px;
+		font-size:1.1em;
 		border: 1px solid #fff;
-		border-radius: 5px; float:left; margin:0 5px
+		border-radius: 5px;
+		color:#fff;
+		display:inline;
+		
 }
 
-
-
-.botao-datableUnidade{ color:#fff; margin:0 7px; }
 										

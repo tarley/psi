@@ -8,7 +8,7 @@
 	"sLengthMenu":   	"Exibir _MENU_ registros",
 	"sLoadingRecords": 	"Carregando...",
 	"sProcessing":   	"Aguarde...",
-	"sSearch":       	"Buscar",
+	"sSearch":       	"Buscar: ",
 	"sZeroRecords":  	"Não existem registros",
 	"oPaginate": {
 		"sFirst":    	"Primeira",

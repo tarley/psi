@@ -7,10 +7,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PSI | Unidade de Atendimento</title>
-	
 	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../resources/css/theme.css"/>
@@ -23,8 +22,7 @@
 	} );	
 	
 	</script>
-
-
+	
 
 </head>
 
@@ -32,79 +30,69 @@
 	
 	<!--  Barra de Navegação -->
 	
-	<nav class="navbar navbar-default">
+	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
+	    		<a class="navbar-brand" href="#">
+        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
+      </a>
 	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        		<span class="sr-only">Toggle navigation</span>
 	        		<span class="icon-bar"></span>
 	        		<span class="icon-bar"></span>
 	        		<span class="icon-bar"></span>
 				</button>
-	     		<div class="navbar-header">
-					<a class="navbar-brand logo" href=""><img  alt="PSI" src="../resources/img/logo.png"  /></a>
-		 		</div>
+
     		</div>
+    		<style>
+    		.activee{ background-color:#3299CC; color:#fff; }
+
+.teste:hover{ background-color:#555; color:#fff !important}
+.teste a:hover{  color:#fff !important; }
+
+a.link{ font-size:1em;   color:#fff; }
+
+
+
+
+
+	</style>
     		
-	   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	    	<ul class="nav navbar-nav">
-	       		<!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
-	       		<li><a href="#">Listar</a></li>-->
-	       		<li class="dropdown">
-		         	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-		         		<span class="glyphicon glyphicon-align-justify" aria-hidden="true">&nbsp;Listar<span class="caret"></span>
-		         	</a>
-		         	
-			        <ul class="dropdown-menu">
-			            <li><a href="../unidadeAtendimento/">Unidades Cadastradas</a></li>
-			            <li><a href="../tipoAtendimento/">Tipos de Unidades Cadastradas</a></li>
-			        </ul>
-	       		</li>
-	     	</ul>
-			
-			<ul class="nav navbar-nav">
-        		<!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
-        		<li><a href="#">Listar</a></li>-->
-        	 	<li class="dropdown">
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pencil" aria-hidden="true">
-          				Cadastrar<span class="caret"></span>
-          			</a>
-	          		<ul class="dropdown-menu">
-			            <li><a href="#">Unidade</a></li>
-			            <li><a href="#">Tipo de Unidade</a></li>
-	          		</ul>
-        		</li>
-        		
-        		<li>
-        			<a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        				Pesquisar
-        			</a>
-        		</li>
-      		</ul>
-			
-			<ul class="nav navbar-nav navbar-right">
-        		<li class="dropdown">
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário<span class="caret"></span></a>
-          			<ul class="dropdown-menu">
-            			<li><a href="#">Alterar dados de conta</a></li>
-            			<li><a href="#">Gerenciar contas de usuário</a></li>
-            			<li role="separator" class="divider"></li>
-            			<li><a href="../logout">Finalizar sessão</a></li>
+	   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
+	    <ul class="nav navbar-nav">
+		
+        <li  class="teste"><a class="link" href="#" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> &nbsp;Página Inicial&nbsp;</a></li>
+      
+		<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Cadastrar Unidade<span class="sr-only">(current)</span></a></li>
+	
+		<li class="teste"><a href="#" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Atendimento</a></li>
+	
+		<li class="teste"><a href="#" class="link"><span class="glyphicon glyphicon-record" style="font-size:1em"></span> Gerenciar Usuário</a></li>
+	
+
+				
+		
+		
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right" >
+      		  		<li class="dropdown" >
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
+          			<ul class="dropdown-menu centralizadora">
+            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp; Minha conta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a></li>
           			</ul>
         		</li>
-      		</ul>
+        		</ul>
+	
       
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
 	
 	
-	<div class="container-fluid centralizarBox">
-		<form action="unidade-atendimento" method="post">
-			<div class="span12 text-right" style="margin-bottom:11px; margin-top:-10px">
-				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="Cadastrar Novo"/>
-			</div>
-		</form>
+	<div class="container centralizarBox">
+		
 		
 		<c:if test="${param.msg == '1' }">
 			
@@ -154,15 +142,20 @@
 	  			</div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
 			
-		</c:if>
+		</c:if> <br />
 		
 		<div class="panel panel-primary">
 			
 			<div class="panel-heading">
-				<h3 class="panel-title">
+				<h3 class="panel-title" style="float:left;padding-top:5px">
 					<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-					Unidades de Atendimento Cadastradas
+					Unidades de Atendimento Cadastradas 
 				</h3>
+				<form action="unidade-atendimento" method="post">
+			<div class="span12 text-right" style="padding-top:0px">
+				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="Cadastrar Novo"/>
+			</div>
+		</form>
 			</div>
 			
 			<div class="panel-body">
@@ -170,16 +163,16 @@
 					
 					<thead>
 						<tr class="tr_padrao"> 
-						      <th width="15%">Nome</th>
+						      <th>Nome</th>
 						      <th>Bairro</th>
 						      <th>Regiao</th>
 						      <th>Atendimento</th>
-						      <th width="18%">Logradouro</th>
-						      <th>CEP</th>
-						      <th>Tel1</th>
-						      <th>Tel2</th>
-						      <th>Tel3</th>
-							<th width="10%">Editar | Excluir</th>
+						     <!--   <th width="18%">Logradouro</th>
+						      <th>CEP</th> -->
+						      <th>Telefone</th>
+						      <!--  <th>Tel2</th>
+						      <th>Tel3</th> --> 
+							<th width="120px"><center>Ação</center></th>
 						</tr>
 					</thead>
 					
@@ -190,23 +183,23 @@
 							     <td style="text-align: center">${unidadeAtendimento.bairro.des_bairro}</td>
 							     <td style="text-align: center">${unidadeAtendimento.regiao.des_regiao}</td>
 							     <td style="text-align: center">${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}</td>		
-							     <td style="text-align: left">${unidadeAtendimento.nom_logradouro},${unidadeAtendimento.num_numero}</td>
-							     <td style="text-align: center">${unidadeAtendimento.num_cep}</td>
+							    <!--  <td style="text-align: left">${unidadeAtendimento.nom_logradouro},${unidadeAtendimento.num_numero}</td> -->
+							      <!--<td style="text-align: center">${unidadeAtendimento.num_cep}</td>-->
 							     <td style="text-align: center">${unidadeAtendimento.num_tel1}</td>
-							     <td style="text-align: center">${unidadeAtendimento.num_tel2}</td>
-							     <td style="text-align: center">${unidadeAtendimento.num_tel3}</td>
+							     <!-- <td style="text-align: center">${unidadeAtendimento.num_tel2}</td>
+							     <td style="font-align:center">${unidadeAtendimento.num_tel3}</td> -->
 								 
 								 <td>
-									<div class="centralizadora" style="margin-left:15px">
+									<div class="centralizadora">
 										<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}">
-											<div class="botao" title="Editar">
-												<span class="glyphicon glyphicon-pencil botao-datableUnidade" aria-hidden="true"></span>
+											<div class="botao" style="padding:5px;" title="Editar">
+												&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 											</div>
 										</a>
 										
 										<a href="#" onclick="remover(${unidadeAtendimento.cod_unidade_atendimento})">
 											<div class="botao" style="background-color:#d9534f" title="Excluir">
-												<span class="glyphicon glyphicon-trash botao-datableUnidade" aria-hidden="true"></span>
+												&nbsp;<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;
 											</div>
 										</a>
 								</td>
