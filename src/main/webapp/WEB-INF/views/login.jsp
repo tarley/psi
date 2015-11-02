@@ -15,7 +15,7 @@
 
   <body class="body-form-signin">
 
-    <div class="container">
+    <div class="container centralizadora">
     
       <form class="form-signin" action="efetuaLogin" method="post">
         <div class="form-signin-heading"><img src="resources/img/logo.png"></div>

@@ -32,18 +32,21 @@ header {
 .body-form-signin {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .form-signin {
   max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+  padding: 25px;
+  margin: 10% auto;
+  border: 1px solid silver;
+  -webkit-box-shadow: 0 0 5px 2px #e7e7e7;
+  box-shadow: 0 0 5px 2px #e7e7e7;
 }
-
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+
 }
 
 .form-signin .checkbox {
@@ -57,6 +60,7 @@ header {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   padding: 10px;
+  margin-bottom:5px;
   font-size: 16px;
 }
 
@@ -145,19 +149,26 @@ a:link, a:visited, a:active {
 }
 .tr_padrao:hover { background-color: #e8e8e8 !important; }
 
-.centralizadora{ text-align:center; padding:1px;}
+.centralizadora{ text-align:center; padding:1px; margin: 0 auto; }
+
 
 .botao{
-		padding:5px;   
-		margin:0 3px;
+		padding:3px;   
 		background-color:#e5c100;
 		width:32px;
 		font-size:1.1em;
 		border: 1px solid #fff;
+		margin:0 auto;
 		border-radius: 5px;
 		color:#fff;
-		display:inline;
+		display:inline-block;
+		
 		
 }
+.col-sm-6{float:right}
+.activee{ background-color:#3299CC; color:#fff; }
+.teste:hover{ background-color:#555; color:#fff !important}
+.teste a:hover{  color:#fff !important; }
+a.link{ font-size:1em;   color:#fff; }
 
 										
