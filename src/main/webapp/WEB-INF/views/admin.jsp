@@ -46,8 +46,8 @@
 	    <ul class="nav navbar-nav">
 		
         
-      <li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Página Inicial<span class="sr-only">(current)</span></a></li>
-		<li  class="teste"><a class="link" href="unidadeAtendimento/" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Cadastrar Unidade</a></li>
+      <li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Página Inicial<span class="sr-only">(current)</span></a></li>
+		<li  class="teste"><a class="link" href="unidadeAtendimento/" ><span class="glyphicon glyphicon-pencil" style="font-size:1em;"></span> Cadastrar Unidade</a></li>
 		<li class="teste"><a href="tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Atendimento</a></li>
 		<li class="teste"><a href="pesquisar/" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 
@@ -61,7 +61,7 @@
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
           			<ul class="dropdown-menu">
             			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-            			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
+            			<li><a href="logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
           			</ul>
         		</li>
         		</ul>

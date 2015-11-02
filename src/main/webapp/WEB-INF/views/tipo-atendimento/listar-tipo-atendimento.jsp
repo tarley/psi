@@ -49,8 +49,9 @@
 	    <ul class="nav navbar-nav">
 		
         <li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> &nbsp;Página Inicial&nbsp;</a></li>
-      		<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Unidade</a></li>
-		<li class="activee"><a class="link" href="../tipoAtendimento/" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Cadastrar Atendimento<span class="sr-only">(current)</span></a></li>
+      		<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Cadastrar Unidade</a></li>
+		<li class="activee"><a class="link" href="../tipoAtendimento/" style="color:#fff"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Atendimento<span class="sr-only">(current)</span></a></li>
+		<li class="teste"><a href="pesquisar/" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 
 	
 
