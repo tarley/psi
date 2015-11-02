@@ -148,7 +148,7 @@
 				<tbody>
 					<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
 						<tr class="tr_padrao">
-							<td style="text-align: left">${tipoAtendimentos.des_tipo_atendimento}</td>
+							<td style="text-align: left;vertical-align:middle">${tipoAtendimentos.des_tipo_atendimento}</td>
 							<td style="width: 90px; text-align: center" >
 								<div class="centralizadora">
 									<a href="editarTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><div class="botao" title="Editar">
@@ -170,7 +170,11 @@
 		</div>
 		
 		
-	
+		<div id="footer" style="background-color:#e7e7e7; padding-top:15px;">
+      <div class="container centralizadora">
+        <p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
+      </div>
+    </div>
 
 
 
