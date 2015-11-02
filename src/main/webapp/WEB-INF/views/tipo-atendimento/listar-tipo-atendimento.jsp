@@ -29,72 +29,52 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
+	<nav class="navbar-default">
+  		<div class="container-fluid">
+	    	<div class="navbar-header">
+	    		<a class="navbar-brand" href="#">
+        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
+      </a>
+      
+	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        		<span class="sr-only">Toggle navigation</span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
 				</button>
-			     <div class="navbar-header">
-					<a class="navbar-brand logo" href=""><img  alt="PSI" src="../resources/img/logo.png"  /></a>
-				 </div>
-			</div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Listar</a></li>-->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-align-justify" aria-hidden="true">&nbsp;Listar<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="../unidadeAtendimento/">Unidades Cadastradas</a></li>
-            <li><a href="../tipoAtendimento/">Tipos de Unidades Cadastradas</a></li>
-          </ul>
-          
-        </li>
+    		</div>
+    		
+	   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
+	    <ul class="nav navbar-nav">
+		
+        <li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> &nbsp;Página Inicial&nbsp;</a></li>
+      		<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Unidade</a></li>
+		<li class="activee"><a class="link" href="../tipoAtendimento/" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Cadastrar Atendimento<span class="sr-only">(current)</span></a></li>
+
+	
+
+				
+		
+		
       </ul>
       
-      
-            <ul class="nav navbar-nav">
-        <!--  <li class="active"><a href="#">Página Inicial<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Listar</a></li>-->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pencil" aria-hidden="true">
-          Cadastrar<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Unidade</a></li>
-            <li><a href="#">Tipo de Unidade</a></li>
-          </ul>
-        </li>
-         <li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"> Pesquisar</a></li>
-      </ul>
-    
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Usuário<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Alterar dados de conta</a></li>
-            <li><a href="#">Gerenciar contas de usuário</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="../logout">Finalizar sessão</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+      		  		<li class="dropdown" >
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
+          			<ul class="dropdown-menu">
+            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
+          			</ul>
+        		</li>
+        		</ul>
+	
+      
+    		</div>
+  		</div>
+	</nav> <!-- Encerra a barra de navegação -->
 
 	<div class="container centralizarBox">
-	<form>
-		<div class="span12 text-right" style="margin-bottom:10px">
-			<input type="submit" class="btn btn-success" formaction="cadastrarTipoAtendimento" value="Cadastrar Novo"/>
-		</div>
-	</form>
 	<c:if test="${param.msg == '1' }">
 			
 			<div class="modal fade" id="Modal-Cadastrado_Sucesso">
@@ -144,13 +124,17 @@
 			</div><!-- /.modal -->
 			
 		</c:if>
-		
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-list" aria-hidden="true"></span> 
-					Tipos de Atendimento Cadastrados
+				<h3 class="panel-title" style="float:left;padding-top:8px">
+					<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+					Tipos de Atendimento Cadastrado 
 				</h3>
+				<form action="unidade-atendimento" method="post">
+					<div class="span12 text-right" style="padding-top:0px">
+						<input type="submit" class="btn btn-success" formaction="cadastrarTipoAtendimento" value="+ Adicionar Atendimento"/>
+					</div>
+				</form>
 			</div>
 
 			<div class="panel-body">
@@ -164,11 +148,11 @@
 				<tbody>
 					<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
 						<tr class="tr_padrao">
-							<td style="text-align: center">${tipoAtendimentos.des_tipo_atendimento}</td>
+							<td style="text-align: left">${tipoAtendimentos.des_tipo_atendimento}</td>
 							<td style="width: 90px; text-align: center" >
 								<div class="centralizadora">
 									<a href="editarTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><div class="botao" title="Editar">
-										<span class="glyphicon glyphicon-pencil botao-datableUnidade" aria-hidden="true"></span>
+										<span class="glyphicon glyphicon-pencil botao-datableUnidade" style="color:#fff" aria-hidden="true"></span>
 									</a>
 								</div>
 								<!-- <a href="excluirTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}" title="Editar">
@@ -181,12 +165,14 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			</div>
 		</div>
-	</div>
-</div></br></br></br>
-</div>
-</div></br></br></br>
+		</div>
+		</div>
+		
+		
+	
+
+
 
 <script type="text/javascript">
 	
