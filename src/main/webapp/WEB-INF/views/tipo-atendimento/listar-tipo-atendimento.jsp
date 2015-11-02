@@ -128,7 +128,7 @@
 			<div class="panel-heading">
 				<h3 class="panel-title" style="float:left;padding-top:8px">
 					<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-					Tipos de Atendimento Cadastrado 
+					Atendimentos Cadastrados 
 				</h3>
 				<form action="unidade-atendimento" method="post">
 					<div class="span12 text-right" style="padding-top:0px">

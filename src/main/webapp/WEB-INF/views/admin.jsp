@@ -9,6 +9,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title> PSI | Painel Administrativo </title>
+	    <link rel="Shortcut Icon" href="resources/img/favicon.ico">
 	    <%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp" %>
 	    
 	    
@@ -29,7 +30,7 @@
   		<div class="container-fluid">
 	    	<div class="navbar-header">
 	    		<a class="navbar-brand" href="#">
-        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="resources/img/logo.png"  />
+        <img class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="resources/img/logo.png"  />
       </a>
       
 	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -48,7 +49,7 @@
       <li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Página Inicial<span class="sr-only">(current)</span></a></li>
 		<li  class="teste"><a class="link" href="unidadeAtendimento/" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Cadastrar Unidade</a></li>
 		<li class="teste"><a href="tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Atendimento</a></li>
-		<li class="teste"><a href="pesquisar" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
+		<li class="teste"><a href="pesquisar/" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 
 				
 		
@@ -84,7 +85,7 @@
        
        		<div id="footer" style="background-color:#e7e7e7; padding-top:15px; position:absolute; bottom:0px; width:100%">
       <div class="container centralizadora">
-        <p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
+        <p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
       </div>
     </div>
 	
