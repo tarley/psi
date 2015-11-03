@@ -43,9 +43,9 @@ public class HomeController {
 	
 	@RequestMapping(value="pesquisar", method = RequestMethod.GET)
 	public String pesquisar(String descricao, Model model) {
-		List<UnidadeAtendimento> listaRegioes = repository.listarPorRegiao(descricao);
+		List<UnidadeAtendimento> listaRegioes = repository.listarPorRegiao(descricao.trim());
 				
-		model.addAttribute("filtro", descricao);
+		model.addAttribute("filtro", descricao.trim());
 		model.addAttribute("listaUnidadeAtendimento", listaRegioes);
 		
 		return "home";
