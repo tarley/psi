@@ -1,5 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page session="false"%>
     
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +23,7 @@
 	
 	
 	<body>
-       <!--  Barra de NavegaÁ„o -->
+       <!--  Barra de Navega√ß√£o -->
 	
 	
 	<nav class="navbar-default">
@@ -46,7 +46,7 @@
 	    <ul class="nav navbar-nav">
 		
         
-      <li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> P·gina Inicial<span class="sr-only">(current)</span></a></li>
+      <li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> P√°gina Inicial<span class="sr-only">(current)</span></a></li>
 		<li  class="teste"><a class="link" href="unidadeAtendimento/" ><span class="glyphicon glyphicon-pencil" style="font-size:1em;"></span> Cadastrar Unidade</a></li>
 		<li class="teste"><a href="tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Atendimento</a></li>
 		<li class="teste"><a href="pesquisar/" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
@@ -58,7 +58,7 @@
       
       <ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ol·, Administrador<span class="caret"></span></a>
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ol√°, Administrador<span class="caret"></span></a>
           			<ul class="dropdown-menu">
             			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
             			<li><a href="logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
@@ -69,26 +69,67 @@
       
     		</div>
   		</div>
-	</nav> <!-- Encerra a barra de navegaÁ„o -->
+	</nav> <!-- Encerra a barra de navega√ß√£o -->
 	
         
         
         <div class="container blocoPai">
 			<br />
 			<div class="jumbotron">
-  <h1>Ol·, seja bem-vindo de Volta :)</h1>
-  <p>Se precisar de ajuda È sÛ clicar no bot„o abaixo.</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button" ><span style="color:#fff">Quero uma explicaÁ„o</span></a></p>
+  <h1>Ol√°, seja bem-vindo de Volta :)</h1>
+  <p>Se precisar de ajuda √© s√≥ clicar no bot√£o abaixo.</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"><span style="color:#fff">Quero uma explica√ß√£o</span></a></p>
+  
+  	
+		<!-- Large modal -->
+		<div class="modal fade bs-example-modal-lg" id="teste" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <br/> <br/> <br/><br/> <br/> <br/><br/><br/><div class="modal-dialog modal-lg">
+		    <div class="modal-content">
+		     <div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators -->
+
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    
+    <div class="item active">
+      <img src="resources/img/tuto1.png" alt="teste">
+	</div>
+	
+    <div class="item">
+      <img src="resources/img/tuto1.png" alt="...">
+	</div>
+    
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+   
+  </a>
+</div>
+		    </div>
+		  </div>
+		</div>
+  
 </div>
 			
        </div>
        
        		<div id="footer" style="background-color:#e7e7e7; padding-top:15px; position:absolute; bottom:0px; width:100%">
       <div class="container centralizadora">
-        <p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de InformaÁ„o Newton Paiva | 8∞ PerÌodo 2015 - Professor Orientador Tarley Lanna.</p>
+        <p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informa√ß√£o Newton Paiva | 8¬∞ Per√≠odo 2015 - Professor Orientador Tarley Lanna.</p>
       </div>
     </div>
-	
+
+<script>
+$(document).ready(function() {
+	   $('#teste').modal('show');
+	});
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>   
 </body>
