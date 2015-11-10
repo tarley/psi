@@ -22,46 +22,31 @@
 	} );	
 	
 	</script>
-	
-
 </head>
 
 <body>
-	
 	<!--  Barra de Navegação -->
-	
-	
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
 	    		<a class="navbar-brand" href="#">
-        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
-      </a>
-      
+			        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
+			    </a>
 	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        		<span class="sr-only">Toggle navigation</span>
 	        		<span class="icon-bar"></span>
 	        		<span class="icon-bar"></span>
 	        		<span class="icon-bar"></span>
 				</button>
-
     		</div>
-    		
-	   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
-	    <ul class="nav navbar-nav">
-		
-        <li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> &nbsp;Página Inicial&nbsp;</a></li>
-      
-		<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Cadastrar Unidade<span class="sr-only">(current)</span></a></li>
-		<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Atendimento</a></li>
-	
-
-				
-		
-		
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
+		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
+			    <ul class="nav navbar-nav">
+			        <li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Introdução</a></li>
+			        <li class="teste"><a class="link" href="../" ><span class="glyphicon glyphicon-search" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
+					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+		      	</ul>
+      			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
           			<ul class="dropdown-menu">
@@ -70,18 +55,12 @@
           			</ul>
         		</li>
         		</ul>
-	
-      
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
 	
-	
 	<div class="container centralizarBox">
-		
-		
 		<c:if test="${param.msg == '1' }">
-			
 			<div class="modal fade" id="Modal-Cadastrado_Sucesso">
 	  			<div class="modal-dialog" >
 	    			<div class="modal-content">
@@ -102,11 +81,8 @@
 	    			</div><!-- /.modal-content -->
 	  			</div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
-			
 		</c:if>
-		
 		<c:if test="${param.msg == '2' }">
-		
 			<div class="modal fade" id="Modal-Editado_Sucesso">
 	  			<div class="modal-dialog" >
 	    			<div class="modal-content">
@@ -135,33 +111,26 @@
 			<div class="panel-heading">
 				<h3 class="panel-title" style="float:left;padding-top:8px">
 					<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-					Unidades Cadastradas 
+					Unidades de Atendimento Cadastradas 
 				</h3>
 				<form action="unidade-atendimento" method="post">
-			<div class="span12 text-right" style="padding-top:0px">
-				<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="+ Adicionar Unidade"/>
+					<div class="span12 text-right" style="padding-top:0px">
+						<input type="submit" class="btn btn-success" formaction="cadastrarUnidadeAtendimento" value="+ Adicionar Unidade"/>
+					</div>
+				</form>
 			</div>
-		</form>
-			</div>
-			
 			<div class="panel-body">
 				<table id="GerenciarUnidade" class="display" cellspacing="0" >
-					
 					<thead>
 						<tr class="tr_padrao"> 
-						      <th>Nome</th>
-						      <th>Bairro</th>
-						      <th>Regiao</th>
-						      <th>Atendimento</th>
-						     <!--   <th width="18%">Logradouro</th>
-						      <th>CEP</th> -->
-						      <th>Telefone</th>
-						      <!--  <th>Tel2</th>
-						      <th>Tel3</th> --> 
-							<th>Ação</th>
+					      <th>Nome</th>
+					      <th>Bairro</th>
+					      <th>Regiao</th>
+					      <th>Atendimento</th>
+					      <th>Telefone</th>
+						  <th>Ação</th>
 						</tr>
 					</thead>
-					
 					<tbody>
 						<c:forEach items="${listaUnidadesAtendimento}" var="unidadeAtendimento">
 							<tr class="tr_padrao" id="row${unidadeAtendimento.cod_unidade_atendimento}">
@@ -169,20 +138,14 @@
 							     <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.bairro.des_bairro}</td>
 							     <td style="text-align: center ; vertical-align:middle">${unidadeAtendimento.regiao.des_regiao}</td>
 							     <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}</td>		
-							    <!--  <td style="text-align: left">${unidadeAtendimento.nom_logradouro},${unidadeAtendimento.num_numero}</td> -->
-							      <!--<td style="text-align: center">${unidadeAtendimento.num_cep}</td>-->
 							     <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.num_tel1}</td>
-							     <!-- <td style="text-align: center">${unidadeAtendimento.num_tel2}</td>
-							     <td style="font-align:center">${unidadeAtendimento.num_tel3}</td> -->
-								 
 								 <td>
 									<div class="centralizadora" style="width:100%">
 										<a href="editarUnidadeAtendimento?id=${unidadeAtendimento.cod_unidade_atendimento}">
-											<div class="botao"  title="Editar">
+											<div class="botao" title="Editar">
 												&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 											</div>
 										</a>
-										
 										<a href="#" onclick="remover(${unidadeAtendimento.cod_unidade_atendimento})">
 											<div class="botao" style="background-color:#d9534f;" title="Excluir">
 												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
@@ -197,16 +160,13 @@
 			</div>
 		</div>
 	</div>
-	
 	<div id="footer" style="background-color:#e7e7e7; padding-top:15px">
-      <div class="container centralizadora">
-        <p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
-      </div>
+		<div class="container centralizadora">
+			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
+		</div>
     </div>
 
-<script type="text/javascript">
-
-	
+	<script type="text/javascript">
 		// Ativar conteúdo de Busca e Estilização
 		$('#GerenciarUnidade')
 		.removeClass( 'display' )
@@ -216,27 +176,23 @@
 		$('#GerenciarUnidade').DataTable( {
 			language: {
 				"url": "../resources/i18n/datatables-pt_BR.json"
-				},
+			},
 		});
 	
-		
-	
-		window.setTimeout('$(".alert").remove()',5000);
-		
+		//window.setTimeout('$(".alert").remove()',5000);
 		
 		function remover(cod_unidade_atendimento) {
-			var resposta = confirm("Deseja remover esse registro?");
-		     if (resposta == true) {
+			//var resposta = confirm("Deseja remover esse registro?");
+		     //if (resposta == true) {
 				jQuery.ajax({ 
 					  url: 'remover/' + cod_unidade_atendimento,
 					  async: true,
 					  success: function(data) {
-					  	alert(data);				  	
+					  	//alert(data);				  	
 					  	$("#row" + cod_unidade_atendimento).remove();
-					  	
 					  }
 				});
-		     }
+		     //}
 		}
 		
 		$(document).ready(function() {
@@ -246,7 +202,7 @@
 			   $('#Modal-Cadastrado_Sucesso').modal('show');
 			});
 
-</script>
+	</script>
 </body>
 </html>
 

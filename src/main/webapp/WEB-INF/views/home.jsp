@@ -15,8 +15,8 @@
 		<div class="container-fluid">	
 			<div class="navbar-header">
 				<a class="navbar-brand logo" href="#"><img  alt="PSI" src="resources/img/logo.png"  /></a>
+				<a class="navbar-brand" href="admin" class="link" style="font-size:12px; margin-left: 1000px;">Acesso Restrito</a>
 			</div>
-			
 		</div>
 	</nav>
 	

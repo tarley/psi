@@ -11,8 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
@@ -46,6 +44,5 @@ public class Cidade {
 	public void setNom_cidade(String nom_cidade) {
 		this.nom_cidade = nom_cidade;
 	}
-
 	
 }

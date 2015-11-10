@@ -106,24 +106,4 @@ public class UnidadeAtendimentoRepository {
 
 		return unidades;
 	}
-
-	/*
-	 * public void remove(UnidadeAtendimento unidade_atendimento) {
-	 * UnidadeAtendimento unidadeARemover =
-	 * buscaPorId(unidade_atendimento.getCod_unidade_atendimento());
-	 * manager.remove(unidadeARemover); }
-	 */
-
-	/*
-	 * @SuppressWarnings("unchecked") public List<String> recuperaTodos() {
-	 * 
-	 * //List<UnidadeAtendimento> unidades = manager.createQuery(
-	 * "SELECT e FROM TIPO_ATENDIMENTO e").getResultList(); TypedQuery<String>
-	 * query = (TypedQuery<String>) manager.createQuery(
-	 * "select e.nom_uni_atendimento from UnidadeAtendimento e"); return
-	 * query.getResultList();
-	 * 
-	 * }
-	 */
-
 }

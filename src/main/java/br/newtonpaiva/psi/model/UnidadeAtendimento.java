@@ -215,7 +215,4 @@ public class UnidadeAtendimento {
 		return true;
 	}
 	
-	
-
-	
 }

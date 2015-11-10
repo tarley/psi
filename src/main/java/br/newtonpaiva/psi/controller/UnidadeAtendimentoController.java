@@ -3,7 +3,6 @@
  */
 package br.newtonpaiva.psi.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,14 +18,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.newtonpaiva.psi.model.Bairro;
 import br.newtonpaiva.psi.model.BairroRepository;
 import br.newtonpaiva.psi.model.Regiao;
 import br.newtonpaiva.psi.model.RegiaoRepository;
-import br.newtonpaiva.psi.model.TipoAtendimento;
 import br.newtonpaiva.psi.model.TipoAtendimentoRepository;
 import br.newtonpaiva.psi.model.UnidadeAtendimento;
 import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
@@ -80,12 +77,10 @@ public class UnidadeAtendimentoController {
 	@Transactional
 	public ResponseEntity<String> remover(@PathVariable("cod_unidade_atendimento") Long cod_unidade_atendimento) {
 		repository.remover(cod_unidade_atendimento);
-		return new ResponseEntity<String>("Unidade de atendimento removida com sucesso!", HttpStatus.OK);
 		
+		return new ResponseEntity<String>("Unidade de atendimento removida com sucesso!", HttpStatus.OK);
 	}
 	
-
-
 	//Só deixa salvar o tipo atendimento PSICOLOGIA
 	@RequestMapping("cadastrarUnidadeAtendimento")
 	@Transactional

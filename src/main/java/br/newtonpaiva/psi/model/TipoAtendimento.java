@@ -11,8 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  * @authors Tarley Lana, Amanda Rosa, Gabriel Gabriel, Filipe Duarte, Mari Braga, Pri Romagnoli
@@ -46,6 +44,5 @@ public class TipoAtendimento {
 	public void setDes_tipo_atendimento(String des_tipo_atendimento) {
 		this.des_tipo_atendimento = des_tipo_atendimento;
 	}
-
 	
 }

@@ -63,20 +63,5 @@ public class TipoAtendimentoRepository {
 	public TipoAtendimento buscaPorId(Long cod_tipo_atendimento) {
 		return manager.find(TipoAtendimento.class, cod_tipo_atendimento);
 	}
-	
-	
-	/*public void remove(TipoAtendimento tipo_atendimento) {
-		TipoAtendimento tipoARemover = buscaPorId(tipo_atendimento.getCod_tipo_atendimento());
-		manager.remove(tipoARemover);
-	}*/
-
-	/*@SuppressWarnings("unchecked")
-	public List<String> recuperaTodos() {
-		
-		//List<TipoAtendimento> tipos = manager.createQuery("SELECT e FROM TIPO_ATENDIMENTO e").getResultList();
-		 TypedQuery<String> query = (TypedQuery<String>) manager.createQuery("select e.des_tipo_atendimento from TipoAtendimento e");
-	     return query.getResultList();
- 
-	}*/
 
 }
