@@ -138,13 +138,21 @@ public class UnidadeAtendimentoController {
 	
 	@RequestMapping(value="/regiao/{regiao}")
 	@Transactional
-	public @ResponseBody ResponseEntity<Bairro> pesquisarBairroRegiao(@PathVariable("regiao") Long cod_regiao) 
+	public @ResponseBody ResponseEntity<String> pesquisarBairroRegiao(@PathVariable("regiao") Long cod_regiao) 
 	{
 		List<Bairro> listarBairrosPorRegiao = bairroRepository.listarBairrosDaRegiao(cod_regiao);
 		
-		System.out.println(listarBairrosPorRegiao);
+		StringBuilder sb = new StringBuilder();
 		
-		return new ResponseEntity<Bairro>(listarBairrosPorRegiao.get(0), HttpStatus.OK);
+		sb.append("<option value=''><out>Selecione</out></option>"+"\n");
+		
+		for(Bairro b : listarBairrosPorRegiao) {
+			sb.append("<option value='"+b.getCod_bairro()+"'><out>"+ b.getDes_bairro()+"</out></option>"+"\n");
+		}
+		
+		System.out.println(sb.toString());
+		return new ResponseEntity<String>(sb.toString(), HttpStatus.OK); 
+		//return new ResponseEntity<Bairro>(listarBairrosPorRegiao.get(0), HttpStatus.OK);
 	}
 	
 	@RequestMapping("removerUnidadeAtendimento")

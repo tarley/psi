@@ -102,8 +102,8 @@
 										</select>
 									</div>
 									<div class="span3">
-										<label class="">Bairro:</label> <select required="required"
-											name="bairro.cod_bairro" id="bairro" class="span12">
+										<label class="">Bairro:</label> 
+										<select required="required" name="bairro.cod_bairro" id="bairro" class="span12">
 											<option value="${unidadeAtendimento.bairro.cod_bairro}">
 												<out>${unidadeAtendimento.bairro.des_bairro}</out>
 											</option>
@@ -136,7 +136,7 @@
 								</div>
 								<div class="row-fluid">
 									<label>Tipo de Atendimento:</label>
-									<form:checkboxes element="label class='checkbox-inline'" required="required" cssClass="checkbox" path="tiposAtendimentoAux" items="${tiposAtendimentosMap}"></form:checkboxes>
+									<form:checkboxes element="label class='checkbox-inline'" cssClass="checkbox" path="tiposAtendimentoAux" items="${tiposAtendimentosMap}"></form:checkboxes>
 								</div>
 								 
 								<br>
@@ -157,26 +157,24 @@
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 
-<!--  <script>
-		$('#regiao').change(function(){
-			
-			var regiao = $('#regiao').val();
-			
-			//alert(regiao);
-			
-			jQuery.ajax({ 
-					
-				  url: 'regiao/' + regiao,
-				  async: true,
-				  success: function(data) 
-				  {
-					  	alert(data);				  	
-					  	//$("#row" + id).remove();
-				  },
-				  error:function(){
-					  alert("deu erro");
-				  }
-			});
-		})
-	</script>-->
+<script>
+	$('#regiao').change(function(){
+		
+		var regiao = $('#regiao').val();
+		
+		jQuery.ajax({ 
+				
+			  url: 'regiao/' + regiao,
+			  async: false,
+			  success: function(data) 
+			  {
+				  	$('option', '#bairro').remove();
+				  	$('#bairro').html(data);
+			  },
+			  error:function(data){
+				  alert("Erro ao carregar os bairros da região:" + data);
+			  }
+		});
+	})
+</script>
 </html>

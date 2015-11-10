@@ -27,7 +27,7 @@ public class BairroRepository {
 	@SuppressWarnings("unchecked")
 	public List<Bairro> listarBairrosDaRegiao(Long cod_regiao) 
 	{
-		return manager.createQuery("select distinct bairro.des_bairro from Bairro where bairro.regiao.cod_regiao = :cod_regiao ")
-					.setParameter("cod_regiao",cod_regiao).getResultList();
+		return manager.createQuery("select distinct b from Bairro b where b.regiao.cod_regiao = :cod_regiao ")
+				.setParameter("cod_regiao", cod_regiao).getResultList();
 	}
 }
