@@ -108,9 +108,11 @@
 												<out>${unidadeAtendimento.bairro.des_bairro}</out>
 											</option>
 											<c:forEach var="bairro" items="${listaBairros}">
-												<option value="${bairro.cod_bairro}">
-													<out>${bairro.des_bairro}</out>
-												</option>
+												<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">
+													<option value="${bairro.cod_bairro}">
+														<out>${bairro.des_bairro}</out>
+													</option>
+												</c:if>
 											</c:forEach>
 										</select>
 									</div>
