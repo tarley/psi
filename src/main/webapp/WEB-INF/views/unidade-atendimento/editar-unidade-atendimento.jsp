@@ -134,12 +134,15 @@
 										<label class="">Telefone 3:</label> <input type="text" maxlength="15"
 											name="num_tel3" value="${unidadeAtendimento.num_tel3}"
 											class="input-small span12">
+									</div>
+									<div class="span6">
+										<label>Tipos de Atendimentos:</label>
+										<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos">
+											<form:options items="${tiposAtendimentosMap}"></form:options>
+										</form:select>
 									</div>									
 								</div>
-								<div class="row-fluid">
-									<label>Tipo de Atendimento:</label>
-									<form:checkboxes element="label class='checkbox-inline'" cssClass="checkbox" path="tiposAtendimentoAux" items="${tiposAtendimentosMap}"></form:checkboxes>
-								</div>
+								
 								 
 								<br>
 								<div class="span12 text-right">
@@ -158,7 +161,13 @@
 </body>
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
-
+<script>
+       $("#tiposAtendimentos").multipleSelect({
+           filter: true,
+           width: '100%',
+           position: 'top'
+       });
+</script>
 <script>
 	$('#regiao').change(function(){
 		

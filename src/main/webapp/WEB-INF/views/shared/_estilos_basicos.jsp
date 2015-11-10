@@ -14,3 +14,8 @@
 
 <spring:url value="/resources/css/datatables.min.css" var="datatable_min"></spring:url>
 <link rel="stylesheet" href="${datatable_min}"/>
+
+<!-- Jquery Multiple -->
+
+<spring:url value="/resources/css/multiple-select.css" var="multipleselect"></spring:url>
+<link rel="stylesheet" href="${multipleselect}"/>
