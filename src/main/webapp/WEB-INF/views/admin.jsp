@@ -53,7 +53,7 @@
 	
 	<div class="container blocoPai">
 		<br />
-		<div class="jumbotron">
+		<div class="jumbotron" style="background-image: url('resources/img/1515.png'); background-repeat:no-repeat; background-position: right;">
 			<h1>Olá, seja bem-vindo :)</h1>
 			<p>Se precisar de ajuda é só clicar no botão abaixo.</p>
 			<p><a class="btn btn-primary btn-lg" href="#" role="button" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"><span style="color:#fff">Quero uma explicação</span></a></p>
