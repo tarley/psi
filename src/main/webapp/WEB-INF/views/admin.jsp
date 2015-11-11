@@ -33,10 +33,10 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 		    <ul class="nav navbar-nav">
-				<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Introdução<span class="sr-only">(current)</span></a></li>
-				<li class="teste"><a href="../psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Página Inicial</a></li>
-				<li  class="teste"><a class="link" href="unidadeAtendimento/" ><span class="glyphicon glyphicon-pencil" style="font-size:1em;"></span> Unidade de Atendimento</a></li>
-				<li class="teste"><a href="tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+				<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Página Inicial<span class="sr-only">(current)</span></a></li>
+				<li  class="teste"><a class="link" href="unidadeAtendimento/" ><span class="glyphicon glyphicon-pencil" style="font-size:1em;"></span> Cadastrar Unidade</a></li>
+				<li class="teste"><a href="tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Tipo de Atendimento</a></li>
+				<li class="teste"><a href="../psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 	      	</ul>
       		<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown" >

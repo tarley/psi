@@ -14,8 +14,10 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>PSI | Unidade de Atendimento</title>
-	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
-	<link rel="stylesheet" href="../resources/css/bootstrap.css" />
+	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
+	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../resources/css/theme.css"/>
+	<script type="text/javascript" src="../resources/js/datatables.min.js"></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -63,14 +65,105 @@
 		<div class="panel panel-primary ">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 					Cadastrar Unidade de Atendimento
 				</h3>
 			</div>
 
 			<div class="panel-body">
 				<div class="container-fluid">
-					<div class="row-fluid">
+		<br />
+				<form:form commandName="unidadeAtendimento" action="adicionarUnidadeAtendimento" method="post">
+				
+					<div class="row">
+						<div class="col-xs-6 col-md-10">
+     						<label >Nome da Unidade:</label>
+    						 <input id="textinput" name="nom_uni_atendimento" type="text" placeholder="Entre com o nome da unidade" class="form-control input-md" required="">
+ 						 </div>
+ 						<div class="col-xs-6 col-md-2">
+     						<label >CEP:</label>
+     						<input id="textinput" name="num_cep" type="text" placeholder="Ex:00000-000" class="form-control input-md" required="">
+  						</div>
+ 					</div>
+ 					<br />
+ 					<div class="row">
+						<div class="col-xs-5 col-md-5">
+     						<label >Endereço:</label>
+    						 <input id="textinput" name="nom_logradouro" type="text" placeholder="Entre com o endereço da unidade" class="form-control input-md" required="">
+ 						 </div>
+ 						<div class="col-xs-6 col-md-1">
+     						<label >Nº:</label>
+     						<input id="textinput" name="num_numero" type="text" placeholder="1030" class="form-control input-md" required="">
+  						</div>
+  						
+  						<div class="col-xs-6 col-md-3">
+     						<label >Região:</label>
+     						<select name="regiao.cod_regiao" id="regiao" class="form-control input-md" required="">
+											<option value="">Selecione</option>
+											<c:forEach var="regiao" items="${listaRegioes}">
+												<option value="${regiao.cod_regiao}">
+													<out>${regiao.des_regiao}</out>
+												</option>
+											</c:forEach>
+										</select>
+						</div>
+						<div class="col-xs-6 col-md-3">
+     						<label >Bairro:</label>
+							<select name="bairro.cod_bairro" id="bairro" class="form-control input-md" required="">
+								<option value="">Selecione</option>					
+							</select>
+						</div>
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-xs-5 col-md-2">
+     						<label >Telefone 1:</label>
+    						 <input type="tel"	name="num_tel1"  placeholder="Ex:31-00000-0000" class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+ 						 </div>
+ 						 
+ 						<div class="col-xs-6 col-md-2">
+     						<label >Telefone 2:</label>
+     						 <input type="tel"	name="num_tel2"  placeholder="Ex:31-00000-0000" class="form-control input-md" maxlength="15" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+  						</div>
+  						
+  						<div class="col-xs-6 col-md-2">
+     						<label >Telefone 3:</label>
+     						 <input type="text" name="num_tel3"   class="form-control input-md" maxlength="15" placeholder="Ex:31-00000-0000" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"></input>
+     						 
+  						</div>
+  						
+  						<div class="col-xs-6 col-md-6">
+     						<label >Tipo de Atendimento:</label><br />
+     						<div style="margin-top:6px">
+     						<form:checkboxes element="label class='checkbox-inline' "  cssClass="checkbox" path="tiposAtendimentoAux" items="${tiposAtendimentosMap}"></form:checkboxes>
+  							</div>
+  						</div>
+  						
+  						
+  						
+  						
+									
+  			
+					</div>
+					
+					
+						<br>
+								<div class="text-right">
+									<input type="submit" class="btn btn-primary" value="Salvar" />
+									<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" />Cancelar</a>
+								</div>
+							</form:form>
+
+				
+
+
+
+					
+					
+					
+					
+					
+					<!--  <div class="col-md-12">
 						<div class="span12">
 							<form:form commandName="unidadeAtendimento"
 								action="adicionarUnidadeAtendimento" method="post">
@@ -142,7 +235,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </body>
