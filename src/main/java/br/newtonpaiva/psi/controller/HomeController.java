@@ -51,4 +51,8 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value="fundadores", method = RequestMethod.GET)
+	public String fundadores() {		
+		return "fundadores/fundadores";
+	}
 }
