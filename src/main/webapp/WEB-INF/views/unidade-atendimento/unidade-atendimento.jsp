@@ -13,11 +13,7 @@
 	<meta name=viewport content="width=device-width, initial-scale=1" />
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PSI | Unidade de Atendimento</title>
-	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
-	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="../resources/css/theme.css"/>
-	<script type="text/javascript" src="../resources/js/datatables.min.js"></script>
+	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -133,11 +129,12 @@
   						</div>
   						
   						<div class="col-xs-6 col-md-6">
-     						<label >Tipo de Atendimento:</label><br />
-     						<div style="margin-top:6px">
-     						<form:checkboxes element="label class='checkbox-inline' "  cssClass="checkbox" path="tiposAtendimentoAux" items="${tiposAtendimentosMap}"></form:checkboxes>
-  							</div>
-  						</div>
+     						<label>Tipos de Atendimentos:</label>
+								<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos">
+									<form:options items="${tiposAtendimentosMap}"></form:options>
+								</form:select>
+						</div>
+					</div>
   						
   						
   						
