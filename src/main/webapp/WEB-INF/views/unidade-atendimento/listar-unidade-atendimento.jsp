@@ -41,7 +41,7 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 			    <ul class="nav navbar-nav">
-					<li  class="teste"><a class="link" href="../unidadeAtendimento/" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
 					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Cadastrar Unidade<span class="sr-only">(current)</span></a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Tipo de Atendimento</a></li>
 					<li class="teste"><a href="../psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
@@ -124,9 +124,9 @@
 					<thead>
 						<tr class="tr_padrao"> 
 					      <th>Nome</th>
-					      <th>Bairro</th>
-					      <th>Regiao</th>
-					      <th>Atendimento</th>
+					      <th>Regiao</th>  					     
+					       <th>Bairro</th>
+					       <th>Atendimento</th>
 					      <th>Telefone</th>
 						  <th>Ação</th>
 						</tr>
@@ -135,9 +135,11 @@
 						<c:forEach items="${listaUnidadesAtendimento}" var="unidadeAtendimento">
 							<tr class="tr_padrao" id="row${unidadeAtendimento.cod_unidade_atendimento}">
 		   						 <td style="text-align: left; vertical-align:middle">${unidadeAtendimento.nom_uni_atendimento}</td>
-							     <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.bairro.des_bairro}</td>
-							     <td style="text-align: center ; vertical-align:middle">${unidadeAtendimento.regiao.des_regiao}</td>
-							     <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}</td>		
+		   						 <td style="text-align: center ; vertical-align:middle">${unidadeAtendimento.regiao.des_regiao}</td>
+		   						 <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.bairro.des_bairro}</td>
+		   						 <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}</td>	
+							     
+							 						    	
 							     <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.num_tel1}</td>
 								 <td>
 									<div class="centralizadora" style="width:100%">
@@ -147,7 +149,7 @@
 											</div>
 										</a>
 										<a href="#" onclick="remover(${unidadeAtendimento.cod_unidade_atendimento})">
-											<div class="botao" style="background-color:#d9534f;" title="Excluir">
+											<div class="botao" style="background-color:#d9534f" title="Excluir">
 												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 											</div>
 										</a>
@@ -160,7 +162,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer" style="background-color:#e7e7e7; padding-top:15px">
+	<div id="footer">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
 		</div>

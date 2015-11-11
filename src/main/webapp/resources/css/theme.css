@@ -171,5 +171,6 @@ a:link, a:visited, a:active {
 .teste:hover{ background-color:#555; color:#fff !important}
 .teste a:hover{  color:#fff !important; }
 a.link{ font-size:1em;   color:#fff; }
+#footer{ background-color:#e7e7e7; padding-top:15px; position:relative; bottom:0; width:100% }
 
 										
