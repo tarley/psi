@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> PSI | Painel Administrativo </title>
+    <title> PSI | Painel Fundadores</title>
     <link rel="Shortcut Icon" href="resources/img/favicon.ico">
     <%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
 	<link rel="stylesheet" href="../resources/css/thumbnail.css" />
@@ -51,6 +51,7 @@
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
+	<br /> <br/>
 	<div class="consdfatainer">
   
 	    <div class="row col-md-12">

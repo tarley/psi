@@ -10,6 +10,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PSI | Unidade de Atendimento</title>
+	<link rel="Shortcut Icon" href="../resources/img/favicon.ico">
 	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../resources/css/theme.css"/>
@@ -29,8 +30,8 @@
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">
-			        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
+	    		<a class="navbar-brand" href="../admin">
+			        <img alt="PSI" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
 			    </a>
 	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        		<span class="sr-only">Toggle navigation</span>
@@ -42,9 +43,9 @@
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 			    <ul class="nav navbar-nav">
 					<li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
-					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Cadastrar Unidade<span class="sr-only">(current)</span></a></li>
-					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Tipo de Atendimento</a></li>
-					<li class="teste"><a href="../psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
+					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
+					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >

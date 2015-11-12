@@ -8,6 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<title> PSI | Tipo Atendimento</title>
+	<link rel="Shortcut Icon" href="../resources/img/favicon.ico">
 	<meta charset="UTF-8">
 	<meta name=description content="Psy - Painel Administrativo" />
 	<meta name=viewport content="width=device-width, initial-scale=1" />
@@ -22,11 +24,12 @@
 	    <![endif]-->
 </head>
 <body>
+<!--  Barra de Navegação -->
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">
-			        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
+	    		<a class="navbar-brand" href="../admin">
+			        <img alt="PSI" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
 			    </a>
 	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        		<span class="sr-only">Toggle navigation</span>
@@ -37,10 +40,10 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 			    <ul class="nav navbar-nav">
-			        <li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Introdução</a></li>
-			        <li class="teste"><a class="link" href="../" ><span class="glyphicon glyphicon-search" style="font-size:1em;"></span> Página Inicial</a></li>
-					<li class="activee"><a class="link" href="../unidadeAtendimento/" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
+					<li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
@@ -68,7 +71,7 @@
 
 			<div class="panel-body">
 				<div class="container-fluid">
-		<br />
+			<br />
 				<form:form commandName="unidadeAtendimento" action="adicionarUnidadeAtendimento" method="post">
 				
 					<div class="row">
@@ -78,12 +81,12 @@
  						 </div>
  						<div class="col-xs-6 col-md-2">
      						<label >CEP:</label>
-     						<input id="textinput" name="num_cep" type="text" placeholder="Ex:00000-000" class="form-control input-md" required="">
+     						<input id="cep" name="num_cep" type="text" placeholder="xxxxx-xxx" class="form-control input-md" required="">
   						</div>
  					</div>
  					<br />
  					<div class="row">
-						<div class="col-xs-5 col-md-5">
+						<div class="col-xs-6 col-md-5">
      						<label >Endereço:</label>
     						 <input id="textinput" name="nom_logradouro" type="text" placeholder="Entre com o endereço da unidade" class="form-control input-md" required="">
  						 </div>
@@ -112,22 +115,22 @@
 					</div>
 					<br/>
 					<div class="row">
-						<div class="col-xs-5 col-md-2">
+						<div class="col-xs-6 col-md-2">
      						<label >Telefone 1:</label>
-    						 <input type="tel"	name="num_tel1"  placeholder="Ex:31-00000-0000" class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+    						 <input type="tel"	id="campoTel1" placeholder="(xxx) xxxx-xxxx" name="num_tel1"   class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
  						 </div>
- 						 
+ 						
  						<div class="col-xs-6 col-md-2">
      						<label >Telefone 2:</label>
-     						 <input type="tel"	name="num_tel2"  placeholder="Ex:31-00000-0000" class="form-control input-md" maxlength="15" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+     						 <input type="tel"	id="campoTel2" placeholder="(xxx) xxxx-xxxx" name="num_tel2"   class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
   						</div>
-  						
+
   						<div class="col-xs-6 col-md-2">
      						<label >Telefone 3:</label>
-     						 <input type="text" name="num_tel3"   class="form-control input-md" maxlength="15" placeholder="Ex:31-00000-0000" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"></input>
+     						 <input type="tel"	id="campoTel3" placeholder="(xxx) xxxx-xxxx" name="num_tel3"   class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
      						 
   						</div>
-  						
+  							
   						<div class="col-xs-6 col-md-6">
      						<label>Tipos de Atendimentos:</label>
 								<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos">
@@ -135,106 +138,12 @@
 								</form:select>
 						</div>
 					</div>
-  						
-  						
-  						
-  						
-									
-  			
-					</div>
-					
-					
-						<br>
-								<div class="text-right">
-									<input type="submit" class="btn btn-primary" value="Salvar" />
-									<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" />Cancelar</a>
-								</div>
-							</form:form>
-
-				
-
-
-
-					
-					
-					
-					
-					
-					<!--  <div class="col-md-12">
-						<div class="span12">
-							<form:form commandName="unidadeAtendimento"
-								action="adicionarUnidadeAtendimento" method="post">
-								<div class="row-fluid">
-									<div class="span10">
-										<label>Nome da Unidade de Atendimento</label> <input
-											class="input-small span12" type="text"
-											name="nom_uni_atendimento" maxlength="80" required=""><br>
-									</div>
-									<div class="span2">
-										<label class="">CEP:</label> <input type="text" name="num_cep"
-											class="input-small span12" maxlength="12" required="">
-									</div>
-								</div>
-
-								<div class="row-fluid">
-									<div class="span5">
-										<label class="">Endereço da Unidade:</label> <input
-											type="text" name="nom_logradouro" class="input-small span12"
-											maxlength="100" required="">
-									</div>
-									<div class="span1">
-										<label class="">N°:</label> <input type="text"
-											name="num_numero" class="input-small span12" maxlength="5" required="">
-									</div>
-									<div class="span3">
-										<label class="">Região:</label> 
-										<select name="regiao.cod_regiao" id="regiao" class="span12" required="">
-											<option value="">Selecione</option>
-											<c:forEach var="regiao" items="${listaRegioes}">
-												<option value="${regiao.cod_regiao}">
-													<out>${regiao.des_regiao}</out>
-												</option>
-											</c:forEach>
-										</select>
-									</div>
-									<div class="span3">
-										<label class="">Bairro:</label> 
-										<select name="bairro.cod_bairro" id="bairro" class="span12" required="">
-											<option value="">Selecione</option>					
-										</select>
-									</div>
-								</div>
-
-								<div class="row-fluid">
-									<div class="span2">
-										<label class="">Telefone 1:</label> <input type="text"
-											name="num_tel1" class="input-small span12" maxlength="15" required="">
-									</div>
-									<div class="span2">
-										<label class="">Telefone 2:</label> <input type="text"
-											name="num_tel2" class="input-small span12" maxlength="15">
-									</div>
-									<div class="span2">
-										<label class="">Telefone 3:</label> <input type="text"
-											name="num_tel3" class="input-small span12" maxlength="15">
-									</div>
-									<div class="span6">
-										<label>Tipos de Atendimentos:</label>
-										<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos">
-											<form:options items="${tiposAtendimentosMap}"></form:options>
-										</form:select>
-									</div>									
-								</div>
-								<br>
-								<div class="span12 text-right">
-									<input type="submit" class="btn btn-primary" value="Salvar" />
-									<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" />Cancelar</a>
-								</div>
-							</form:form>
+				</div><br>
+						<div class="text-right" style="margin-right:14px">
+							<input type="submit" class="btn btn-primary" value="Salvar" />
+							<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" />Cancelar</a>
 						</div>
-					</div>
-				</div>
-			</div> -->
+			</form:form>
 		</div>
 	</div>
 </body>
@@ -268,4 +177,15 @@
 		});
 	})
 </script>
+<script>
+jQuery(function($){
+	$("#cep").mask("99999-999");
+	$("#campoTel1").mask("(99) 9999-9999");
+	$("#campoTel2").mask("(99) 9999-9999");
+	$("#campoTel3").mask("(99) 9999-9999");
+	
+
+	});
+</script>
+
 </html>

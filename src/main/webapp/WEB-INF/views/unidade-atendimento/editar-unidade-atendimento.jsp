@@ -8,15 +8,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PSI | Unidade de Atendimento</title>
+	<link rel="Shortcut Icon" href="../resources/img/favicon.ico">
 	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
-	<link rel="stylesheet" href="../resources/css/bootstrap.css" />
 </head>
 <body>
+<!--  Barra de Navegação -->
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">
-			        <img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
+	    		<a class="navbar-brand" href="../admin">
+			        <img alt="PSI" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
 			    </a>
 	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        		<span class="sr-only">Toggle navigation</span>
@@ -27,10 +28,10 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 			    <ul class="nav navbar-nav">
-			        <li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Introdução</a></li>
-			        <li class="teste"><a class="link" href="../" ><span class="glyphicon glyphicon-search" style="font-size:1em;"></span> Página Inicial</a></li>
-					<li class="activee"><a class="link" href="../unidadeAtendimento/" style="color:#fff"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
+					<li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
@@ -59,7 +60,93 @@
 			<div class="panel-body">
 				<!-- Text field - Nome Unidade Atendimento  -->
 				<div class="container-fluid">
-					<div class="row-fluid">
+				<br />
+				<form:form commandName="unidadeAtendimento" method="POST" action="alterarUnidadeAtendimento">  
+				
+					<div class="row">
+						<div class="col-xs-6 col-md-10">
+     						<label >Nome da Unidade:</label>
+    						 <input id="textinput" name="nom_uni_atendimento" value="${unidadeAtendimento.nom_uni_atendimento}" type="text" placeholder="Entre com o nome da unidade" class="form-control input-md" required="">
+ 						 </div>
+ 						<div class="col-xs-6 col-md-2">
+     						<label >CEP:</label>
+     						<input id="cep" name="num_cep" type="text" placeholder="xxxxx-xxx" value="${unidadeAtendimento.num_cep}" class="form-control input-md" required="">
+  						</div>
+ 					</div>
+ 					<br />
+ 					<div class="row">
+						<div class="col-xs-6 col-md-5">
+     						<label >Endereço:</label>
+    						 <input id="textinput" name="nom_logradouro" value="${unidadeAtendimento.nom_logradouro}" type="text" placeholder="Entre com o endereço da unidade" class="form-control input-md" required="">
+ 						 </div>
+ 						<div class="col-xs-6 col-md-1">
+     						<label >Nº:</label>
+     						<input id="textinput" name="num_numero" value="${unidadeAtendimento.num_numero}" type="text" placeholder="1030" class="form-control input-md" required="">
+  						</div>
+  						
+  						<div class="col-xs-6 col-md-3">
+     						<label >Região:</label>
+     						<select required="required" name="regiao.cod_regiao" id="regiao" class="form-control input-md">
+											<c:forEach var="regiao" items="${listaRegioes}">
+												<option value="${regiao.cod_regiao}"
+													${regiao.cod_regiao == unidadeAtendimento.regiao.cod_regiao ? 'selected' : ''}>
+													<out>${regiao.des_regiao}</out>
+												</option>
+											</c:forEach>
+							</select>
+						</div>
+						<div class="col-xs-6 col-md-3">
+     						<label >Bairro:</label>
+							<select required="required" name="bairro.cod_bairro" id="bairro" class="form-control input-md">
+											<option value="${unidadeAtendimento.bairro.cod_bairro}">
+												<out>${unidadeAtendimento.bairro.des_bairro}</out>
+											</option>
+											<c:forEach var="bairro" items="${listaBairros}">
+												<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">
+													<option value="${bairro.cod_bairro}">
+														<out>${bairro.des_bairro}</out>
+													</option>
+												</c:if>
+											</c:forEach>
+							</select>
+						</div>
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-xs-6 col-md-2">
+     						<label >Telefone 1:</label>
+    						 <input type="tel"	id="campoTel1"  value="${unidadeAtendimento.num_tel1}" placeholder="(xxx) xxxx-xxxx" name="num_tel1"   class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+ 						 </div>
+ 						
+ 						<div class="col-xs-6 col-md-2">
+     						<label >Telefone 2:</label>
+     						 <input type="tel"	id="campoTel2" value="${unidadeAtendimento.num_tel2}" placeholder="(xxx) xxxx-xxxx" name="num_tel2"   class="form-control input-md" maxlength="15"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+  						</div>
+
+  						<div class="col-xs-6 col-md-2">
+     						<label >Telefone 3:</label>
+     						 <input type="tel"	id="campoTel3" value="${unidadeAtendimento.num_tel3}" placeholder="(xxx) xxxx-xxxx" name="num_tel3"   class="form-control input-md" maxlength="15"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+     						 
+  						</div>
+  							
+  						<div class="col-xs-6 col-md-6">
+     						<label>Tipos de Atendimentos:</label>
+										<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos">
+											<form:options items="${tiposAtendimentosMap}"></form:options>
+										</form:select>
+						</div>
+					</div>
+				</div><br>
+				<div class="text-right style="margin-right:14px">
+									<input type="hidden" name="cod_unidade_atendimento" id="cod_unidade_atendimento" value="${unidadeAtendimento.cod_unidade_atendimento}" /> 
+									<input type="submit" class="btn btn-primary" value="Salvar" /> 
+										<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" >Cancelar</a>
+								</div>
+			</form:form>	
+					
+					
+					
+					<!--  <div class="row-fluid">
 						<div class="col-md-12">
 							<form:form commandName="unidadeAtendimento" method="POST" action="alterarUnidadeAtendimento">  
 								<div class="row-fluid">
@@ -150,13 +237,12 @@
 									<input type="submit" class="btn btn-primary" value="Salvar" /> 
 										<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" >Cancelar</a>
 								</div>
-							</form:form>
+							</form:form> -->
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+
 
 </body>
 
@@ -187,5 +273,15 @@
 			  }
 		});
 	})
+</script>
+<script>
+jQuery(function($){
+	$("#cep").mask("99999-999");
+	$("#campoTel1").mask("(99) 9999-9999");
+	$("#campoTel2").mask("(99) 9999-9999");
+	$("#campoTel3").mask("(99) 9999-9999");
+	
+
+	});
 </script>
 </html>

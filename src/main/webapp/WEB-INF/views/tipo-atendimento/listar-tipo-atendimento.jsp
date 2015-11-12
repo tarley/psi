@@ -10,6 +10,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 	<title>PSI | Tipo Atendimento</title>
+	<link rel="Shortcut Icon" href="../resources/img/favicon.ico">
 	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../resources/css/theme.css"/>
@@ -25,12 +26,13 @@
 </head>
 
 <body>
+		<!--  Barra de Navegação -->
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">
-        			<img alt="Brand" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
-      			</a>
+	    		<a class="navbar-brand" href="../admin">
+			        <img alt="PSI" class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
+			    </a>
 	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        		<span class="sr-only">Toggle navigation</span>
 	        		<span class="icon-bar"></span>
@@ -38,25 +40,26 @@
 	        		<span class="icon-bar"></span>
 				</button>
     		</div>
-	   		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
-		   		<ul class="nav navbar-nav">
-					<li class="teste"><a href="../admin" class="link"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Introdução</a></li>
-			        <li class="teste"><a class="link" href="../" ><span class="glyphicon glyphicon-search" style="font-size:1em;"></span> Página Inicial</a></li>
-			      	<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Unidade de Atendimento</a></li>
+		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
+			    <ul class="nav navbar-nav">
+					<li class="teste"><a class="link" href="../admin"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Página Inicial</a></li>
+					<li  class="teste"><a class="link" href="../unidadeAtendimento/" ><span class="glyphicon glyphicon-credit-card" style="font-size:1em;"></span> Unidade de Atendimento</a></li>
 					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento<span class="sr-only">(current)</span></a></li>
-	      		</ul>
-	      		<ul class="nav navbar-nav navbar-right">
-	      		  	<li class="dropdown" >
-	          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
-	          			<ul class="dropdown-menu">
-	            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-	            			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
-	          			</ul>
-	        		</li>
-	        	</ul>
-   			</div>
- 		</div>
+					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
+		      	</ul>
+      			<ul class="nav navbar-nav navbar-right">
+      		  		<li class="dropdown" >
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
+          			<ul class="dropdown-menu">
+            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
+          			</ul>
+        		</li>
+        		</ul>
+    		</div>
+  		</div>
 	</nav> <!-- Encerra a barra de navegação -->
+
 <br /><br /><br />
 	<div class="container centralizarBox">
 		<c:if test="${param.msg == '1' }">
