@@ -27,7 +27,7 @@
 				<form action="pesquisar" method="get">
 					<div class="input-group">
 						<input type="text" id="des_bairro" name="descricao" value="${empty filtro ? '' : filtro}" 
-							class="form-control input-lg" placeholder="DIGITE O BAIRRO">
+							class="form-control input-lg autocomplete-suggestions" placeholder="DIGITE O BAIRRO">
 						<span class="input-group-btn">
 							<button class="btn btn-primary btn-lg" type="submit">
 								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Pesquisar
@@ -84,8 +84,19 @@
 	<%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 	
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3wiTHEdnl0vLz_Z4FZbivw6JsnjT2Pg&signed_in=true&callback=initMap"></script>
-	
+ 	<script src="/psi/resources/js/jquery.autocomplete.js" type="text/javascript"></script>
+
 	<script>
+	
+// 	var countries = [
+// 	                 { value: 'Teste', data: 'AD' },
+// 	                 { value: 'Teste', data: 'BR' },
+// 	              ];
+
+//      $('#des_bairro').autocomplete({
+//          lookup: countries,
+//      });
+	
 	$(document).ready(function(){
 		$(".table").dataTable({
 			"lengthChange": false,
