@@ -24,9 +24,8 @@
 	</script>
 
 </head>
-
 <body>
-		<!--  Barra de Navegação -->
+	<!--  Barra de Navegação -->
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
@@ -42,16 +41,17 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 			    <ul class="nav navbar-nav">
-					<li class="teste"><a class="link" href="../admin"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Página Inicial</a></li>
-					<li  class="teste"><a class="link" href="../unidadeAtendimento/" ><span class="glyphicon glyphicon-credit-card" style="font-size:1em;"></span> Unidade de Atendimento</a></li>
-					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento<span class="sr-only">(current)</span></a></li>
+					<li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Unidade de Atendimento</a></li>
+					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Tipo de Atendimento<span class="sr-only">(current)</span></a></li>
+					<li class="teste"><a href="../usuario/" class="link"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário</a></li>
 					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
           			<ul class="dropdown-menu">
-            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<li><a href="#"><span class="glyphicon glyphicon-wrench" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
             			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
           			</ul>
         		</li>
@@ -59,8 +59,7 @@
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
-
-<br /><br /><br />
+	<br />
 	<div class="container centralizarBox">
 		<c:if test="${param.msg == '1' }">
 			<div class="modal fade" id="Modal-Cadastrado_Sucesso">
@@ -149,19 +148,13 @@
 			</div>
 		</div>
 	</div>
-		<br /><br /><br /><br /><br /><br /><br /><br /><br />
-		
-	<div id="footer" style="bottom:0; position:relative;">
+	<div id="footer">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
 		</div>
-	</div>
+    </div>
 
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-		window.setTimeout('$(".alert").remove()',10000);
-	});
 
 	// Ativar conteúdo de Busca e Estilização
 	$('#tipoAtendimentoTable')

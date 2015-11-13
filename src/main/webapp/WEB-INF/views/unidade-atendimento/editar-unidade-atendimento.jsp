@@ -28,16 +28,17 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 			    <ul class="nav navbar-nav">
-					<li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
-					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
+					<li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li class="activee"><a class="link" href="../unidadeAtendimento/" style="color:#fff"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+					<li class="teste"><a href="../usuario/" class="link"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário</a></li>
 					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
           			<ul class="dropdown-menu">
-            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<li><a href="#"><span class="glyphicon glyphicon-wrench" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
             			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
           			</ul>
         		</li>
@@ -62,11 +63,10 @@
 				<div class="container-fluid">
 				<br />
 				<form:form commandName="unidadeAtendimento" method="POST" action="alterarUnidadeAtendimento">  
-				
 					<div class="row">
 						<div class="col-xs-6 col-md-10">
      						<label >Nome da Unidade:</label>
-    						 <input id="textinput" name="nom_uni_atendimento" value="${unidadeAtendimento.nom_uni_atendimento}" type="text" placeholder="Entre com o nome da unidade" class="form-control input-md" required="">
+    						 <input id="textinput" name="nom_uni_atendimento" value="${unidadeAtendimento.nom_uni_atendimento}" type="text" class="form-control input-md" required="">
  						 </div>
  						<div class="col-xs-6 col-md-2">
      						<label >CEP:</label>
@@ -76,38 +76,37 @@
  					<br />
  					<div class="row">
 						<div class="col-xs-6 col-md-5">
-     						<label >Endereço:</label>
-    						 <input id="textinput" name="nom_logradouro" value="${unidadeAtendimento.nom_logradouro}" type="text" placeholder="Entre com o endereço da unidade" class="form-control input-md" required="">
+     						<label >Rua / Avenida:</label>
+    						 <input id="textinput" name="nom_logradouro" value="${unidadeAtendimento.nom_logradouro}" type="text" class="form-control input-md" required="">
  						 </div>
  						<div class="col-xs-6 col-md-1">
      						<label >Nº:</label>
-     						<input id="textinput" name="num_numero" value="${unidadeAtendimento.num_numero}" type="text" placeholder="1030" class="form-control input-md" required="">
+     						<input id="textinput" name="num_numero" value="${unidadeAtendimento.num_numero}" type="text" class="form-control input-md" required="">
   						</div>
-  						
   						<div class="col-xs-6 col-md-3">
      						<label >Região:</label>
      						<select required="required" name="regiao.cod_regiao" id="regiao" class="form-control input-md">
-											<c:forEach var="regiao" items="${listaRegioes}">
-												<option value="${regiao.cod_regiao}"
-													${regiao.cod_regiao == unidadeAtendimento.regiao.cod_regiao ? 'selected' : ''}>
-													<out>${regiao.des_regiao}</out>
-												</option>
-											</c:forEach>
+								<c:forEach var="regiao" items="${listaRegioes}">
+									<option value="${regiao.cod_regiao}"
+										${regiao.cod_regiao == unidadeAtendimento.regiao.cod_regiao ? 'selected' : ''}>
+										<out>${regiao.des_regiao}</out>
+									</option>
+								</c:forEach>
 							</select>
 						</div>
 						<div class="col-xs-6 col-md-3">
      						<label >Bairro:</label>
 							<select required="required" name="bairro.cod_bairro" id="bairro" class="form-control input-md">
-											<option value="${unidadeAtendimento.bairro.cod_bairro}">
-												<out>${unidadeAtendimento.bairro.des_bairro}</out>
-											</option>
-											<c:forEach var="bairro" items="${listaBairros}">
-												<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">
-													<option value="${bairro.cod_bairro}">
-														<out>${bairro.des_bairro}</out>
-													</option>
-												</c:if>
-											</c:forEach>
+								<option value="${unidadeAtendimento.bairro.cod_bairro}">
+									<out>${unidadeAtendimento.bairro.des_bairro}</out>
+								</option>
+								<c:forEach var="bairro" items="${listaBairros}">
+									<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">
+										<option value="${bairro.cod_bairro}">
+											<out>${bairro.des_bairro}</out>
+										</option>
+									</c:if>
+								</c:forEach>
 							</select>
 						</div>
 					</div>
@@ -115,36 +114,32 @@
 					<div class="row">
 						<div class="col-xs-6 col-md-2">
      						<label >Telefone 1:</label>
-    						 <input type="tel"	id="campoTel1"  value="${unidadeAtendimento.num_tel1}" placeholder="(xxx) xxxx-xxxx" name="num_tel1"   class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+    						 <input type="tel"	id="campoTel1"  value="${unidadeAtendimento.num_tel1}" placeholder="(xx) xxxx-xxxx" name="num_tel1" required="required" class="form-control input-md" maxlength="15" required="" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
  						 </div>
  						
  						<div class="col-xs-6 col-md-2">
      						<label >Telefone 2:</label>
-     						 <input type="tel"	id="campoTel2" value="${unidadeAtendimento.num_tel2}" placeholder="(xxx) xxxx-xxxx" name="num_tel2"   class="form-control input-md" maxlength="15"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+     						 <input type="tel"	id="campoTel2" value="${unidadeAtendimento.num_tel2}" placeholder="(xx) xxxx-xxxx" name="num_tel2" class="form-control input-md" maxlength="15"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
   						</div>
 
   						<div class="col-xs-6 col-md-2">
      						<label >Telefone 3:</label>
-     						 <input type="tel"	id="campoTel3" value="${unidadeAtendimento.num_tel3}" placeholder="(xxx) xxxx-xxxx" name="num_tel3"   class="form-control input-md" maxlength="15"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
-     						 
+     						 <input type="tel"	id="campoTel3" value="${unidadeAtendimento.num_tel3}" placeholder="(xx) xxxx-xxxx" name="num_tel3" class="form-control input-md" maxlength="15"  onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
   						</div>
-  							
   						<div class="col-xs-6 col-md-6">
      						<label>Tipos de Atendimentos:</label>
-										<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos">
-											<form:options items="${tiposAtendimentosMap}"></form:options>
-										</form:select>
+								<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos" required="required">
+									<form:options items="${tiposAtendimentosMap}"></form:options>
+								</form:select>
 						</div>
 					</div>
 				</div><br>
 				<div class="text-right style="margin-right:14px">
-									<input type="hidden" name="cod_unidade_atendimento" id="cod_unidade_atendimento" value="${unidadeAtendimento.cod_unidade_atendimento}" /> 
-									<input type="submit" class="btn btn-primary" value="Salvar" /> 
-										<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" >Cancelar</a>
-								</div>
+					<input type="hidden" name="cod_unidade_atendimento" id="cod_unidade_atendimento" value="${unidadeAtendimento.cod_unidade_atendimento}" /> 
+					<input type="submit" class="btn btn-primary" value="Salvar" /> 
+						<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" >Cancelar</a>
+				</div>
 			</form:form>	
-					
-					
 					
 					<!--  <div class="row-fluid">
 						<div class="col-md-12">
@@ -229,8 +224,6 @@
 										</form:select>
 									</div>									
 								</div>
-								
-								 
 								<br>
 								<div class="span12 text-right">
 									<input type="hidden" name="cod_unidade_atendimento" id="cod_unidade_atendimento" value="${unidadeAtendimento.cod_unidade_atendimento}" /> 
@@ -241,9 +234,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-
+			<div id="footer">
+				<div class="container centralizadora">
+					<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
+				</div>
+		    </div>
 </body>
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
@@ -275,13 +270,11 @@
 	})
 </script>
 <script>
-jQuery(function($){
-	$("#cep").mask("99999-999");
-	$("#campoTel1").mask("(99) 9999-9999");
-	$("#campoTel2").mask("(99) 9999-9999");
-	$("#campoTel3").mask("(99) 9999-9999");
-	
-
+	jQuery(function($){
+		$("#cep").mask("99999-999");
+		$("#campoTel1").mask("(99) 9999-9999");
+		$("#campoTel2").mask("(99) 9999-9999");
+		$("#campoTel3").mask("(99) 9999-9999");
 	});
 </script>
 </html>

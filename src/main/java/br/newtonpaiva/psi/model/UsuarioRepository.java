@@ -20,5 +20,42 @@ public class UsuarioRepository {
 		
 		return	usuarios;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Usuario> listar() {
+		return manager.createQuery("select u from Usuario u").getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Usuario> listar(String columns) {
+		return manager.createQuery("select " + columns + " from Usuario u").getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Usuario> listarPorDescricao(String nom_usuario) {
+		return manager.createQuery("select u from Usuario u where ta.nom_usuario like :nom_usuario")
+				.setParameter("nom_usuario", nom_usuario + "%").getResultList();
+	}
+	
+	public void remover(Usuario usuario) {
+		manager.remove(usuario);
+	}
+	
+	public void remover(Long cod_usuario) {
+		Usuario usuarioARemover = buscaPorId(cod_usuario);
+		remover(usuarioARemover);
+	}
+	
+	public void adiciona(Usuario usuario) {
+		manager.persist(usuario);
+	}
+
+	public void altera(Usuario usuario) {
+		manager.merge(usuario);
+	}
+	
+	public Usuario buscaPorId(Long cod_usuario) {
+		return manager.find(Usuario.class, cod_usuario);
+	}
 
 }

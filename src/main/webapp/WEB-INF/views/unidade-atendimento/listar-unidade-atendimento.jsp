@@ -24,7 +24,6 @@
 	
 	</script>
 </head>
-
 <body>
 	<!--  Barra de Navegação -->
 	<nav class="navbar-default">
@@ -42,16 +41,17 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 			    <ul class="nav navbar-nav">
-					<li  class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
 					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento<span class="sr-only">(current)</span></a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+					<li class="teste"><a href="../usuario/" class="link"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário</a></li>
 					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
-          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
           			<ul class="dropdown-menu">
-            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<li><a href="#"><span class="glyphicon glyphicon-wrench" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
             			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
           			</ul>
         		</li>
@@ -59,6 +59,7 @@
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
+	<br />
 	
 	<div class="container centralizarBox">
 		<c:if test="${param.msg == '1' }">
@@ -97,18 +98,14 @@
 		        				<h4>Dados Editados Com Sucesso !</h4>
 		        			</center>
 		      			</div>
-		      		
 		      			<div class="modal-footer" style="text-align:center">
 		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
 		      			</div>
 	    			</div><!-- /.modal-content -->
 	  			</div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
-			
 		</c:if> 
-		
 		<div class="panel panel-primary">
-			
 			<div class="panel-heading">
 				<h3 class="panel-title" style="float:left;padding-top:8px">
 					<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
@@ -126,8 +123,7 @@
 						<tr class="tr_padrao"> 
 					      <th>Nome</th>
 					      <th>Regiao</th>  					     
-					       <th>Bairro</th>
-					       <th>Atendimento</th>
+					      <th>Bairro</th>
 					      <th>Telefone</th>
 						  <th>Ação</th>
 						</tr>
@@ -138,9 +134,6 @@
 		   						 <td style="text-align: left; vertical-align:middle">${unidadeAtendimento.nom_uni_atendimento}</td>
 		   						 <td style="text-align: center ; vertical-align:middle">${unidadeAtendimento.regiao.des_regiao}</td>
 		   						 <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.bairro.des_bairro}</td>
-		   						 <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.tipoAtendimento.des_tipo_atendimento}</td>	
-							     
-							 						    	
 							     <td style="text-align: center; vertical-align:middle">${unidadeAtendimento.num_tel1}</td>
 								 <td>
 									<div class="centralizadora" style="width:100%">

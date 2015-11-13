@@ -91,7 +91,7 @@ public class TipoAtendimentoController {
 	}
 
 	@RequestMapping("alterarTipoAtendimento")
-	@Transactional//aNtendimento??
+	@Transactional
 	public String altera(@Valid TipoAtendimento tipo_antendimento, BindingResult result) {
 
 		repository.altera(tipo_antendimento);
@@ -106,7 +106,6 @@ public class TipoAtendimentoController {
 		repository.remover(tipo_antendimento);
 
 		return "tipo-atendimento/sucesso";
-
 	}
 
 }

@@ -36,8 +36,6 @@ import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
 @RequestMapping("unidadeAtendimento")
 public class UnidadeAtendimentoController {
 	
-	//FALTA O EDITAR E CADASTRAR FUNCIONAR (MUITOS PRA MUITOS)
-	
 	@Autowired
 	UnidadeAtendimentoRepository repository;
 	@Autowired
@@ -81,7 +79,6 @@ public class UnidadeAtendimentoController {
 		return new ResponseEntity<String>("Unidade de atendimento removida com sucesso!", HttpStatus.OK);
 	}
 	
-	//Só deixa salvar o tipo atendimento PSICOLOGIA
 	@RequestMapping("cadastrarUnidadeAtendimento")
 	@Transactional
 	public String cadastrar(Model model) {
@@ -98,7 +95,6 @@ public class UnidadeAtendimentoController {
 		
 		return "unidade-atendimento/unidade-atendimento";
 	}
-	
 	
 	@RequestMapping("adicionarUnidadeAtendimento")
 	@Transactional

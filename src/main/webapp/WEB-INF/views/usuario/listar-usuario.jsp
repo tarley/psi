@@ -9,7 +9,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-	<title>PSI | Tipo Atendimento</title>
+	<title>PSI | Usuário</title>
 	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../resources/css/theme.css"/>
@@ -18,12 +18,12 @@
 	<script type="text/JavaScript" charset="utf-8">
 	
 	$(document).ready(function() {
-		$('#tipoAtendimentoTable').DataTable();
+		$('#usuarioTable').DataTable();
 	} );	
 	</script>
 </head>
-
 <body>
+	<!--  Barra de Navegação -->
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
@@ -38,25 +38,27 @@
 				</button>
     		</div>
 	   		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
-		   		<ul class="nav navbar-nav">
-					<li class="teste"><a href="../admin" class="link"><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Introdução</a></li>
-			        <li class="teste"><a class="link" href="../" ><span class="glyphicon glyphicon-search" style="font-size:1em;"></span> Página Inicial</a></li>
-			      	<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-pencil" style="font-size:1em"></span> Unidade de Atendimento</a></li>
-					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento<span class="sr-only">(current)</span></a></li>
-	      		</ul>
-	      		<ul class="nav navbar-nav navbar-right">
-	      		  	<li class="dropdown" >
-	          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
-	          			<ul class="dropdown-menu">
-	            			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-	            			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
-	          			</ul>
-	        		</li>
-	        	</ul>
-   			</div>
+			    <ul class="nav navbar-nav">
+					<li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
+					<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento</a></li>
+					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
+					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário<span class="sr-only">(current)</span></a></li>
+					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
+		      	</ul>
+      			<ul class="nav navbar-nav navbar-right">
+      		  		<li class="dropdown" >
+          			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
+          			<ul class="dropdown-menu">
+            			<li><a href="#"><span class="glyphicon glyphicon-wrench" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
+          			</ul>
+        		</li>
+        		</ul>
+    		</div>
  		</div>
 	</nav> <!-- Encerra a barra de navegação -->
-
+	<br />
+	
 	<div class="container centralizarBox">
 		<c:if test="${param.msg == '1' }">
 			<div class="modal fade" id="Modal-Cadastrado_Sucesso">
@@ -69,10 +71,9 @@
 		      			<div class="modal-body">
 		        			<center>
 		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
-		        				<h4>Novo Tipo de Atendimento Cadastrado com Sucesso !</h4>
+		        				<h4>Novo Usuário Cadastrado com Sucesso !</h4>
 		        			</center>
 		      			</div>
-		      		
 		      			<div class="modal-footer" style="text-align:center">
 		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
 		      			</div>
@@ -92,7 +93,7 @@
 		      			<div class="modal-body">
 		        			<center>
 		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
-		        				<h4>Dados de Tipo de Atendimento Editados Com Sucesso !</h4>
+		        				<h4>Usuário Editado Com Sucesso !</h4>
 		        			</center>
 		      			</div>
 		      			<div class="modal-footer" style="text-align:center">
@@ -106,37 +107,45 @@
 			<div class="panel-heading">
 				<h3 class="panel-title" style="float:left;padding-top:8px">
 					<span class="glyphicon glyphicon-list" aria-hidden="true"></span> 
-					Tipos de Atendimento Cadastrados 
+					Usuários Cadastrados 
 				</h3>
 				<form action="unidade-atendimento" method="post">
 					<div class="span12 text-right" style="padding-top:0px">
-						<input type="submit" class="btn btn-success" formaction="cadastrarTipoAtendimento" value="+ Adicionar Atendimento"/>
+						<input type="submit" class="btn btn-success" formaction="cadastrarUsuario" value="+ Adicionar Usuário"/>
 					</div>
 				</form>
 			</div>
 			<div class="panel-body">
-				<table id="tipoAtendimentoTable" class="display" cellspacing="0" width="100%">
+				<table id="usuarioTable" class="display" cellspacing="0" width="100%">
 					<thead>
 						<tr>
-							<th>Nome</th>
+							<th>Login</th>
+							<th>Senha</th>
+							<th>Usuario</th>
+							<th>Email</th>
 							<th style="text-align: center;">Editar</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${listaTipoAtendimentos}" var="tipoAtendimentos">
+						<c:forEach items="${listaUsuarios}" var="usuarios">
 							<tr class="tr_padrao">
-								<td style="text-align: left;vertical-align:middle">${tipoAtendimentos.des_tipo_atendimento}</td>
-								<td style="width: 90px; text-align: center" >
-									<div class="centralizadora">
-										<a href="editarTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}"><div class="botao" title="Editar">
-											<span class="glyphicon glyphicon-pencil botao-datableUnidade" style="color:#fff" aria-hidden="true"></span>
+								<td style="text-align: left;vertical-align:middle">${usuarios.login}</td>
+								<td style="text-align: left;vertical-align:middle">${usuarios.senha}</td>
+								<td style="text-align: left;vertical-align:middle">${usuarios.nome}</td>
+								<td style="text-align: left;vertical-align:middle">${usuarios.email}</td>
+								<td>
+									<div class="centralizadora" style="width:100%">
+										<a href="editarUsuario?id=${usuarios.codUsuario}">
+											<div class="botao" title="Editar">
+												&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+											</div>
+										</a>
+										<a href="#" onclick="remover(${usuarios.codUsuario})">
+											<div class="botao" style="background-color:#d9534f" title="Excluir">
+												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+											</div>
 										</a>
 									</div>
-									<!-- <a href="excluirTipoAtendimento?id=${tipoAtendimentos.cod_tipo_atendimento}" title="Editar">
-										<div class="botao" style="background-color:#d9534f" title="Excluir">
-												<span class="glyphicon glyphicon-trash botao-datableUnidade" aria-hidden="true"></span>
-										</div>
-									</a> -->
 								</td>
 							</tr>
 						</c:forEach>
@@ -145,26 +154,20 @@
 			</div>
 		</div>
 	</div>
-		
-		
-	<div id="footer" style="background-color:#e7e7e7; padding-top:15px;">
+	<div id="footer" style="background-color:#e7e7e7; padding-top:15px; position:absolute; bottom:0px; width:100%">
 		<div class="container centralizadora">
-			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
+			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
 		</div>
 	</div>
 
 <script type="text/javascript">
-	
-	$(document).ready(function(){
-		window.setTimeout('$(".alert").remove()',10000);
-	});
 
 	// Ativar conteúdo de Busca e Estilização
-	$('#tipoAtendimentoTable')
+	$('#usuarioTable')
 	.removeClass( 'display' )
 	.addClass('table table-striped table-bordered');
 
-	$('#tipoAtendimentoTable').DataTable( {
+	$('#usuarioTable').DataTable( {
 		language: {
 			"url": "../resources/i18n/datatables-pt_BR.json"
 		}
