@@ -16,11 +16,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<script src="../resources/js/jquery-1.11.3.min.js" type="text/javascript"></script>
-<script src="../resources/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
 
 </head>
 <body>
+		<!--  Barra de Navegação -->
 	<nav class="navbar-default">
   		<div class="container-fluid">
 	    	<div class="navbar-header">
@@ -39,7 +39,7 @@
 					<li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em;"></span> Página Inicial</a></li>
 					<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento</a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
-					<li class="activee"><a class="link" href="../usuario/" style="color:#fff"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário<span class="sr-only">(current)</span></a></li>
+					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário<span class="sr-only">(current)</span></a></li>
 					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
@@ -69,24 +69,24 @@
 						<div class="row">
 							<div class="col-xs-6 col-md-6">
 								<label>Login:</label>
-									<input type="text" name="login" id="login" maxlength="60" class="form-control input-md" required="" />
+									<input type="text" name="login" id="textinput" maxlength="60" class="form-control input-md" required="" />
 								<form:errors path="usuario.nom_usuario" cssStyle="color:red" />
 							
 							</div>
 							<div class="col-xs-6 col-md-6">
-								<label>Senha:</label> <input required="" type="password" name="senha" maxlength="8" class="form-control input-md" />
+								<label>Senha:</label> <input  id="textinput" type="password" name="senha" maxlength="8" class="form-control input-md" />
 							</div>
 						</div>
 
 						<div class="row top15">
 								<div class="col-xs-6 col-md-6">
 									<label>Nome do Usuário:</label> 
-									<input required="" type="text" name="nome" maxlength="60" class="form-control input-md">
+									<input required="" type="text" id="textinput" name="nome" maxlength="60" class="form-control input-md" />
 								</div>
 								
 								<div class="col-xs-6 col-md-6 ">
 									<label class="">Email:</label>
-									<input required=""type="text" name="email" maxlength="50" class="form-control input-md">
+									<input required="" type="text" id="textinput" name="email" maxlength="50" class="form-control input-md" />
 								</div>
 								
 						</div>
@@ -109,11 +109,11 @@
 			
 	<div id="footer" style="position:absolute; bottom:0px">
 		<div class="container centralizadora">
-			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
+			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
 		</div>
     </div>
+    <%@include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 </body>
-	
-<script src="../resources/js/jquery-1.11.3.min.js"></script>
+
 
 </html>
