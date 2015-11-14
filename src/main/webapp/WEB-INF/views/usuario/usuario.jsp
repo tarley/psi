@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="../resources/img/favicon.ico">
 	<title> PSI | Usuário</title>
 	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
-	<link rel="stylesheet" href="../resources/css/bootstrap.css"/>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -56,47 +56,61 @@
 	</nav> <!-- Encerra a barra de navegação -->
 	<br/><br/>
 	<!-- Barra | Container  -->
-		<div class="container centralizarBox">
+		<div class="container blocoPai">
 		<div class="panel panel-primary ">
 			<div class="panel-heading">
 				<h3 class="panel-title"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Cadastrar Usuário</h3>
 			</div>
 			<div class="panel-body">
-				<div class="row-fluid">
-					<div class="span12">
+				<div class="container-fluid">
+					<div class="col-xs-12 col-md-12">
 						<form action="adicionarUsuario" method="post">
-							<div class="span6">
-								<label>Login</label>
-									<input type="text" name="login" id="login" maxlength="80" class="input-small span12" required=""><br>
+						
+						
+						<div class="row">
+							<div class="col-xs-6 col-md-6">
+								<label>Login:</label>
+									<input type="text" name="login" id="login" maxlength="60" class="form-control input-md" required="" />
 								<form:errors path="usuario.nom_usuario" cssStyle="color:red" />
+							
 							</div>
-							<div class="span6">
-								<label class="">Senha</label> <input required="required"
-									type="text" name="senha" maxlength="12" class="input-small span12">
+							<div class="col-xs-6 col-md-6">
+								<label>Senha:</label> <input required="" type="text" name="senha" maxlength="8" class="form-control input-md" />
 							</div>
-							<div class="row-fluid">
-								<div class="span6">
-									<label class="">Nome do Usuário:</label> <input
-										required="required" type="text" name="nome" maxlength="70" class="input-small span12">
+						</div>
+						
+						
+					
+							
+							<div class="row top15">
+								<div class="col-xs-6 col-md-6">
+									<label>Nome do Usuário:</label> 
+									<input required="" type="text" name="nome" maxlength="60" class="form-control input-md">
 								</div>
-								<div class="span6">
-									<label class="">Email:</label> <input required="required"
-										type="text" name="email" maxlength="70" class="input-small span12">
+								
+								<div class="col-xs-6 col-md-6 ">
+									<label class="">Email:</label>
+									<input required=""type="text" name="email" maxlength="50" class="form-control input-md">
 								</div>
+								
 							</div>
-							<div class="container-fluid">
-								<div class="span12 text-right">
+	
+					
+						
+						
+					</div></div><br />
+							<div class="row col-xs-12 col-md-12">
+								<div class="text-right">
 									<input type="submit" class="btn btn-primary" value="Salvar" />
 									<a href="../usuario/" style="color:#00000" class="btn btn-default" value="Cancelar">Cancelar</a>
 								</div>
 							</div>
-						</form>
-					</div>
+							</form>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div id="footer">
+			</div>
+			
+	<div id="footer" style="position:absolute; bottom:0px">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
 		</div>
