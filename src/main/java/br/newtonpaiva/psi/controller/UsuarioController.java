@@ -62,11 +62,11 @@ public class UsuarioController {
 		return new ResponseEntity<Usuario>(listaUsuarios.get(0), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/remover/{cod_usuario}")
+	@RequestMapping(value = "/remover/{codUsuario}")
 	@Transactional
-	public ResponseEntity<String> remover(@PathVariable("cod_usuario") Long cod_usuario) {
-		repository.remover(cod_usuario);
-		return new ResponseEntity<String>("Tipo atendimento removido com sucesso!", HttpStatus.OK);
+	public ResponseEntity<String> remover(@PathVariable("codUsuario") Long codUsuario) {
+		repository.remover(codUsuario);
+		return new ResponseEntity<String>("Usuario removido com sucesso!", HttpStatus.OK);
 	}
 
 	@RequestMapping("cadastrarUsuario")

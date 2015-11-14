@@ -179,6 +179,20 @@
 	$(document).ready(function() {
 		   $('#Modal-Cadastrado_Sucesso').modal('show');
 	});
+	
+	function remover(codUsuario) {
+		//var resposta = confirm("Deseja remover esse registro?");
+	     //if (resposta == true) {
+			jQuery.ajax({ 
+				  url: 'remover/' + codUsuario,
+				  async: true,
+				  success: function(data) {
+				  	//alert(data);				  	
+				  	$("#row" + codUsuario).remove();
+				  }
+			});
+	     //}
+	}
 
 </script>
 

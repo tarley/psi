@@ -66,7 +66,7 @@
 					<div class="span12">
 						<form action="alterarUsuario" method="post">
 							<div class="span6">
-								<input type="hidden" name="cod_usuario" value="${usuario.codUsuario}" />
+								<input type="hidden" name="codUsuario" value="${usuario.codUsuario}" />
 								<label>Login</label> 
 									<input type="text" required="" name="login" id="login" value="${usuario.login}" maxlength="80" class="input-small span12"><br>
 								<form:errors path="usuario.nom_usuario" cssStyle="color:red" />
