@@ -175,20 +175,18 @@
 			},
 		});
 	
-		//window.setTimeout('$(".alert").remove()',5000);
-		
 		function remover(cod_unidade_atendimento) {
-			//var resposta = confirm("Deseja remover esse registro?");
-		     //if (resposta == true) {
+			var resposta = confirm("Deseja remover esse registro?");
+		     if (resposta == true) {
 				jQuery.ajax({ 
 					  url: 'remover/' + cod_unidade_atendimento,
 					  async: true,
 					  success: function(data) {
-					  	//alert(data);				  	
+					  	alert(data);				  	
 					  	$("#row" + cod_unidade_atendimento).remove();
 					  }
 				});
-		     //}
+		     }
 		}
 		
 		$(document).ready(function() {

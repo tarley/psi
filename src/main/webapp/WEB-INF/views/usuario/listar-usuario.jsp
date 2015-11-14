@@ -128,7 +128,7 @@
 					</thead>
 					<tbody>
 						<c:forEach items="${listaUsuarios}" var="usuarios">
-							<tr class="tr_padrao">
+							<tr class="tr_padrao" id="row${usuarios.codUsuario}">
 								<td style="text-align: left;vertical-align:middle">${usuarios.login}</td>
 								<td style="text-align: left;vertical-align:middle">${usuarios.senha}</td>
 								<td style="text-align: left;vertical-align:middle">${usuarios.nome}</td>
@@ -181,17 +181,17 @@
 	});
 	
 	function remover(codUsuario) {
-		//var resposta = confirm("Deseja remover esse registro?");
-	     //if (resposta == true) {
+		var resposta = confirm("Deseja remover esse registro?");
+	     if (resposta == true) {
 			jQuery.ajax({ 
 				  url: 'remover/' + codUsuario,
 				  async: true,
 				  success: function(data) {
-				  	//alert(data);				  	
+				  	alert(data);				  	
 				  	$("#row" + codUsuario).remove();
 				  }
 			});
-	     //}
+	     }
 	}
 
 </script>

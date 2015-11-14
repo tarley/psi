@@ -14,8 +14,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
 </head>
 <body>
 	<nav class="navbar-default">
@@ -62,9 +60,8 @@
 			<div class="panel-body">
 			<form action="alterarUsuario" method="post">
 				<div class="container-fluid">
-				<div class="col-xs-12 col-md-12">
-					<div class="row">
-						
+					<div class="col-xs-12 col-md-12">
+						<div class="row">
 							<div class="col-xs-6 col-md-6">
 								<input type="hidden" name="codUsuario" value="${usuario.codUsuario}" />
 								<label>Login</label> 
@@ -72,26 +69,22 @@
 								<form:errors path="usuario.nom_usuario" cssStyle="color:red" />
 							</div>
 							<div class="col-xs-6 col-md-6"">
-								<label class="">Senha</label> <input required=""
-									type="password" name="senha" maxlength="12" value="${usuario.senha}" class="form-control input-md">
+								<label class="">Senha</label> 
+								<input required="" type="text" name="senha" maxlength="12" value="${usuario.senha}" class="form-control input-md">
 							</div>
+						</div>
+						<div class="row top15">
+							<div class="col-xs-6 col-md-6"">
+								<label>Nome do Usuário:</label>
+								<input required="" type="text" name="nome" value="${usuario.nome}" maxlength="70" class="form-control input-md">
+							</div>
+							<div class="col-xs-6 col-md-6"">
+								<label class="">Email:</label> <input required=""
+									type="email" name="email" maxlength="70" value="${usuario.email}" class="form-control input-md">
+							</div>
+						</div>
 					</div>
-				
-							<div class="row top15">
-								<div class="col-xs-6 col-md-6"">
-									<label>Nome do Usuário:</label>
-									<input
-										required="" type="text" name="nome" value="${usuario.nome}" maxlength="70" class="form-control input-md">
-								</div>
-								<div class="col-xs-6 col-md-6"">
-									<label class="">Email:</label> <input required=""
-										type="text" name="email" maxlength="70" value="${usuario.email}" class="form-control input-md">
-								</div>
-							</div>
-				
-					
-					
-			</div></div><br />
+			</div><br />
 						<div class="row col-xs-12 col-md-12">
 								<div class="text-right">
 									<input type="submit" class="btn btn-primary" value="Salvar" />
@@ -100,12 +93,8 @@
 							</div>
 							</form>
 					</div><br />
-				
 				</div>
-		
-						
 			</div>
-
 	<div id="footer" style="position:absolute; bottom:0px">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
@@ -114,4 +103,4 @@
     <%@include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 </body>
 
-</html > -->
+</html >

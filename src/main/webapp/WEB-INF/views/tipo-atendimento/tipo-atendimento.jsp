@@ -66,7 +66,7 @@
 							<div class="row">
 								<div class="col-xs-12 col-md-12">
 		     						<label >Nome do tipo de atendimento:</label>
-		    						 <input type="text" name="des_tipo_atendimento" id="des_tipo_atendimento" maxlength="80" placeholder="Entre com o nome do tipo de atendimento" class="form-control input-md" required=""><br>
+		    						 <input type="text" name="des_tipo_atendimento" id="des_tipo_atendimento" maxlength="80" class="form-control input-md" required=""><br>
 									<form:errors path="tipoAtendimento.des_tipo_atendimento" cssStyle="color:red" />
 		 						 </div>
 		 					</div>
@@ -82,11 +82,11 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<div class="container centralizadora">
-			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
-		</div>
-    </div>
+	<div id="footer" style="position:absolute; bottom:0px">
+			<div class="container centralizadora">
+				<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
+			</div>
+    	</div>
 </body>
 	
 
