@@ -62,10 +62,9 @@
 				<h3 class="panel-title"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Cadastrar Usuário</h3>
 			</div>
 			<div class="panel-body">
+			<form action="adicionarUsuario" method="post">
 				<div class="container-fluid">
 					<div class="col-xs-12 col-md-12">
-						<form action="adicionarUsuario" method="post">
-						
 						
 						<div class="row">
 							<div class="col-xs-6 col-md-6">
@@ -75,14 +74,11 @@
 							
 							</div>
 							<div class="col-xs-6 col-md-6">
-								<label>Senha:</label> <input required="" type="text" name="senha" maxlength="8" class="form-control input-md" />
+								<label>Senha:</label> <input required="" type="password" name="senha" maxlength="8" class="form-control input-md" />
 							</div>
 						</div>
-						
-						
-					
-							
-							<div class="row top15">
+
+						<div class="row top15">
 								<div class="col-xs-6 col-md-6">
 									<label>Nome do Usuário:</label> 
 									<input required="" type="text" name="nome" maxlength="60" class="form-control input-md">
@@ -93,17 +89,18 @@
 									<input required=""type="text" name="email" maxlength="50" class="form-control input-md">
 								</div>
 								
-							</div>
+						</div>
 	
 					
 						
 						
-					</div></div><br />
+						</div></div><br />
 							<div class="row col-xs-12 col-md-12">
 								<div class="text-right">
 									<input type="submit" class="btn btn-primary" value="Salvar" />
-									<a href="../usuario/" style="color:#00000" class="btn btn-default" value="Cancelar">Cancelar</a>
+									<a href="../usuario/" style="color:#00000" class="btn btn-default" >Cancelar</a>
 								</div>
+								
 							</div>
 							</form>
 				</div>
