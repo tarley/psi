@@ -87,14 +87,13 @@
  	<script src="/psi/resources/js/jquery.autocomplete.js" type="text/javascript"></script>
 
 	<script>
-	
-// 	var countries = [
-// 	                 { value: 'Teste', data: 'AD' },
-// 	                 { value: 'Teste', data: 'BR' },
-// 	              ];
 
 //      $('#des_bairro').autocomplete({
-//          lookup: countries,
+//          serviceUrl: 'listarBairros',
+//          minChars:3,
+//          onSelect: function(suggestion) {
+//              alert('You selected ' + suggestion.value + ', ' + suggestion.data);    
+//          } 
 //      });
 	
 	$(document).ready(function(){

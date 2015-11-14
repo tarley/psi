@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.newtonpaiva.psi.model.BairroRepository;
 import br.newtonpaiva.psi.model.UnidadeAtendimento;
 import br.newtonpaiva.psi.model.UnidadeAtendimentoRepository;
 
@@ -19,6 +20,8 @@ public class HomeController {
 	
 	@Autowired
 	UnidadeAtendimentoRepository repository;
+	@Autowired
+	BairroRepository bairroRepository;
 	
 	@RequestMapping(value = "/")
 	public String home(Model model) {
@@ -54,5 +57,12 @@ public class HomeController {
 	@RequestMapping(value="fundadores", method = RequestMethod.GET)
 	public String fundadores() {		
 		return "fundadores/fundadores";
+	}
+	
+	@RequestMapping(value="listarBairros", method = RequestMethod.GET)
+	public List<String> listarBairrosPorTrecho(String query) {		
+		List<String> bairros = bairroRepository.listarBairrosPorTrecho(query);
+		
+		return bairros;
 	}
 }
