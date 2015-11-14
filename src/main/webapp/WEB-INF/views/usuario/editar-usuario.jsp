@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title> PSI | Usuário</title>
 	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
-	<link rel="stylesheet" href="../resources/css/bootstrap.css"/>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -16,8 +15,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<script src="../resources/js/jquery-1.11.3.min.js" type="text/javascript"></script>
-<script src="../resources/js/jquery.dataTables.min.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -54,56 +51,67 @@
     		</div>
  		</div>
 	</nav> <!-- Encerra a barra de navegação -->
-	<br/><br/>
-	<!-- Barra | Container  -->
-	<div class="container centralizarBox">
+
+<!--  Barra | Container -->
+  <br /><br />
+	<div class="container blocoPai">
 		<div class="panel panel-primary ">
 			<div class="panel-heading">
 				<h3 class="panel-title"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Editar Usuário</h3>
 			</div>
 			<div class="panel-body">
-				<div class="row-fluid">
-					<div class="span12">
-						<form action="alterarUsuario" method="post">
-							<div class="span6">
+			<form action="alterarUsuario" method="post">
+				<div class="container-fluid">
+				<div class="col-xs-12 col-md-12">
+					<div class="row">
+						
+							<div class="col-xs-6 col-md-6">
 								<input type="hidden" name="codUsuario" value="${usuario.codUsuario}" />
 								<label>Login</label> 
-									<input type="text" required="" name="login" id="login" value="${usuario.login}" maxlength="80" class="input-small span12"><br>
+									<input type="text" required="" name="login" id="login" value="${usuario.login}" maxlength="80" class="form-control input-md">
 								<form:errors path="usuario.nom_usuario" cssStyle="color:red" />
 							</div>
-							<div class="span6">
-								<label class="">Senha</label> <input required="required"
-									type="text" name="senha" maxlength="12" value="${usuario.senha}" class="input-small span12">
+							<div class="col-xs-6 col-md-6"">
+								<label class="">Senha</label> <input required=""
+									type="password" name="senha" maxlength="12" value="${usuario.senha}" class="form-control input-md">
 							</div>
-							<div class="row-fluid">
-								<div class="span6">
-									<label class="">Nome do Usuário:</label> <input
-										required="required" type="text" name="nome" value="${usuario.nome}" maxlength="70" class="input-small span12">
+					</div>
+				
+							<div class="row top15">
+								<div class="col-xs-6 col-md-6"">
+									<label>Nome do Usuário:</label>
+									<input
+										required="" type="text" name="nome" value="${usuario.nome}" maxlength="70" class="form-control input-md">
 								</div>
-								<div class="span6">
-									<label class="">Email:</label> <input required="required"
-										type="text" name="email" maxlength="70" value="${usuario.email}" class="input-small span12">
+								<div class="col-xs-6 col-md-6"">
+									<label class="">Email:</label> <input required=""
+										type="text" name="email" maxlength="70" value="${usuario.email}" class="form-control input-md">
 								</div>
 							</div>
-							<div class="container-fluid">
-								<div class="span12 text-right">
+				
+					
+					
+			</div></div><br />
+						<div class="row col-xs-12 col-md-12">
+								<div class="text-right">
 									<input type="submit" class="btn btn-primary" value="Salvar" />
 									<a href="../usuario/" style="color:#00000" class="btn btn-default" value="Cancelar">Cancelar</a>
 								</div>
 							</div>
-						</form>
-					</div>
+							</form>
+					</div><br />
+				
 				</div>
+		
+						
 			</div>
-		</div>
-	</div>
-	<div id="footer">
+
+	<div id="footer" style="position:absolute; bottom:0px">
 		<div class="container centralizadora">
-			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
+			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
 		</div>
     </div>
+    <%@include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
 </body>
-	
-<script src="../resources/js/jquery-1.11.3.min.js"></script>
 
-</html>
+</html > -->
