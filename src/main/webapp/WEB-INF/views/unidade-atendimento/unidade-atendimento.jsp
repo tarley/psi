@@ -142,11 +142,12 @@
 			</form:form>
 		</div>
 	</div>
-	<div id="footer">
-		<div class="container centralizadora">
-			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna</a>.</p>
-		</div>
-    </div>
+	</div>
+		<div id="footer" style="position:absolute; bottom:0px">
+			<div class="container centralizadora">
+				<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
+			</div>
+    	</div>
 </body>
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
