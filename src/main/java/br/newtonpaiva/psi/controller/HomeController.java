@@ -24,10 +24,11 @@ public class HomeController {
 	BairroRepository bairroRepository;
 	
 	@RequestMapping(value = "/")
-	public String home(Model model) {
-		List<UnidadeAtendimento> listaUnidadeAtendimento = repository.listar();
+	public String home() {
+	//public String home(Model model) {	
+		//List<UnidadeAtendimento> listaUnidadeAtendimento = repository.listar();
 		
-		model.addAttribute("listaUnidadeAtendimento", listaUnidadeAtendimento);
+		//model.addAttribute("listaUnidadeAtendimento", listaUnidadeAtendimento);
 		
 		return "home";
 	}
