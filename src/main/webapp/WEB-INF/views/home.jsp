@@ -28,7 +28,8 @@
 							class="form-control input-lg autocomplete-suggestions" placeholder="DIGITE O BAIRRO">
 						<span class="input-group-btn">
 							<button class="btn btn-primary btn-lg" type="submit">
-								<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Pesquisar
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								<span id="btn-pesquisar-txt"> Pesquisar</span>
 							</button>
 						</span>
 					</div>
@@ -36,8 +37,8 @@
 			</div>
 		</div>
 		
-		<div class="row" id="bloco-resultado">
-			<div class="col-md-6">
+		<div id="bloco-grid" class="row padding-top-30">
+			<div class="col-md-12">
 				<div class="table-responsive">
 					<table class="table table-striped">
 						<thead>
@@ -71,8 +72,11 @@
 					</table>
 				</div>
 			</div>
+		</div>
 		
-			<div class="col-md-6">
+		<div id="bloco-mapa" class="row padding-top-30">
+			<div class="col-md-12">
+				<a href="#" class="btn btn-default margin-bottom-5">Voltar</a>
 				<div id="mapa"></div>
 			</div>
 		</div>
@@ -95,62 +99,97 @@
 //      });
 	
 	$(document).ready(function(){
+		if ( document.getElementById("des_bairro").value == "" ) {
+			$("#bloco-grid").hide();
+			$("#bloco-mapa").hide();
+			$("#bloco-pesquisa").css("margin-top", "15%");
+		} else {
+			$("#bloco-mapa").hide();
+		}
+		
+		$("form").submit(function(e){
+			// Verifica se o bairro foi informado. 
+			// Caso não, nada acontece. Caso sim, sobe o campo de pesquisa
+			// E exibe a grid de resultados
+			if ( document.getElementById("des_bairro").value == "" ) {
+				e.preventDefault();
+			} else {
+				if ( $("#bloco-grid").css("display") == "none" && $("#bloco-mapa").css("display") == "none" ) {
+					$("#bloco-pesquisa").animate({
+						"margin-top": "-=15%"
+					}, "slow", function() {
+						$("#bloco-grid").show("slow");
+					});
+				}
+			}
+		});
+		
 		$(".table").dataTable({
 			"lengthChange": false,
 			"pageLength": 6,
 			"searching": false,
-			"columnDefs" : [ 
-			   { "orderable" : false, "targets" : 2
-				} ],
-				"language" : {
-					"url" : "resources/i18n/datatables-pt_BR.json"
-				}
+			"columnDefs" : [
+			   { "orderable" : false, "targets" : 2 }
+		   	],
+			"language" : {
+				"url" : "resources/i18n/datatables-pt_BR.json"
+			}
+		});
+		
+		$("#bloco-mapa a").click(function(){
+			$("#bloco-mapa").fadeOut("slow", function(){
+				$("#bloco-grid").fadeIn("slow");
 			});
 		});
+	});
 
-		function setLocation(endereco, nome, tel1, tel2, tel3, tipoAtendimento) {
+		function setLocation(endereco, nome, tel1, tel2, tel3, tipoAtendimento)
+		{
+			$("#bloco-grid").fadeOut("slow", function(){
+				$("#bloco-mapa").fadeIn("slow");
+				
+				var map = new google.maps.Map(document.getElementById('mapa'));
+				var geocoder = new google.maps.Geocoder();
+				var marker = new google.maps.Marker({
+					map : map,
+					icon: "resources/img/hospital-icon.png"
+				});
 	
-			var map = new google.maps.Map(document.getElementById('mapa'));
-			var geocoder = new google.maps.Geocoder();
-			var marker = new google.maps.Marker({
-				map : map,
-				icon: "resources/img/hospital-icon.png"
-			});
-
-			var infowindow = new google.maps.InfoWindow(), marker;
-			var contentString =
-		      '<p><b>' + nome + '</b></p>'+
-		      '<p><b> Tipo de Atendimento: </b>' + tipoAtendimento + '</p>'+
-		      '<p>' + endereco + '</p>'+
-		      '<p>' + tel1 + '</p>'+
-		      '<p>' + tel2 + '</p>'+
-		      '<p>' + tel3 + '</p>';
-
-			google.maps.event.addListener(marker, 'click',
-				(function(marker, i) {
-					return function() {
+				var infowindow = new google.maps.InfoWindow(), marker;
+				var contentString =
+			      '<p><b>' + nome + '</b></p>'+
+			      '<p><b> Tipo de Atendimento: </b>' + tipoAtendimento + '</p>'+
+			      '<p>' + endereco + '</p>'+
+			      '<p>' + tel1 + '</p>'+
+			      '<p>' + tel2 + '</p>'+
+			      '<p>' + tel3 + '</p>';
+	
+				google.maps.event.addListener(marker, 'click',
+					(function(marker, i) {
+						return function() {
+							infowindow.setContent(contentString);
+							infowindow.open(map, marker);
+						}
+					})(marker))
+	
+				geocoder.geocode({
+					'address' : endereco + ', Brasil', 'region' : 'BR'
+				}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						if (results[0]) {
+							var latitude = results[0].geometry.location.lat();
+							var longitude = results[0].geometry.location.lng();
+							var location = new google.maps.LatLng(latitude, longitude);
+	
+							marker.setPosition(location);
+							map.setCenter(location);
+							map.setZoom(16);
+						}
+						
 						infowindow.setContent(contentString);
 						infowindow.open(map, marker);
 					}
-				})(marker))
-
-			geocoder.geocode({
-				'address' : endereco + ', Brasil', 'region' : 'BR'
-			}, function(results, status) {
-				if (status == google.maps.GeocoderStatus.OK) {
-					if (results[0]) {
-						var latitude = results[0].geometry.location.lat();
-						var longitude = results[0].geometry.location.lng();
-						var location = new google.maps.LatLng(latitude, longitude);
-
-						marker.setPosition(location);
-						map.setCenter(location);
-						map.setZoom(16);
-					}
-					
-					infowindow.setContent(contentString);
-					infowindow.open(map, marker);
-				}
+				});
 			});
 		}
 
