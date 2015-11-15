@@ -37,7 +37,7 @@
 					<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento</a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
 					<li class="activee"><a class="link" href="#" style="color:#fff"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário<span class="sr-only">(current)</span></a></li>
-					<li class="teste"><a href="../../" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
+					<li class="teste"><a href="../" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
