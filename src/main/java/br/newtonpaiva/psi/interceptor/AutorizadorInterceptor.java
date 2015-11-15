@@ -12,10 +12,13 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			  throws Exception {
 
 	      String uri = request.getRequestURI();
-	      if(uri.endsWith("login") || uri.endsWith("efetuaLogin") || uri.equals("/psi/") ||
-	    		   uri.contains("resources") || uri.contains("/pesquisar") 
-	    		   || uri.contains("/listarBairros") || uri.equals("www.projetopsi.com.br")
-	    		   || uri.equals("projetopsi.com.br")){
+	      StringBuffer url = request.getRequestURL();
+	      
+	      if(uri.endsWith("login") || uri.endsWith("efetuaLogin") || uri.equals("/psi/")
+    		  	   || uri.contains("resources") || uri.contains("/pesquisar") 
+	    		   || uri.contains("/listarBairros") 
+	    		   || url.equals("http://www.projetopsi.com.br") || url.equals("http://www.projetopsi.com.br")
+	    	  	   || url.equals("http://www.projetopsi.com.br/") || url.equals("http://www.projetopsi.com.br/")){
 	        return true;
 	      }
 
