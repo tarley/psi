@@ -120,7 +120,6 @@
 					<thead>
 						<tr>
 							<th>Login</th>
-							<th>Senha</th>
 							<th>Usuario</th>
 							<th>Email</th>
 							<th style="text-align: center;">Editar</th>
@@ -130,7 +129,6 @@
 						<c:forEach items="${listaUsuarios}" var="usuarios">
 							<tr class="tr_padrao" id="row${usuarios.codUsuario}">
 								<td style="text-align: left;vertical-align:middle">${usuarios.login}</td>
-								<td style="text-align: left;vertical-align:middle">${usuarios.senha}</td>
 								<td style="text-align: left;vertical-align:middle">${usuarios.nome}</td>
 								<td style="text-align: left;vertical-align:middle">${usuarios.email}</td>
 								<td>
