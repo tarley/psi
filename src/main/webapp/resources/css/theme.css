@@ -21,7 +21,8 @@
 .navbar .link { font-size: 0.7em; }
 
 @media (max-width: 400px){
-	#btn-pesquisar-txt {
+	#btn-pesquisar-txt,
+	.navbar .link {
 	    display: none;
 	}
 }
