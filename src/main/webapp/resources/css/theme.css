@@ -6,13 +6,6 @@
  	text-decoration:none;
  	padding:0;
  	outline:none;
- 	
- }
-header {
-	background-color: #006da3;
-	border-bottom: 4px solid #1e90ff;
-	margin-bottom: 50px;
-	padding-left: 20px; 
 }
 
 .input-lg { text-align: center; }
@@ -20,6 +13,8 @@ header {
 .no-margin { margin: 0; }
 
 .no-padding { padding: 0; }
+
+.navbar .link { font-size: 0.7em; }
 
 #bloco-resultado { padding-top: 30px; }
 
