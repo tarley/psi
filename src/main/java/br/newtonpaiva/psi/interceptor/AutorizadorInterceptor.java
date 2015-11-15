@@ -3,30 +3,38 @@ package br.newtonpaiva.psi.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import br.newtonpaiva.psi.controller.HomeController;
+import br.newtonpaiva.psi.controller.LoginController;
+
 public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
-	
+
 	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object controller) 
-			  throws Exception {
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object controller)
+			throws Exception {
+		
+		if (isAllowedController(controller) || isUsuarioLogado(request)) {
+			return true;
+		}
 
-	      String uri = request.getRequestURI();
-	      StringBuffer url = request.getRequestURL();
-	      
-	      if(uri.endsWith("login") || uri.endsWith("efetuaLogin") || uri.equals("/psi/")
-    		  	   || uri.contains("resources") || uri.contains("/pesquisar") 
-	    		   || uri.contains("/listarBairros") 
-	    		   || url.equals("http://www.projetopsi.com.br") || url.equals("http://www.projetopsi.com.br")
-	    	  	   || url.equals("http://www.projetopsi.com.br/") || url.equals("http://www.projetopsi.com.br/")){
-	        return true;
-	      }
+		response.sendRedirect(request.getContextPath() + "/login");
+		return false;
+	}
 
-	      if(request.getSession().getAttribute("usuarioLogado") != null) {
-	        return true;
-	      }
+	private boolean isUsuarioLogado(HttpServletRequest request) {
+		return request.getSession().getAttribute("usuarioLogado") != null;
+	}
 
-	      response.sendRedirect("login");
-	      return false;
-	  }
+	private boolean isAllowedController(Object controller) {
+		if (controller instanceof HandlerMethod) {
+			HandlerMethod handler = (HandlerMethod) controller;
+			
+			return handler.getBean() instanceof HomeController ||
+				   handler.getBean() instanceof LoginController;
+		}
+		
+		return true;
+	}
 }

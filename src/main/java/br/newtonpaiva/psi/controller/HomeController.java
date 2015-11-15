@@ -40,11 +40,6 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/admin")
-	public String adminPanel() {
-		return "admin";
-	}
-	
 	@RequestMapping(value="pesquisar", method = RequestMethod.GET)
 	public String pesquisar(String descricao, Model model) {
 		List<UnidadeAtendimento> listaRegioes = repository.listarPorRegiao(descricao.trim());
