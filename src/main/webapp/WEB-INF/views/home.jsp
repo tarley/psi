@@ -78,6 +78,7 @@
 			<div class="col-md-12">
 				<a href="#" class="btn btn-default margin-bottom-5">Voltar</a>
 				<div id="mapa"></div>
+				<a href="#" class="btn btn-default margin-top-5 hide">Voltar</a>
 			</div>
 		</div>
 		

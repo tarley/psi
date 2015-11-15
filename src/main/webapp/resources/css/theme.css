@@ -15,6 +15,7 @@
 .no-padding { padding: 0; }
 
 .margin-bottom-5 { margin-bottom: 5px !important; }
+.margin-top-5 { margin-top: 5px !important; }
 
 .padding-top-30 { padding-top: 30px; }
 
@@ -24,6 +25,12 @@
 	#btn-pesquisar-txt,
 	.navbar .link {
 	    display: none;
+	}
+}
+
+@media (max-width: 400px){
+	#bloco-mapa .margin-top-5 {
+	    display: inline-block !important;
 	}
 }
 
