@@ -35,13 +35,13 @@
 					<li class="teste"><a href="../unidadeAtendimento/" class="link"><span class="glyphicon glyphicon-credit-card" style="font-size:1em"></span> Unidade de Atendimento</a></li>
 					<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Tipo de Atendimento</a></li>
 					<li class="activee"><a class="link" href="../usuario/" style="color:#fff"><span class="glyphicon glyphicon-user" style="font-size:1em"></span> Usuário<span class="sr-only">(current)</span></a></li>
-					<li class="teste"><a href="/psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
+					<li class="teste"><a href="../../" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
 		      	</ul>
       			<ul class="nav navbar-nav navbar-right">
       		  		<li class="dropdown" >
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
           			<ul class="dropdown-menu">
-            			<li><a href="#"><span class="glyphicon glyphicon-wrench" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            			<!-- <li><a href="#"><span class="glyphicon glyphicon-wrench" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li> -->
             			<li><a href="../logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
           			</ul>
         		</li>
@@ -97,7 +97,7 @@
 			</div>
 	<div id="footer" style="position:absolute; bottom:0px">
 		<div class="container centralizadora">
-			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
+			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
 		</div>
     </div>
     <%@include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
