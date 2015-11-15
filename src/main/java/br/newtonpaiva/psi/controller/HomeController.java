@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.newtonpaiva.psi.model.BairroRepository;
 import br.newtonpaiva.psi.model.UnidadeAtendimento;
@@ -61,7 +62,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="listarBairros", method = RequestMethod.GET)
-	public List<String> listarBairrosPorTrecho(String query) {		
+	public @ResponseBody Object listarBairrosPorTrecho(String query) {		
 		List<String> bairros = bairroRepository.listarBairrosPorTrecho(query);
 		
 		return bairros;

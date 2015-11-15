@@ -91,13 +91,18 @@
 
 	<script>
 
-//      $('#des_bairro').autocomplete({
-//          serviceUrl: 'listarBairros',
-//          minChars:3,
-//          onSelect: function(suggestion) {
-//              alert('You selected ' + suggestion.value + ', ' + suggestion.data);    
-//          } 
-//      });
+     $('#des_bairro').autocomplete({
+         serviceUrl: 'listarBairros',
+         minChars:3,
+         type : "GET",
+         transformResult: function(response) {
+     		return {      	
+     		  suggestions: $.map($.parseJSON(response), function(item) {
+     		      return { value: item };
+     		   })
+     		}
+         }
+     });
 	
 	$(document).ready(function(){
 		if ( document.getElementById("des_bairro").value == "" ) {
