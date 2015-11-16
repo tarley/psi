@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PSI</title>
+	<link rel="Shortcut Icon" href="../resources/img/favicon.ico">
 	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
 </head>
 <body>
@@ -15,7 +16,7 @@
 		<div class="container-fluid">	
 			<a id="logo" class="navbar-brand logo" href="#"><img  alt="PSI" src="resources/img/logo.png"></a>
 			<a id="acesso" class="navbar-brand link pull-right" href="admin"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i>&nbsp;Acesso Restrito</a>
-			<a id="fundadores" class="navbar-brand link pull-right" href="fundadores"><i class="glyphicon glyphicon-education" aria-hidden="true"></i>&nbsp;<span>Fundadores</span></a>
+			<a id="fundadores" class="navbar-brand link pull-right" href="fundadores/"><i class="glyphicon glyphicon-education" aria-hidden="true"></i>&nbsp;<span>Fundadores</span></a>
 		</div>
 	</nav>
 	
