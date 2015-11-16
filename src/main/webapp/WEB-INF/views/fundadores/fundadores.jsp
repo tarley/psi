@@ -462,6 +462,21 @@
                         </ul>
                     </div>
                 </div>
+                 <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="../resources/img/fundadores/psicologia/Kamila_Braga.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                        <h4>Kamila Braga</h4>
+                        <p class="text-muted">Psicologia</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-sm-3">
                     <div class="team-member">
                         <img src="../resources/img/fundadores/psicologia/Katrine_Arruda.JPG" class="img-responsive img-circle img-fundadores" alt="">
