@@ -66,7 +66,7 @@
 							<div class="row">
 								<div class="col-xs-12 col-md-12">
 								<input type="hidden" name="cod_tipo_atendimento" value="${tipoAtendimento.cod_tipo_atendimento}" />
-		     						<label >Nome do tipo de atenndimento:</label>
+		     						<label >Nome do tipo de atendimento:</label>
 		    						 <input type="text" required="" name="des_tipo_atendimento" id="des_tipo_atendimento" value="${tipoAtendimento.des_tipo_atendimento}" maxlength="80" class="form-control input-md"><br>
 								<form:errors path="tipoAtendimento.des_tipo_atendimento" cssStyle="color:red" />
 									<form:errors path="tipoAtendimento.des_tipo_atendimento" cssStyle="color:red" />
