@@ -8,9 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title> PSI | Painel Fundadores</title>
-    <link rel="Shortcut Icon" href="resources/img/favicon.ico">
+    <link rel="Shortcut Icon" href="../resources/img/favicon.ico">
     <%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
 	<link rel="stylesheet" href="../resources/css/thumbnail.css" />
+	<link rel="stylesheet" href="../resources/css/fundadores.css" />
 	    <!--[if lt IE 9]>
 	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -34,184 +35,212 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 		    <ul class="nav navbar-nav">
-				<li class="teste"><a class="link" href="../admin" ><span class="glyphicon glyphicon-home" style="font-size:1em"></span> Página Inicial</a></li>
-				<li  class="teste"><a class="link" href="../unidadeAtendimento/" ><span class="glyphicon glyphicon-pencil" style="font-size:1em;"></span> Cadastrar Unidade</a></li>
-				<li class="teste"><a href="../tipoAtendimento/" class="link"><span class="glyphicon glyphicon-edit" style="font-size:1em"></span> Cadastrar Tipo de Atendimento</a></li>
-				<li class="teste"><a href="../../psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Pesquisar Unidade</a></li>
+				<li class="teste"><a href="../../psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Voltar à Pesquisa de Unidade</a></li>
 	      	</ul>
-      		<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown" >
-         			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Olá, Administrador<span class="caret"></span></a>
-         			<ul class="dropdown-menu">
-	           			<li><a href="#"><span class="glyphicon glyphicon-cog" style="font-size:1em;"></span> &nbsp;Gerenciar Contas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-	           			<li><a href="logout"><span class="glyphicon glyphicon-share-alt" style="font-size:1em"></span>&nbsp; Sair  </a></li>
-         			</ul>
-       			</li>
-        	</ul>
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
 	<br /> <br/>
-	<div class="consdfatainer">
-  
-	    <div class="row col-md-12">
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	      
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	
-	        <div class="col-md-3">            
-	           <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png" alt="...">
-	            </div>
-	      	</div>        
+	<div class="container">	
+		<div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Sistemas de informação - 8º Periodo</h2>
+            </div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/adelaide.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Adelaide Antunes</h4>
+                     <p class="text-muted">Desenvolvedora</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/amanda.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Amanda Rosa</h4>
+                     <p class="text-muted">Desenvolvedora</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/breno.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Breno Rica</h4>
+                     <p class="text-muted">Desenvolvedor</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/diego.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Diego Martins</h4>
+                     <p class="text-muted">Desenvolvedor</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/filipe.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Filipe Duarte</h4>
+                     <p class="text-muted">Desenvolvedor</p>
+                 </div>
+           </div>  
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/leo.PNG" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Leonardo Silva</h4>
+                     <p class="text-muted">Tester</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/mariana.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Mariana Braga</h4>
+                     <p class="text-muted">Desenvolvedora</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/priscila.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Priscila Romagnoli</h4>
+                     <p class="text-muted">Desenvolvedora</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/rafael.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Rafael Pessoa</h4>
+                     <p class="text-muted">Tester</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si8/tulio.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Túlio Bandeira</h4>
+                     <p class="text-muted">Tester</p>
+                 </div>
+           </div>
+	    </div>
+	    <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Sistemas de informação - 4º Periodo</h2>
+            </div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si4/ater.JPG" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Ater</h4>
+                     <p class="text-muted">Sistemas de Informação</p>
+                 </div>
+           	</div>
+           	<div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si4/bruno.PNG" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Bruno</h4>
+                     <p class="text-muted">Sistemas de Informação</p>
+                 </div>
+           </div>
+	    	<div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si4/carina.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Carina</h4>
+                     <p class="text-muted">Sistemas de Informação</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si4/douglas.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Douglas</h4>
+                     <p class="text-muted">Sistemas de Informação</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si4/Napoliana.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Napoliana</h4>
+                     <p class="text-muted">Sistemas de Informação</p>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si4/Pedro.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Pedro</h4>
+                     <p class="text-muted">Sistemas de Informação</p>
+                 </div>
+           </div>
+            <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/si4/Vivian.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Vivian</h4>
+                     <p class="text-muted">Sistemas de Informação</p>
+                 </div>
+           </div>
+	    </div>
+	    <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Psicologia - 4º Periodo</h2>
+            </div>
+	    </div>
+	    <div class="row">
+		    <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Eloha_Costa.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Eloha Costa</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+        	</div>
+         	 <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Ingrid_Gabriella.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Ingrid Gabriella</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+           	</div>
+           	 <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Jade_Ester.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Jade Ester</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+           	</div>
+           	 <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Katrine_Arruda.JPG" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Katrine Arruda</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+           	</div>
+           	 <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Patricia_Antonia.JPG" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Patricia Antônia</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+           	</div>
+           	 <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Prof.Francisco.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Prof.Francisco</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+           	</div>
+           	 <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Rayna_Ferreira.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Rayna Ferreira</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+           	</div>
+           	 <div class="col-sm-3">
+                 <div class="text-center">
+                     <img src="../resources/img/fundadores/psicologia/Thais_Goncalves.jpg" class="img-responsive img-circle img-fundadores" alt="">
+                     <h4>Thais Gonçalves</h4>
+                     <p class="text-muted">Psicologia</p>
+                 </div>
+           	</div> 
+         </div>       
 	        
-	  	</div>
-	  	<div class="row col-md-12">
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	      
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	
-	        <div class="col-md-3">            
-	           <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png" alt="...">
-	            </div>
-	      	</div>        
-	        
-	  	</div>
-	  	<div class="row col-md-12">
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	      
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	
-	        <div class="col-md-3">            
-	            <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png"" alt="...">
-	            </div>
-	      	</div>
-	
-	        <div class="col-md-3">            
-	           <div class="thumbnail">
-	                <div class="caption">
-	                    <h4>Nome do aluno</h4>
-	                    <p>Sistemas de informação</p>	                   
-	                    <a href="" class="label label-info" rel="tooltip" title="Facebook">Facebook</a></p>
-	                	<img src="../resources/img/si.jpg">
-	                </div>
-	                <img src="../resources/img/400x300.png" alt="...">
-	            </div>
-	      	</div>        
-	        
-	  	</div>
-	  
-	</div><!-- /.container -->
-	
-	<div id="footer" style="background-color:#e7e7e7; padding-top:15px; position:absolute; bottom:0px; width:100%">
-		<div class="container centralizadora">
-			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador Tarley Lanna.</p>
-		</div>
-	</div>
+</div>
+
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%> 
 <script src="../resources/js/thumbnail.js"></script> 
 </body>
