@@ -100,7 +100,7 @@
            <div class="col-sm-3">
                  <div class="text-center">
                      <img src="../resources/img/fundadores/si8/priscila.jpg" class="img-responsive img-circle img-fundadores" alt="">
-                     <h4>Priscila Romagnoli</h4>
+                     <h4>Priscilla Romagnoli</h4>
                      <p class="text-muted">Desenvolvedora</p>
                  </div>
            </div>

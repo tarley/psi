@@ -13,9 +13,9 @@
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">	
-			<a class="navbar-brand logo" href="#"><img  alt="PSI" src="resources/img/logo.png"></a>
-			<a class="navbar-brand link pull-right" href="admin">Acesso Restrito</a>
-			<a class="navbar-brand link pull-right" href="fundadores/">Fundadores</a>
+			<a id="logo" class="navbar-brand logo" href="#"><img  alt="PSI" src="resources/img/logo.png"></a>
+			<a id="acesso" class="navbar-brand link pull-right" href="admin"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i>&nbsp;Acesso Restrito</a>
+			<a id="fundadores" class="navbar-brand link pull-right" href="fundadores"><i class="glyphicon glyphicon-education" aria-hidden="true"></i>&nbsp;<span>Fundadores</span></a>
 		</div>
 	</nav>
 	
