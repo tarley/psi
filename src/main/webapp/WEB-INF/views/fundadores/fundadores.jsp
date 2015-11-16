@@ -185,7 +185,7 @@
                 <div class="col-sm-3">
                     <div class="team-member">
                         <img src="../resources/img/fundadores/si8/priscila.jpg" class="img-responsive img-circle img-fundadores" alt="">
-                        <h4>Priscila Romagnoli</h4>
+                        <h4>Priscilla Romagnoli</h4>
                         <p class="text-muted">Desenvolvedora</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
