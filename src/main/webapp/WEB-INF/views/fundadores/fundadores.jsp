@@ -54,7 +54,7 @@
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
-	<div class="container">
+	<div class="container container-fundador">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Fundadores do Sistema</h2>
