@@ -18,9 +18,9 @@
 
 	<script type="text/JavaScript" charset="utf-8">
 	
-	$(document).ready(function() {
-		$('#GerenciarUnidade').DataTable();
-	} );	
+		$(document).ready(function() {
+			$('#GerenciarUnidade').DataTable();
+		} );	
 	
 	</script>
 </head>
@@ -142,8 +142,9 @@
 												&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 											</div>
 										</a>
-										<a href="#" onclick="remover(${unidadeAtendimento.cod_unidade_atendimento})">
-											<div class="botao" style="background-color:#d9534f" title="Excluir">
+										<a href="#" >
+											<div class="botao" id="botao" style="background-color:#d9534f" title="Excluir">
+												<input type="hidden" value="${unidadeAtendimento.cod_unidade_atendimento}" class="input_cod_unidade" id="input_cod_unidade">
 												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 											</div>
 										</a>
@@ -154,6 +155,50 @@
 					</tbody>
 				</table>
 			</div>
+			<!-- Modal confirmação de exclusão -->
+			<div class="modal fade" id="Modal-Confirma_Exclusao">
+	  			<div class="modal-dialog" >
+	    			<div class="modal-content">
+	      				<div class="modal-header">
+	        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	       					 <h4 class="modal-title"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Mensagem de Notificação</h4>
+	     				 </div>
+		      			<div class="modal-body">
+		        			<center>
+		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
+		        				<h4>Tem certeza que deseja excluir a unidade de atendimento?</h4>
+		        			</center>
+		      			</div>		      		
+		      			<div class="modal-footer" style="text-align:center">
+		      				<button type="button" id="button_confirma_exclusao" class="btn btn-default button_confirma_exclusao" data-dismiss="modal">Confirmar</button>
+		      				<input type="hidden" value="" class="modal_cod_unidade" id="modal_cod_unidade">
+		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      			</div>
+	    			</div><!-- /.modal-content -->
+	  			</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+			<!-- Modal exclusão com sucesso -->
+			<div class="modal fade" id="Modal-Exclusao_Sucesso">
+	  			<div class="modal-dialog" >
+	    			<div class="modal-content">
+	      				<div class="modal-header">
+	        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	       					 <h4 class="modal-title"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>Mensagem de Notificação</h4>
+	     				 </div>
+		      			<div class="modal-body ">
+		        			<center>
+		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
+		        				<div class="texto_confirmacao" id="texto_confirmacao">
+		        					
+	        					</div>
+		        			</center>
+		      			</div>		      		
+		      			<div class="modal-footer" style="text-align:center">
+		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      			</div>
+	    			</div><!-- /.modal-content -->
+	  			</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
 		</div>
 	</div>
 	<div id="footer">
@@ -175,7 +220,7 @@
 			},
 		});
 	
-		function remover(cod_unidade_atendimento) {
+		/*function remover(cod_unidade_atendimento) {
 			var resposta = confirm("Deseja remover esse registro?");
 		     if (resposta == true) {
 				jQuery.ajax({ 
@@ -187,15 +232,38 @@
 					  }
 				});
 		     }
-		}
+		}*/
 		
 		$(document).ready(function() {
 			   $('#Modal-Editado_Sucesso').modal('show');
 			});
-		$(document).ready(function() {
-			   $('#Modal-Cadastrado_Sucesso').modal('show');
+		$(document).ready(function() 
+		{
+		   $('#Modal-Cadastrado_Sucesso').modal('show');
+		});
+		$(".botao").click(function()
+		{
+			var cod_unidade = $('.input_cod_unidade',this).val();
+			$('.modal_cod_unidade').val(cod_unidade);
+			$('#Modal-Confirma_Exclusao').modal('show');
+			//alert(cod);
+		});
+		$(".button_confirma_exclusao").click(function()
+		{
+			var cod_unidade = $('.modal_cod_unidade').val();
+			jQuery.ajax({ 
+				  url: 'remover/' + cod_unidade,
+				  async: true,
+				  success: function(data) 
+				  {
+				  	$(".texto_confirmacao").html("<h4>"+data+"</h4>");
+			  		$('#Modal-Exclusao_Sucesso').modal('show');
+				  	//alert(data);			  	
+				  	$("#row" + cod_unidade).remove();
+				  	
+				  }
 			});
-
+		});
 	</script>
 </body>
 </html>
