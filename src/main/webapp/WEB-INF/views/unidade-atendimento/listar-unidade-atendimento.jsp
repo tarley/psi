@@ -143,7 +143,7 @@
 											</div>
 										</a>
 										<a href="#" >
-											<div class="botao" id="botao" style="background-color:#d9534f" title="Excluir">
+											<div class="botao botaoExluir" id="botao" style="background-color:#d9534f" title="Excluir">
 												<input type="hidden" value="${unidadeAtendimento.cod_unidade_atendimento}" class="input_cod_unidade" id="input_cod_unidade">
 												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 											</div>
@@ -241,7 +241,7 @@
 		{
 		   $('#Modal-Cadastrado_Sucesso').modal('show');
 		});
-		$(".botao").click(function()
+		$(".botaoExluir").click(function()
 		{
 			var cod_unidade = $('.input_cod_unidade',this).val();
 			$('.modal_cod_unidade').val(cod_unidade);

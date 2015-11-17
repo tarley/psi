@@ -130,7 +130,7 @@
   						<div class="col-xs-6 col-md-6">
      						<label>Tipos de Atendimento:</label>
 								<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos" required="required">
-									<form:options items="${tiposAtendimentosMap}"></form:options>
+									<form:options items="${tiposAtendimentosMap}" ></form:options>
 								</form:select>
 						</div>
 					</div>
