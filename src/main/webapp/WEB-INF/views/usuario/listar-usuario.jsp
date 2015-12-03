@@ -154,7 +154,7 @@
 	</div>
 </div>
 	<br /><br /><br /><br /><br /><br /><br /><br />
-	<div id="clear"></div>
+	<div id="clear" style="padding-bottom:12px"></div>
 	<div id="footer">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
