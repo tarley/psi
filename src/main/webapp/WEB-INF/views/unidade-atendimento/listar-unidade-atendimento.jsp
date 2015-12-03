@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="../resources/js/datatables.min.js"></script>
 
 	<script type="text/JavaScript" charset="utf-8">
-	
+	 
 		$(document).ready(function() {
 			$('#GerenciarUnidade').DataTable();
 		} );	
@@ -157,7 +157,7 @@
 			</div>
 			<!-- Modal confirmação de exclusão -->
 			<div class="modal fade" id="Modal-Confirma_Exclusao">
-	  			<div class="modal-dialog" >
+	  			<div class="modal-dialog" > 
 	    			<div class="modal-content">
 	      				<div class="modal-header">
 	        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

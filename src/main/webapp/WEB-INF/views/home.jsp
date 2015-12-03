@@ -20,7 +20,7 @@
 			<a id="sugestao" class="navbar-brand link pull-right" href="mailto:tarley.lana@gmail.com"><i class="glyphicon glyphicon-flag" aria-hidden="true"></i>&nbsp;<span>Sugerir unidade</span></a>
 		</div>
 	</nav>
-	
+	 
 	<section class="container blocoPai">
 		
 		<div class="row" id="bloco-pesquisa">

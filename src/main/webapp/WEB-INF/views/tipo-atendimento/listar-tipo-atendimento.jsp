@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="../resources/css/datatables.min.css"/>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../resources/css/theme.css"/>
-
+ 
 	<script type="text/javascript" src="../resources/js/datatables.min.js"></script>
 	<script type="text/JavaScript" charset="utf-8">
 	

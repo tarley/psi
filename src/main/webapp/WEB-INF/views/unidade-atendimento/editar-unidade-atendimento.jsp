@@ -11,7 +11,7 @@
 	<link rel="Shortcut Icon" href="../resources/img/favicon.ico">
 	<%@include file="/WEB-INF/views/shared/_estilos_basicos.jsp"%>
 </head>
-<body>
+<body> 
 <!--  Barra de Navegação -->
 	<nav class="navbar-default">
   		<div class="container-fluid">
