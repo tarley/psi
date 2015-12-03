@@ -125,7 +125,7 @@
 					      <th>Regiao</th>  					     
 					      <th>Bairro</th>
 					      <th>Telefone</th>
-						  <th>Ação</th>
+						  <th style="text-align: center;">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -170,7 +170,7 @@
 		        			</center>
 		      			</div>		      		
 		      			<div class="modal-footer" style="text-align:center">
-		      				<button type="button" id="button_confirma_exclusao" class="btn btn-default button_confirma_exclusao" data-dismiss="modal">Confirmar</button>
+		      				<button type="button" id="button_confirma_exclusao" class="btn btn-primary button_confirma_exclusao" data-dismiss="modal">Confirmar</button>
 		      				<input type="hidden" value="" class="modal_cod_unidade" id="modal_cod_unidade">
 		        			<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 		      			</div>
@@ -221,20 +221,6 @@
 				"url": "../resources/i18n/datatables-pt_BR.json"
 			},
 		});
-	
-		/*function remover(cod_unidade_atendimento) {
-			var resposta = confirm("Deseja remover esse registro?");
-		     if (resposta == true) {
-				jQuery.ajax({ 
-					  url: 'remover/' + cod_unidade_atendimento,
-					  async: true,
-					  success: function(data) {
-					  	alert(data);				  	
-					  	$("#row" + cod_unidade_atendimento).remove();
-					  }
-				});
-		     }
-		}*/
 		
 		$(document).ready(function() {
 			   $('#Modal-Editado_Sucesso').modal('show');

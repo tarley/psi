@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page session="false"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -111,7 +112,12 @@
 				</h3>
 				<form action="unidade-atendimento" method="post">
 					<div class="span12 text-right" style="padding-top:0px">
-						<input type="submit" class="btn btn-success" formaction="cadastrarUsuario" value="+ Adicionar Usuário"/>
+						<c:if test="${fn:length(listaUsuarios) lt 2}">
+							<p>&nbsp;</p>
+						</c:if>
+						<c:if test="${fn:length(listaUsuarios) gt 1}">
+							<input type="submit" class="btn btn-success" formaction="cadastrarUsuario" value="+ Adicionar Usuário"/>
+						</c:if>
 					</div>
 				</form>
 			</div>
@@ -122,7 +128,7 @@
 							<th>Login</th>
 							<th>Usuario</th>
 							<th>Email</th>
-							<th style="text-align: center;">Editar</th>
+							<th style="text-align: center;">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -138,11 +144,14 @@
 												&nbsp;<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 											</div>
 										</a>
-										<a href="#" onclick="remover(${usuarios.codUsuario})">
-											<div class="botao" style="background-color:#d9534f" title="Excluir">
-												<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-											</div>
-										</a>
+										<c:if test="${fn:length(listaUsuarios) gt 1}">
+											<a href="#" onclick="remover(${usuarios.codUsuario})">
+												<div class="botao botaoExluir" style="background-color:#d9534f" title="Excluir">
+													<input type="hidden" value="${usuarios.codUsuario}" class="input_cod_usuario" id="input_cod_usuario">
+													<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+												</div>
+											</a>
+										</c:if>
 									</div>
 								</td>
 							</tr>
@@ -150,6 +159,50 @@
 					</tbody>
 				</table>
 			</div>
+			<!-- Modal confirmação de exclusão -->
+			<div class="modal fade" id="Modal-Confirma_Exclusao">
+	  			<div class="modal-dialog" > 
+	    			<div class="modal-content">
+	      				<div class="modal-header">
+	        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	       					 <h4 class="modal-title"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Mensagem de Notificação</h4>
+	     				 </div>
+		      			<div class="modal-body">
+		        			<center>
+		        				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="font-size:35px;color:#d9534f;"></span> </br/>
+		        				<h4>Tem certeza que deseja excluir este usuario?</h4>
+		        			</center>
+		      			</div>		      		
+		      			<div class="modal-footer" style="text-align:center">
+		      				<button type="button" id="button_confirma_exclusao" class="btn btn-primary button_confirma_exclusao" data-dismiss="modal">Confirmar</button>
+		      				<input type="hidden" value="" class="modal_cod_usuario" id="modal_cod_usuario">
+		        			<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+		      			</div>
+	    			</div><!-- /.modal-content -->
+	  			</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+			<!-- Modal exclusão com sucesso -->
+			<div class="modal fade" id="Modal-Exclusao_Sucesso">
+	  			<div class="modal-dialog" >
+	    			<div class="modal-content">
+	      				<div class="modal-header">
+	        				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	       					 <h4 class="modal-title"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>Mensagem de Notificação</h4>
+	     				 </div>
+		      			<div class="modal-body ">
+		        			<center>
+		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
+		        				<div class="texto_confirmacao" id="texto_confirmacao">
+		        					
+	        					</div>
+		        			</center>
+		      			</div>		      		
+		      			<div class="modal-footer" style="text-align:center">
+		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      			</div>
+	    			</div><!-- /.modal-content -->
+	  			</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
 		</div>
 	</div>
 </div>
@@ -182,19 +235,29 @@
 		   $('#Modal-Cadastrado_Sucesso').modal('show');
 	});
 	
-	function remover(codUsuario) {
-		var resposta = confirm("Deseja remover esse registro?");
-	     if (resposta == true) {
-			jQuery.ajax({ 
-				  url: 'remover/' + codUsuario,
-				  async: true,
-				  success: function(data) {
-				  	alert(data);				  	
-				  	$("#row" + codUsuario).remove();
-				  }
+	$(".botaoExluir").click(function()
+			{
+				var cod_usuario = $('.input_cod_usuario',this).val();
+				$('.modal_cod_usuario').val(cod_usuario);
+				$('#Modal-Confirma_Exclusao').modal('show');
+				//alert(cod);
 			});
-	     }
-	}
+			$(".button_confirma_exclusao").click(function()
+			{
+				var cod_usuario = $('.modal_cod_usuario').val();
+				jQuery.ajax({ 
+					  url: 'remover/' + cod_usuario,
+					  async: true,
+					  success: function(data) 
+					  {
+					  	$(".texto_confirmacao").html("<h4>"+data+"</h4>");
+				  		$('#Modal-Exclusao_Sucesso').modal('show');
+					  	//alert(data);			  	
+					  	$("#row" + cod_usuario).remove();
+					  	
+					  }
+				});
+			});
 
 </script>
 
