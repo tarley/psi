@@ -21,12 +21,14 @@
 
 .navbar .link { font-size: 0.7em; }
 
-#fundadores { font-size: 0.9em; }
+#sugestao { font-size: 0.9em; }
 
 @media (max-width: 400px){
 	#btn-pesquisar-txt,
 	#acesso,
-	#fundadores span { display: none; }
+	#fundadores span,
+	#sugestao span { display: none; }
+	
 	#logo { width: 200px; }
 }
 
