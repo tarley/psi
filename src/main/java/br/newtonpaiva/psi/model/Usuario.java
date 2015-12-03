@@ -22,6 +22,8 @@ public class Usuario {
 	
 	private String Senha;
 	
+	private int Perfil;
+	
 	public Long getCodUsuario() {
 		return Cod_Usuario;
 	}
@@ -61,5 +63,15 @@ public class Usuario {
 	public void setSenha(String senha) {
 		Senha = senha;
 	}
+
+	public int getPerfil() {
+		return Perfil;
+	}
+
+	public void setPerfil(int perfil) {
+		Perfil = perfil;
+	}
+	
+	
 
 }

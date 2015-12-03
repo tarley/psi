@@ -1,9 +1,11 @@
 package br.newtonpaiva.psi.model;
 
+import java.security.MessageDigest;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -12,7 +14,9 @@ public class UsuarioRepository {
 	private EntityManager manager;
 
 	@SuppressWarnings("unchecked")
-	public List<Usuario> verificaUsuario(String login, String senha) {
+	public List<Usuario> verificaUsuario(String login, String senha) throws Exception 
+	{
+		senha = sha256(senha);
 		
 		List<Usuario> usuarios = manager
 				.createQuery("select u from Usuario u where u.Des_Login = :login and u.Senha = :senha")
@@ -46,16 +50,42 @@ public class UsuarioRepository {
 		remover(usuarioARemover);
 	}
 	
-	public void adiciona(Usuario usuario) {
-		manager.persist(usuario);
+	public void adiciona(Usuario usuario) throws Exception
+	{			
+	     usuario.setSenha(sha256(usuario.getSenha()));
+		
+		 manager.persist(usuario);
 	}
 
-	public void altera(Usuario usuario) {
+	public void altera(Usuario usuario) throws Exception
+	{
+		usuario.setSenha(sha256(usuario.getSenha()));
+		
 		manager.merge(usuario);
 	}
 	
 	public Usuario buscaPorId(Long cod_usuario) {
 		return manager.find(Usuario.class, cod_usuario);
+	}
+	
+	public String sha256(String senha)  throws Exception
+	{		
+		String senhaOriginal = senha;
+		
+		 MessageDigest md = MessageDigest.getInstance("SHA-256");
+	     md.update(senhaOriginal.getBytes());
+	     
+	     byte byteData[] = md.digest();
+	     
+	     StringBuffer sb = new StringBuffer();
+	     for (int i = 0; i < byteData.length; i++) 
+	     {
+	         sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+	     }
+	     
+	     String senhaHash = sb.toString();
+	     
+	     return senhaHash;		
 	}
 
 }

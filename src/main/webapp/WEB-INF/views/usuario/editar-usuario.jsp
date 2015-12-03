@@ -70,7 +70,7 @@
 							</div>
 							<div class="col-xs-6 col-md-6"">
 								<label class="">Senha</label> 
-								<input required="" type="text" name="senha" maxlength="12" value="${usuario.senha}" class="form-control input-md">
+								<input required="" type="text" name="senha" maxlength="12" value="***********" class="form-control input-md">
 							</div>
 						</div>
 						<div class="row top15">

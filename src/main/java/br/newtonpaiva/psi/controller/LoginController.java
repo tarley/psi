@@ -17,7 +17,8 @@ public class LoginController {
 	UsuarioRepository repository;
 	
 	@RequestMapping("efetuaLogin")
-	public String efetuaLogin(Usuario usuario, Model model, HttpSession session) {
+	public String efetuaLogin(Usuario usuario, Model model, HttpSession session) throws Exception 
+	{
 		
 		List<Usuario> usuarios = repository.verificaUsuario(usuario.getLogin(), usuario.getSenha());
 		

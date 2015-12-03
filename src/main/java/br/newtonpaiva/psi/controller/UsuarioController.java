@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.newtonpaiva.psi.model.UnidadeAtendimento;
 import br.newtonpaiva.psi.model.Usuario;
 import br.newtonpaiva.psi.model.UsuarioRepository;
 
@@ -77,7 +76,7 @@ public class UsuarioController {
 
 	@RequestMapping("adicionarUsuario")
 	@Transactional
-	public String adicionar(@Valid Usuario usuario, BindingResult result) {
+	public String adicionar(@Valid Usuario usuario, BindingResult result) throws Exception {
 
 		repository.adiciona(usuario);
 
@@ -86,7 +85,8 @@ public class UsuarioController {
 
 	@RequestMapping("editarUsuario")
 	@Transactional
-	public String editar(Long id, Model model) {
+	public String editar(Long id, Model model)
+	{
 		Usuario usr = repository.buscaPorId(id);
 		model.addAttribute("usuario", usr);
 		return "usuario/editar-usuario";
@@ -94,7 +94,8 @@ public class UsuarioController {
 
 	@RequestMapping("alterarUsuario")
 	@Transactional
-	public String altera(@Valid Usuario usuario, BindingResult result) {
+	public String altera(@Valid Usuario usuario, BindingResult result) throws Exception 
+	{
 
 		repository.altera(usuario);
 
