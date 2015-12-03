@@ -60,7 +60,7 @@
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
 	<br />
-	
+	<div id="tudo">
 	<div class="container centralizarBox">
 		<c:if test="${param.msg == '1' }">
 			<div class="modal fade" id="Modal-Cadastrado_Sucesso">
@@ -95,7 +95,7 @@
 		      			<div class="modal-body">
 		        			<center>
 		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
-		        				<h4>Dados Editados Com Sucesso !</h4>
+		        				<h4>Dados editados com sucesso !</h4>
 		        			</center>
 		      			</div>
 		      			<div class="modal-footer" style="text-align:center">
@@ -165,14 +165,14 @@
 	     				 </div>
 		      			<div class="modal-body">
 		        			<center>
-		        				<span class="glyphicon glyphicon-ok" aria-hidden="true" style="font-size:35px;color:#5CB85C;"></span> </br/>
-		        				<h4>Tem certeza que deseja excluir a unidade de atendimento?</h4>
+		        				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="font-size:35px;color:#d9534f;"></span> </br/>
+		        				<h4>Tem certeza que deseja excluir essa unidade de atendimento?</h4>
 		        			</center>
 		      			</div>		      		
 		      			<div class="modal-footer" style="text-align:center">
 		      				<button type="button" id="button_confirma_exclusao" class="btn btn-default button_confirma_exclusao" data-dismiss="modal">Confirmar</button>
 		      				<input type="hidden" value="" class="modal_cod_unidade" id="modal_cod_unidade">
-		        			<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		        			<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 		      			</div>
 	    			</div><!-- /.modal-content -->
 	  			</div><!-- /.modal-dialog -->
@@ -201,11 +201,13 @@
 			</div><!-- /.modal -->
 		</div>
 	</div>
+	</div>
+	<div id="clear"></div>
 	<div id="footer">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
 		</div>
-    </div>
+	</div>
 
 	<script type="text/javascript">
 		// Ativar conteúdo de Busca e Estilização

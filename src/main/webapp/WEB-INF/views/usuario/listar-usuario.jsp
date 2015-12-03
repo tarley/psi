@@ -58,7 +58,7 @@
  		</div>
 	</nav> <!-- Encerra a barra de navegação -->
 	<br />
-	
+	<div id="tudo">
 	<div class="container centralizarBox">
 		<c:if test="${param.msg == '1' }">
 			<div class="modal fade" id="Modal-Cadastrado_Sucesso">
@@ -152,11 +152,15 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer" style="background-color:#e7e7e7; padding-top:15px; position:absolute; bottom:0px; width:100%">
+</div>
+	<br /><br /><br /><br /><br /><br /><br /><br />
+	<div id="clear"></div>
+	<div id="footer">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
 		</div>
 	</div>
+
 
 <script type="text/javascript">
 

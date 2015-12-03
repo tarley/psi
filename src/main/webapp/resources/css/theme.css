@@ -21,6 +21,8 @@
 
 .navbar .link { font-size: 0.7em; }
 
+#fundadores { font-size: 0.9em; }
+#acesso { font-size: 0.9em; }
 #sugestao { font-size: 0.9em; }
 
 @media (max-width: 400px){
@@ -200,6 +202,18 @@ a:link, a:visited, a:active {
 .teste:hover{ background-color:#555; color:#fff !important}
 .teste a:hover{  color:#fff !important; }
 a.link{ font-size:1em;   color:#fff; }
-#footer{ background-color:#e7e7e7; padding-top:15px; position:relative; bottom:0; width:100% }
+
+html, body {height: 84.7%;}
+
+#tudo { min-height: 84.7%; position: relative; }
+
+* html #tudo { height: 84.7%; /* hack para IE6 que trata height como min-height */}
+
+#footer {
+	background-color:#e7e7e7;
+	padding-top:15px;
+	position:relative;
+	bottom:0; width:100% 
+	}
 
 										

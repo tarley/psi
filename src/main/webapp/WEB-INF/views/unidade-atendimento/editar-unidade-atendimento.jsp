@@ -49,7 +49,7 @@
 	<br />
 	<br /><br />
 	<br />
-
+	<div id="tudo">
 	<!-- Barra | Container  -->
 	<div class="container centralizarBox">
 		<div class="panel panel-primary ">
@@ -135,111 +135,24 @@
 						</div>
 					</div>
 				</div><br>
-				<div class="text-right style="margin-right:14px">
+				<div class="text-right" style="margin-right:14px">
 					<input type="hidden" name="cod_unidade_atendimento" id="cod_unidade_atendimento" value="${unidadeAtendimento.cod_unidade_atendimento}" /> 
 					<input type="submit" class="btn btn-primary" value="Salvar" /> 
 						<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" >Cancelar</a>
 				</div>
 			</form:form>	
 					
-					<!--  <div class="row-fluid">
-						<div class="col-md-12">
-							<form:form commandName="unidadeAtendimento" method="POST" action="alterarUnidadeAtendimento">  
-								<div class="row-fluid">
-									<div class="span10">
-										<label>Nome da Unidade de Atendimento</label> <input
-											required="required" class="input-small span12" maxlength="80"
-											value="${unidadeAtendimento.nom_uni_atendimento}" type="text"
-											name="nom_uni_atendimento"><br>
-									</div>
-									<div class="span2">
-										<label class="">CEP:</label> <input required="required"
-											type="text" name="num_cep" maxlength="12"
-											value="${unidadeAtendimento.num_cep}"
-											class="input-small span12">
-									</div>
-								</div>
-
-								<div class="row-fluid">
-									<div class="span5">
-										<label class="">Endereço da Unidade:</label> <input
-											required="required" type="text" name="nom_logradouro"
-											value="${unidadeAtendimento.nom_logradouro}"
-											maxlength="100" class="input-small span12">
-									</div>
-									<div class="span1">
-										<label class="">N°:</label> <input required="required"
-											type="text" name="num_numero" maxlength="5"
-											value="${unidadeAtendimento.num_numero}"
-											class="input-small span12">
-									</div>
-									<div class="span3">
-										<label class="">Região:</label> <select required="required"
-											name="regiao.cod_regiao" id="regiao" class="span12">
-											<c:forEach var="regiao" items="${listaRegioes}">
-												<option value="${regiao.cod_regiao}"
-													${regiao.cod_regiao == unidadeAtendimento.regiao.cod_regiao ? 'selected' : ''}>
-													<out>${regiao.des_regiao}</out>
-												</option>
-											</c:forEach>
-										</select>
-									</div>
-									<div class="span3">
-										<label class="">Bairro:</label> 
-										<select required="required" name="bairro.cod_bairro" id="bairro" class="span12">
-											<option value="${unidadeAtendimento.bairro.cod_bairro}">
-												<out>${unidadeAtendimento.bairro.des_bairro}</out>
-											</option>
-											<c:forEach var="bairro" items="${listaBairros}">
-												<c:if test="${unidadeAtendimento.regiao.cod_regiao == bairro.regiao.cod_regiao}">
-													<option value="${bairro.cod_bairro}">
-														<out>${bairro.des_bairro}</out>
-													</option>
-												</c:if>
-											</c:forEach>
-										</select>
-									</div>
-								</div>
-
-								<div class="row-fluid">
-									<div class="span2">
-										<label class="">Telefone 1:</label> <input required="required"
-											type="text" name="num_tel1" maxlength="15"
-											value="${unidadeAtendimento.num_tel1}"
-											class="input-small span12">
-									</div>
-									<div class="span2">
-										<label class="">Telefone 2:</label> <input type="text" maxlength="15"
-											name="num_tel2" value="${unidadeAtendimento.num_tel2}"
-											class="input-small span12">
-									</div>
-									<div class="span2">
-										<label class="">Telefone 3:</label> <input type="text" maxlength="15"
-											name="num_tel3" value="${unidadeAtendimento.num_tel3}"
-											class="input-small span12">
-									</div>
-									<div class="span6">
-										<label>Tipos de Atendimentos:</label>
-										<form:select path="tiposAtendimentoAux" multiple="multiple" id="tiposAtendimentos">
-											<form:options items="${tiposAtendimentosMap}"></form:options>
-										</form:select>
-									</div>									
-								</div>
-								<br>
-								<div class="span12 text-right">
-									<input type="hidden" name="cod_unidade_atendimento" id="cod_unidade_atendimento" value="${unidadeAtendimento.cod_unidade_atendimento}" /> 
-									<input type="submit" class="btn btn-primary" value="Salvar" /> 
-										<a href="../unidadeAtendimento/" style="color:#00000" class="btn btn-default" value="Cancelar" >Cancelar</a>
-								</div>
-							</form:form> -->
 						</div>
 					</div>
 				</div>
-		<div id="footer" style="position:absolute; bottom:0px">
-			<div class="container centralizadora">
-				<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
-			</div>
-    	</div>
+				</div>
+				<br/><br/><br/><br/><br/>
+		<div id="clear"></div>
+		<div id="footer">
+		<div class="container centralizadora">
+			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
+		</div>
+	</div>
 </body>
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>

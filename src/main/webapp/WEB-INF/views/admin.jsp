@@ -51,53 +51,22 @@
     		</div>
   		</div>
 	</nav> <!-- Encerra a barra de navegação -->
-	
-	<div class="container blocoPai">
-		<br />
-		<div class="jumbotron" style="background-image: url('resources/img/1515.png'); background-repeat:no-repeat; background-position: right;">
-			<h1>Olá, seja bem-vindo! :)</h1>
-			<!--<p>Se precisar de ajuda é só clicar no botão abaixo.</p>
-			<p><a class="btn btn-primary btn-lg" href="#" role="button" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg"><span style="color:#fff">Abrir Tutorial</span></a></p>
-		  	-->
-		  	
-		  	<!-- Large modal -->
-			<div class="modal fade bs-example-modal-lg" id="teste" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-				 <br/><br/><br/><br/><br/><br/><br/><br/>
-				 <div class="modal-dialog modal-lg">
-				 	<div class="modal-content">
-				 		<div id="carousel-example-generic" class="carousel slide">
-							<!-- Indicators -->
-							
-							<!-- Wrapper for slides -->
-							<div class="carousel-inner" role="listbox">
-		   						<div class="item active">
-								     <img src="resources/img/tuto1.png" alt="teste">
-								</div>
-							   	<div class="item">
-								     <img src="resources/img/tuto1.png" alt="...">
-								</div>
-		   					</div>
-		 				</div>
+	<div id="tudo">
+		<div class="container blocoPai">
+			<br />
+			<div class="jumbotron" style="background-image: url('resources/img/1515.png'); background-repeat:no-repeat; background-position: right;">
+				<br/><h1>Olá, seja bem-vindo! :)</h1><br/>
 		
-						<!-- Controls -->
-						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"></a>
-		  				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"></a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
-	<div id="footer" style="background-color:#e7e7e7; padding-top:15px; position:absolute; bottom:0px; width:100%">
+	<div id="clear"></div>
+	<div id="footer">
 		<div class="container centralizadora">
 			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
 		</div>
 	</div>
 
-<script>
-	$(document).ready(function() {
-		   $('#teste').modal('show');
-	});
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>   
 </body>

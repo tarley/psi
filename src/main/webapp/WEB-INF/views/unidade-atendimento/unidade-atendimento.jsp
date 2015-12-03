@@ -61,6 +61,7 @@
 	<br /><br /><br /><br /><br />
 
 	<!-- Barra | Container  -->
+	<div id="tudo">
 	<div class="container centralizarBox">
 		<div class="panel panel-primary ">
 			<div class="panel-heading">
@@ -143,11 +144,13 @@
 		</div>
 	</div>
 	</div>
-		<div id="footer" style="position:absolute; bottom:0px">
-			<div class="container centralizadora">
-				<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
-			</div>
-    	</div>
+	</div><br/><br/><br/><br/>
+		<div id="clear"></div>
+		<div id="footer">
+		<div class="container centralizadora">
+			<p class="muted credit">&copy; PSI - Desenvolvido pela Turma de Sistemas de Informação Newton Paiva | 8° Período 2015 - Professor Orientador: Tarley Lana.</p>
+		</div>
+	</div>
 </body>
 
 <%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
