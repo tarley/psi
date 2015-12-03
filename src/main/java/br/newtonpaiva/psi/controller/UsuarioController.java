@@ -5,6 +5,7 @@ package br.newtonpaiva.psi.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +36,23 @@ public class UsuarioController {
 	UsuarioRepository repository;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String index(Model model) {
-		List<Usuario> listaUsuarios = repository.listar();
-
-		model.addAttribute("listaUsuarios", listaUsuarios);
+	public String index(Model model,HttpSession session) 
+	{		
+		int perfil = (int) session.getAttribute("perfil");
+		
+		if(perfil==1)
+		{
+			List<Usuario> listaUsuarios = repository.listar();
+			model.addAttribute("listaUsuarios", listaUsuarios);
+		}
+		else
+		{
+			String login = (String)session.getAttribute("login");
+			List<Usuario> listaUsuarios = repository.listarUsuario(login);
+			model.addAttribute("listaUsuarios", listaUsuarios);
+			
+			System.out.println(login);
+		}
 
 		return "usuario/listar-usuario";
 	}

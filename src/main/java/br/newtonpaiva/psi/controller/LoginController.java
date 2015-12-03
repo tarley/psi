@@ -20,10 +20,13 @@ public class LoginController {
 	public String efetuaLogin(Usuario usuario, Model model, HttpSession session) throws Exception 
 	{
 		
-		List<Usuario> usuarios = repository.verificaUsuario(usuario.getLogin(), usuario.getSenha());
+		usuario = repository.verificaUsuario(usuario.getLogin(), usuario.getSenha());
 		
-		if(!usuarios.isEmpty()) {
+		if(usuario!=null) 
+		{
 		    session.setAttribute("usuarioLogado", usuario);
+		    session.setAttribute("perfil", usuario.getPerfil());
+		    session.setAttribute("login", usuario.getLogin());
 		    return "redirect:admin";
 		}
 		

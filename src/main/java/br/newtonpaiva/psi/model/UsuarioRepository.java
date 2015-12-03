@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
@@ -13,21 +14,35 @@ public class UsuarioRepository {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@SuppressWarnings("unchecked")
-	public List<Usuario> verificaUsuario(String login, String senha) throws Exception 
+	public Usuario verificaUsuario(String login, String senha) throws Exception 
 	{
 		senha = sha256(senha);
 		
-		List<Usuario> usuarios = manager
+		try
+		{
+			Usuario usuario = (Usuario)manager		
 				.createQuery("select u from Usuario u where u.Des_Login = :login and u.Senha = :senha")
-				.setParameter("login", login).setParameter("senha", senha).getResultList();
+				.setParameter("login", login).setParameter("senha", senha).getSingleResult();
+			
+			return usuario;
+		}
+		catch(NoResultException e)
+		{
+			return null;
+		}
 		
-		return	usuarios;
+		
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Usuario> listar() {
 		return manager.createQuery("select u from Usuario u").getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Usuario> listarUsuario(String login) {
+		return manager.createQuery("select u from Usuario u where u.Des_Login = :login")
+				.setParameter("login", login).getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
