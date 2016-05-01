@@ -7,15 +7,18 @@
 	spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- <bean id="mysqlDataSource"
+	
+	<!-- Banco de desenvolvimento Local 
+	<bean id="mysqlDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/psi" />
 		<property name="username" value="root" />
 		<property name="password" value="" />
-	</bean> -->
+	</bean>
+	-->
 
-	<!-- Banco de desenvolvimento --> 
+	<!-- Banco de desenvolvimento 
 	<bean id="mysqlDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -23,6 +26,7 @@
 		<property name="username" value="root" />
 		<property name="password" value="TYOscb93834" />
 	</bean>
+	--> 
 	
 	<!-- Banco de produção -->
 	<!-- <bean id="mysqlDataSource"
@@ -30,8 +34,40 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://mysql66435-projetopsi.jelasticlw.com.br/psi" />
 		<property name="username" value="root" />
-		<property name="password" value="TYOscb93834" />
+		<property name="password" value="bEYL24rr0M" />
 	</bean> -->
+	
+	<!-- Banco de produção JelasticCloud  
+	<bean id="mysqlDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://mysql66435-projetopsi.jelasticlw.com.br/psi_dev" />
+		<property name="username" value="root" />
+		<property name="password" value="bEYL24rr0M" />		
+	</bean>
+	-->
+	
+	<!-- Banco de produção OpenShift [Tentativa com falha]
+	<bean id="mysqlDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://projetopsi-lana.rhcloud.com/projetopsi" />
+		<property name="username" value="adminujhcX2v" />
+		<property name="password" value="eire-ef1uSa3" />
+	</bean>
+	-->
+	
+	<!-- Banco de produção OpenShift-->
+	<bean id="mysqlDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://127.10.36.2:3306/projetopsi" />
+		<property name="username" value="adminujhcX2v" />
+		<property name="password" value="eire-ef1uSa3" />
+	</bean> 
+	
+	
+	
 	
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

@@ -87,11 +87,9 @@
 		
 	</section>
 
-	<%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
-	
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3wiTHEdnl0vLz_Z4FZbivw6JsnjT2Pg&signed_in=true&callback=initMap"></script>
- 	<script src="/psi/resources/js/jquery.autocomplete.js" type="text/javascript"></script>
-
+	<%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
+		
 	<script>
 
      $('#des_bairro').autocomplete({

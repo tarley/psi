@@ -49,7 +49,7 @@
     		</div>
 		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
 		    <ul class="nav navbar-nav">
-				<li class="teste"><a href="../../psi" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Voltar à Pesquisa de Unidade</a></li>
+				<li class="teste"><a href="/" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Voltar à Pesquisa de Unidade</a></li>
 	      	</ul>
     		</div>
   		</div>
