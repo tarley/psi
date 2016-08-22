@@ -22,7 +22,11 @@
 	</nav>
 	 
 	<section class="container blocoPai">
-		
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading">Pesquisa de atendimentos gratuitos de psicólogos</h2>
+			</div>		
+		</div>
 		<div class="row" id="bloco-pesquisa">
 			<div class="col-md-12">
 				<form action="pesquisar" method="get">
