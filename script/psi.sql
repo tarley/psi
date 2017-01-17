@@ -734,9 +734,9 @@ INSERT INTO `USUARIO` (`COD_USUARIO`, `DES_LOGIN`, `SENHA`, `NOM_USUARIO`, `DES_
 (12, 'Gabriel', '5F5CA58F1FFC85827D25D5EAF930212E4D26F38C85665A2F64877EF916B19E12', 'Gabriel', 'gabriel@smfox.com.br', '0'),
 (15, 'Amanda', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'amanda', 'amanda@gmail.com', '0'),
 (16, 'Pri', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'Priscilla', 'priscillaromagnoli@hotmail.com', '0'),
-(20, 'admin', 'Np2015', 'administrador', 'admin@c.com', '1'),
+(20, 'admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'administrador', 'admin@c.com', '1'),
 (42, 'dmartinsti@gmail.com', 'b7e94be513e96e8c45cd23d162275e5a12ebde9100a425c4ebcdd7fa4dcd897c', 'DiegoMartins', 'dmartinsti@gmail.com', '0'),
-(43, 'NewtonPaiva', 'Np2015', 'Newton Paiva', 'newtonpaiva@newtonpaiva.com', '0');
+(43, 'NewtonPaiva', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Newton Paiva', 'newtonpaiva@newtonpaiva.com', '0');
 
 --
 -- Indexes for dumped tables

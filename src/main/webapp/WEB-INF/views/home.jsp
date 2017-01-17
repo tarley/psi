@@ -12,15 +12,8 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container-fluid">	
-			<a id="logo" class="navbar-brand logo" href="#"><img  alt="PSI" src="resources/img/logo.png"></a>
-			<a id="acesso" class="navbar-brand link pull-right" href="admin"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i>&nbsp;<span>Acesso Restrito</span></a>
-			<a id="fundadores" class="navbar-brand link pull-right" href="fundadores/"><i class="glyphicon glyphicon-education" aria-hidden="true"></i>&nbsp;<span>Fundadores</span></a>
-			<a id="sugestao" class="navbar-brand link pull-right" href="mailto:tarley.lana@gmail.com"><i class="glyphicon glyphicon-flag" aria-hidden="true"></i>&nbsp;<span>Sugerir unidade</span></a>
-		</div>
-	</nav>
-	 
+	<%@include file="/WEB-INF/views/shared/_barra_navegacao.jsp"%>
+ 
 	<section class="container blocoPai">
 		<div class="row">
 			<div class="col-lg-12 text-center">

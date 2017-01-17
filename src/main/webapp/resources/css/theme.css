@@ -136,6 +136,15 @@
 
 .logo { margin-top: -14px; }
 
+#logo-newtonpaiva {
+	margin-top: -14px;
+	margin-left: 120%;
+}
+
+#barra-navegacao {
+	min-height: 70px;
+}
+
 .barra{
 		background-color:#006da3;
 		border-bottom: 4px solid #1E90FF;
