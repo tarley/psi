@@ -33,27 +33,8 @@
 </head>
 <body>
 	
-    <!--  Barra de Navegação -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-  		<div class="container-fluid">
-	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">
-        			<img class="img-responsive" style="max-width: 100%;margin-top:-14px" alt="PSI" src="../resources/img/logo.png"  />
-      			</a>
-	      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        		<span class="sr-only">Toggle navigation</span>
-	        		<span class="icon-bar"></span>
-	        		<span class="icon-bar"></span>
-	        		<span class="icon-bar"></span>
-				</button>
-    		</div>
-		   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="text-align:center">
-		    <ul class="nav navbar-nav">
-				<li class="teste"><a href="/" class="link"><span class="glyphicon glyphicon-search" style="font-size:1em"></span> Voltar à Pesquisa de Unidade</a></li>
-	      	</ul>
-    		</div>
-  		</div>
-	</nav> <!-- Encerra a barra de navegação -->
+    <%@include file="/WEB-INF/views/shared/_barra_navegacao_fundadores.jsp"%>
+    
 	<div class="container container-fundador">
             <div class="row">
                 <div class="col-lg-12 text-center">

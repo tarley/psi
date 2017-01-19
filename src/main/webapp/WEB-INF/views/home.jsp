@@ -12,9 +12,9 @@
 </head>
 <body>
 
-	<%@include file="/WEB-INF/views/shared/_barra_navegacao.jsp"%>
+	<%@include file="/WEB-INF/views/shared/_barra_navegacao_principal.jsp"%>
  
-	<section class="container blocoPai">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<h2 class="section-heading">Pesquisa de atendimentos gratuitos de psicólogos</h2>
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		
-	</section>
+	</div>
 
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo3wiTHEdnl0vLz_Z4FZbivw6JsnjT2Pg&signed_in=true&callback=initMap"></script>
 	<%@ include file="/WEB-INF/views/shared/_scripts_basicos.jsp"%>
